@@ -4,9 +4,9 @@
   description: "This paper presents the first systematic security analysis of in-flight Wi-Fi paywall systems, revealing vulnerabilities that allow covert channels, free Internet access, and bandwidth theft due to architectural and policy flaws. Countermeasures are proposed to address these issues."
   authors: "Abdullah Al Ishtiaq^, <b>Raja Hasnain Anwar</b>^, Yasra Chandio, Fatima Muhammad Anwar, Syed Rafiul Hussain, and <b>Muhammad Taqi Raza</b><br><small>^ These authors contributed equally to this work.</small>"
   link:
-    url: https://wisec2025.gmu.edu/program-accepted-papers/
+    url: https://dl.acm.org/doi/10.1145/3734477.3734713
     display: ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)
-  highlight: 1ß
+  highlight: 1
 
 - title: "PLCpot: Application Dialogue Replay based Scalable PLC Honeypot for Industrial Control Systems"
   year: 2025
