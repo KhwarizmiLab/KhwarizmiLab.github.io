@@ -11,6 +11,8 @@ permalink: /media.html
 ## Digital Payments Security
 - Global News Radio 640 Toronto Canada
 - <a href="https://www.forbes.com/sites/billhardekopf/2024/08/22/this-week-in-credit-card-news-people-using-cash-back-cards-to-help-during-tough-economy/" title="This Week In Credit Card News: Digital Wallets Can Allow Purchases with Stolen Credit Cards" target='_blank'>Forbes</a>
+- <a href="https://www.investopedia.com/cybersecurity-mobile-wallet-may-not-be-safe-11731210" title="Cybersecurity Alert: Why Your Mobile Wallet May Not Be Safe Even With a VPN
+" target='_blank'>Investopedia</a>
 - <a href="https://www.youtube.com/watch?v=da-4BQukeQM" title="Digital wallets can allow purchases with stolen credit cards" target='_blank'>National Science Foundation (NSF)</a>
 - <a href="https://technews.acm.org/archives.cfm?fo=2024-08-aug/aug-23-2024.html" title="A Loophole in Digital Wallet Security" target='_blank'>ACM TechNews, Friday, August 23, 2024</a>
 - <a href="https://www.msn.com/en-us/money/personalfinance/digital-wallets-allow-for-the-use-of-stolen-credit-cards/ar-AA1p7TFh?ocid=finance-verthp-feeds" title="Digital wallets allow for the use of stolen credit cards" target='_blank'>MSN</a>
