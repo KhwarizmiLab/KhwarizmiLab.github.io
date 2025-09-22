@@ -1,9 +1,9 @@
 ---
-title: "Khwarizmi Lab - Pictures"
+title: "Khwarizmi Lab - Gallery"
 layout: piclay
-excerpt: "Khwarizmi Lab -- Pictures"
+excerpt: "Khwarizmi Lab -- Gallery"
 sitemap: true
-permalink: /pictures/
+permalink: /gallery/
 ---
 
 # Gallery
