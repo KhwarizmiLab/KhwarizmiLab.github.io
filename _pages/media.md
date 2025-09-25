@@ -1,12 +1,12 @@
 ---
-title: "Khwarizmi Lab - Media Coverage"
+title: "Khwarizmi Lab - Media and Press Coverage"
 layout: textlay
 excerpt: "Media and Press Coverage @ Khwarizmi Lab"
 sitemap: true
 permalink: /media.html
 ---
 
-# Media Coverage
+# Media and Press Coverage
 
 ## Digital Payments Security
 - Global News Radio 640 Toronto Canada
