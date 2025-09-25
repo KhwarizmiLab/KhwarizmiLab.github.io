@@ -1,7 +1,7 @@
 ---
 title: "Khwarizmi Lab - Media Coverage"
 layout: textlay
-excerpt: "Media Coverage @ Khwarizmi Lab"
+excerpt: "Media and Press Coverage @ Khwarizmi Lab"
 sitemap: true
 permalink: /media.html
 ---
