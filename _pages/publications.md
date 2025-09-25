@@ -28,8 +28,10 @@ permalink: /publications/
   <pubtit>{{ publi.title }}
   {% if publi.link.pdf %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]{% endif %}
   {% if publi.link.slides %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]{% endif %}
+  {% if publi.award %}<br><span class="text-success"><strong>{{ publi.award }}</strong></span>{% endif %}
+  
   </pubtit>
-  <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="33%" style="float: left" />
+  <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="50%" style="float: left" />
   <p>{{ publi.description }}</p>
   <p><em>{{ publi.authors }}</em></p>
   <p><strong><a href="{{ publi.link.url }}" target="_blank">{{ publi.link.display }}</a></strong></p>
@@ -65,6 +67,7 @@ permalink: /publications/
   <!-- Check if file links exist -->
   {% if publi.link.pdf %}<b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]</b>{% endif %}
   {% if publi.link.slides %}<b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]</b>{% endif %}
+  {% if publi.award %}<br><span class="text-success"><strong>{{ publi.award }}</strong></span>{% endif %}
 
   <em>{{ publi.authors }} </em><br /><a href="{{ publi.link.url }}">{{ publi.link.display }}</a>
 
