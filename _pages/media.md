@@ -30,6 +30,7 @@ permalink: /media.html
 - <a href='https://www.paymentsjournal.com/researchers-uncover-security-issues-in-digital-wallets/' target='_blank' title="Researchers Uncover Security Issues in Digital Wallets">PaymentsJournal</a>
 - <a href="https://www.eurekalert.org/news-releases/1054622" title="Digital wallets can allow purchases with stolen credit cards" target='_blank'>EurekaAlert!</a>
 - <a href="https://www.helpnetsecurity.com/2024/08/19/digital-wallet-stolen-card/" title="Stolen, locked payment cards can be used with digital wallet apps" target='_blank'>Help Net Security</a>
+- <a href="https://www.galacticadvisors.com/research/stolen-credit-cards-used-in-digital-wallets/" title="Stolen Credit Cards Used in Digital Wallets" target='_blank'>Galactic Advisors</a>
 - <a href="https://www.consumeraffairs.com/news/study-the-safety-of-applepay-and-googlepay-called-into-question-091624.html" title="Study: The safety of ApplePay and GooglePay called into question" target='_blank'>Consumer Affairs</a>
 - <a href="https://sciencex.com/news/2024-08-week-japanese-ancestry-loophole-digital.html" title="Best of Last Week—Japanese ancestry challenged, loophole in digital wallets, using AI to diagnose genetic disease" target='_blank'>Science X</a>
 - <a href="https://www.newsbytesapp.com/news/science/hackers-can-use-stolen-credit-card-details-on-digital-wallets/story" title="Security flaw allows stolen credit card use on digital wallets" target='_blank'>NewsBytes</a>
