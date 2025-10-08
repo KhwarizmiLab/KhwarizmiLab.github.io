@@ -32,10 +32,10 @@
   number_educ: 1
   education1: BE Electrical Engineering, <a href="http://nust.edu.pk/" target="_blank">National University of Sciences and Technology, Pakistan</a>. 2023
   number_rec: 4
-  interest1: Embedded Systems
-  interest2: 5G at the edge
-  interest3: Internet of Things
-  interest4: Cloud Computing
+  interest1: Networked Systems
+  interest2: Cellular Core 
+  interest3: ORAN, 3GPP
+  interest4: Time Synchronization
 
 - name: Ali Hamza Malik
   photo: ali.jpeg
