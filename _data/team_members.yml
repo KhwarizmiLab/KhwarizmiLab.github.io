@@ -59,3 +59,14 @@
   interest2: Cellular Core 
   interest3: ORAN, 3GPP
   interest4: Time Synchronization
+
+- name: Osama Ahmad
+  photo: osama.jpg
+  info: PhD Student
+  email: oahmad_AT_umass.edu
+  number_educ: 2
+  education1: MS Electrical Engineering, <a href="https://lums.edu.pk/" target="_blank">Lahore University of Management Sciences, Pakistan</a>. 2024
+  education2: B.Sc. Mechatronics and Control Engineering, <a href="https://uet.edu.pk/" target="_blank">University of Engineering and Technology, Lahore, Pakistan</a>. 2019
+  number_rec: 2
+  interest1: LLM for Edge
+  interest2: Quantum Sensing

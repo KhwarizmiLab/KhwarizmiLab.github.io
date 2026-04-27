@@ -1,3 +1,9 @@
+- date: April 27, 2026
+  headline: "Paper '<a href='{{ site.url }}{{ site.baseurl }}/docs/InferNet.pdf' target='_blank'>InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference</a>' has been accepted for publication in ACM Transactions on AI Security and Privacy."
+
+- date: March 23, 2026
+  headline: "Paper titled 'Characterizing Cellular Network Dynamics for Federated Human Activity Recognition' accepted at <a href='https://fmsys-org.github.io/2026/index.html' target='_blank'>FMSys 2026</a>."
+
 - date: March 6, 2026
   headline: "Taqi Raza selected as a <a href='https://www.umass.edu/engineering/news/raza-starr-pep-fellows' target='_blank'>PEP Fellow</a> by the UMass Amherst Public Engagement Project (PEP) Program for 2026."
 
@@ -6,6 +12,9 @@
 
 - date: January 23, 2026
   headline: "Abdullah Soomro gave a talk at New England Systems Day 2026 titled 'Millisecond Time Synchronization for 5G NB-IoT Networks'!"
+
+- date: January 1, 2026
+  headline: "Osama Ahmad joined Khwarizmi Lab as a PhD student."
 
 - date: September 21, 2025
   headline: "Paper on 'SynchroNB: Toward Robust Timing for 5G NB-IoT Networks' accepted at <a href='https://sensys.acm.org/2026/' target='_blank'>ACM SenSys 2026</a>."

@@ -28,7 +28,7 @@ permalink: /gallery/
 📍 {{ pic.loc }}<br/>
 {{ pic.alt }}
 </p>
-<img src="{{ site.url }}{{ site.baseurl }}/images/gallery/{{ pic.image }}" alt="{{ pic.alt }}" class="img-responsive" width="100%" style="float: left" />
+<img src="{{ site.url }}{{ site.baseurl }}/images/gallery/{{ pic.image }}" alt="{{ pic.alt }}" class="img-responsive gallery-image" width="100%" style="float: left" />
 </div>
 
 {% assign number_printed = number_printed | plus: 1 %}
