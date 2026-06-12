@@ -105,6 +105,17 @@ code {
 	background-color: $gray-lighter;
 }
 
+/* Match blockquote text size to body copy (Bootstrap default is 1.25x) */
+blockquote {
+	font-size: $font-size-base;
+}
+
+/* Theme repurposes the maroon brand color as $panel-bg, which leaves panel
+   bodies unreadable. Keep panels on text-layout content pages white. */
+#textid .panel {
+	background-color: $body-bg;
+}
+
 /* FAQ collapsible answers: slower reveal/hide animation */
 #faq .collapsing {
 	transition-duration: 0.6s;
