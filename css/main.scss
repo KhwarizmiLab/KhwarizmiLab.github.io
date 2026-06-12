@@ -98,3 +98,19 @@ firstp {
 .fa-external-link, .fa-location-pin {
 	font-size: 12px;
 }
+
+/* Neutralize inline code background (default Bootstrap renders it red/pink) */
+code {
+	color: $gray-dark;
+	background-color: $gray-lighter;
+}
+
+/* FAQ collapsible answers: slower reveal/hide animation */
+#faq .collapsing {
+	transition-duration: 0.6s;
+	transition-timing-function: ease;
+}
+#faq .panel-heading a {
+	display: block;
+	text-decoration: none;
+}

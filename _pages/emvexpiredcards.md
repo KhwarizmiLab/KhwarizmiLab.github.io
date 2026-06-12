@@ -6,23 +6,17 @@ sitemap: true
 permalink: /emvexpiredcards/
 ---
 
-<!-- IMAGES: add the following to images/emv/
-  setup.jpg, cardemulator.jpg, posemulator.jpg, receipt.jpg -->
-
 <!-- ─────────────────── HERO ─────────────────── -->
 <div class="text-center">
   <h1>Zombie Cards Back Online</h1>
   <h4>Reviving Expired Credit Cards for Contactless Payments</h4>
   <p>
-    <a href="{{ site.url }}{{ site.baseurl }}/team">Raja Hasnain Anwar</a> &nbsp;·&nbsp;
+    <a href="https://rhasnainanwar.me/" target="_blank">Raja Hasnain Anwar</a> &nbsp;·&nbsp;
     Gerard DeCunha &nbsp;·&nbsp;
     <a href="https://people.cs.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
   </p>
-  <p class="text-muted">University of Massachusetts Amherst</p>
   <p>
-    <span class="label label-default">USENIX Security 2026</span>
-    &nbsp;
-    <span class="label label-success">Artifact Evaluated &mdash; Available</span>
+    <a class="btn btn-default" href="#">Paper (PDF)</a>
   </p>
 </div>
 
@@ -50,6 +44,14 @@ enforce card lifecycle state. Based on these findings, we propose countermeasure
 issuers, and payments to ensure end-to-end transaction integrity and security.
 </div>
 
+<strong>BibTeX</strong>
+<pre>@inproceedings{anwar2026zombie,
+  title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
+  author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
+  booktitle={USENIX Security 26},
+  year={2026}
+}</pre>
+
 
 ## Demo Video
 
@@ -63,28 +65,26 @@ issuers, and payments to ensure end-to-end transaction integrity and security.
 </div>
 <p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
 
-## Background: How EMV Contactless Payments Work
-
 <p>
 EMV (Europay, Mastercard, Visa) is the global standard governing chip-based card payments.
 In a <strong>contactless transaction</strong>, the card and a Point-of-Sale (POS) terminal exchange
 Application Protocol Data Units (APDUs) over NFC. Five parties participate:
 </p>
 
-<div class="row">
-  <div class="col-sm-6">
-    <ul>
-      <li><strong>Card (Payment Device)</strong> — stores the payment application and cryptographic keys in a secure element.</li>
-      <li><strong>POS Terminal</strong> — reads the card over NFC, applies kernel rules, and decides whether to approve locally or escalate online.</li>
-      <li><strong>Acquirer</strong> — the merchant's bank; routes the transaction to the payment network.</li>
-    </ul>
-  </div>
-  <div class="col-sm-6">
-    <ul>
-      <li><strong>Payment Network</strong> (Visa, Mastercard, Discover) — defines the kernel specification and routes between acquirer and issuer.</li>
-      <li><strong>Issuer</strong> — the cardholder's bank; ultimately authorizes or declines based on its own risk engine.</li>
-    </ul>
-  </div>
+<div class="row" markdown="0">
+<div class="col-sm-6">
+<ul>
+<li><strong>Card (Payment Device)</strong> — stores the payment application and cryptographic keys in a secure element.</li>
+<li><strong>POS Terminal</strong> — reads the card over NFC, applies kernel rules, and decides whether to approve locally or escalate online.</li>
+<li><strong>Acquirer</strong> — the merchant's bank; routes the transaction to the payment network.</li>
+</ul>
+</div>
+<div class="col-sm-6">
+<ul>
+<li><strong>Payment Network</strong> (Visa, Mastercard, Discover) — defines the kernel specification and routes between acquirer and issuer.</li>
+<li><strong>Issuer</strong> — the cardholder's bank; ultimately authorizes or declines based on its own risk engine.</li>
+</ul>
+</div>
 </div>
 
 <p>
@@ -181,104 +181,135 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 
 <div class="row">
   <div class="col-sm-6 col-sm-offset-3">
-    <img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.jpg"
+    <img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png"
          alt="Receipt showing $100 approved transaction on an expired Visa card"
          class="img-responsive center-block" />
-    <p class="text-center"><small>Transaction receipt for a $100 contactless payment approved on an expired Visa card ending in 8634.</small></p>
+    <p class="text-center"><small>Transaction receipt for a $100 contactless payment approved on an expired Visa card ending in 8634, as shown in the video.</small></p>
   </div>
 </div>
 
-## Key Findings
-
-<div class="panel panel-default">
-  <div class="panel-body"><strong>F1 — Kernel 3 enables expired card revival.</strong><br>
-  An unmodified expired Visa card is rejected as expected. After in-flight rewriting of
-  <code>#5F24</code>, the same card completes transactions across $1, $100, and $500 amounts, at
-  controlled POS terminals and at real retail and grocery merchants. No special merchant setup or
-  amount threshold is required.</div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body"><strong>F2 — Kernel design determines whether expiry is integrity-protected.</strong><br>
-  Kernels 2 (Mastercard), 4 (AmEx), and 6 (Discover) cryptographically bind expiry-relevant data
-  to authenticated protocol outputs. Any in-flight modification triggers a signature mismatch and
-  transaction decline. Kernel 3 (Visa) does not, creating the exploitable gap.</div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body"><strong>F3 — Issuer authorization behavior is inconsistent.</strong><br>
-  Among the tested banks, Bank A approved all transactions from the expired card once the terminal
-  accepted the modified expiry — its authorization logic checks only that the account is open and
-  the ARQC is valid. Bank B consistently declined and prompted the cardholder to use the
-  replacement card, indicating instrument-level lifecycle enforcement.</div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body"><strong>F4 — Card replacement does not guarantee revocation.</strong><br>
-  A card replaced by the issuer (before its printed expiry) continued to complete transactions to
-  the same underlying account. "Replaced" is an issuer-managed state not reflected in on-card
-  fields evaluated by the kernel, and EMV does not mandate uniform handling of this lifecycle event.</div>
-</div>
-
-<div class="panel panel-default">
-  <div class="panel-body"><strong>F5 — Digital wallets are more resilient.</strong><br>
-  Apple Pay and Google Pay tokens are updated over-the-air by the issuer's token service provider.
-  Token expiry is refreshed without cardholder action, reducing the probability that an expired
-  underlying credential remains usable. This reflects the core lesson: centralized lifecycle
-  management is more robust than terminal-local policy checks.</div>
-</div>
-
-## Proposed Countermeasures
-
-<dl class="dl-horizontal">
-  <dt>CM0</dt><dd>Cardholders should physically destroy expired cards (cut through chip and stripe). Issuers and terminal vendors should deploy the EMV Relay Resistance Protocol (RRP).</dd>
-  <dt>CM1</dt><dd>Cryptographically bind the Application Expiration Date to an issuer-verifiable signature or ODA data, so NFC-layer tampering is detectable.</dd>
-  <dt>CM2</dt><dd>Terminals should enforce consistency between <code>#5F24</code> and the expiry embedded in Track 2 at the earliest verifiable point and generate issuer-visible evidence on divergence.</dd>
-  <dt>CM3</dt><dd>Issuers should authorize against a (PAN, expiration date) tuple — not PAN alone — so an obsolete card cannot ride on an active account.</dd>
-  <dt>CM4</dt><dd>When a replacement card is issued, the prior card should transition to a hard revocation state that declines across all amounts and merchant categories.</dd>
-  <dt>CM5</dt><dd>Kernels should forward the actual TVR to the issuer. Sending all-zeros removes the standard channel for issuer-side compensating controls.</dd>
-  <dt>CM6</dt><dd>When authenticated static data is inconsistent, terminals should fail closed rather than continuing via online fallback.</dd>
-</dl>
-
-## Paper &amp; Resources
-
-<p>
-  <a class="btn btn-default" href="#">Paper (PDF)</a>
-  <a class="btn btn-default" href="https://doi.org/10.5281/zenodo.20437876" target="_blank">Transaction Logs (Zenodo)</a>
-  <a class="btn btn-default" href="{{ site.url }}{{ site.baseurl }}/publications">All Publications</a>
-</p>
-
-<p class="small text-muted">
-  <strong>Citation:</strong> Raja Hasnain Anwar, Gerard DeCunha, Muhammad Taqi Raza.
-  "Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments."
-  <em>USENIX Security 2026</em>.
-</p>
 
 ## FAQ
 
-<dl>
-  <dt>Q: How realistic is it for an attacker to obtain an expired card?</dt>
-  <dd>The attack exploits a documented misconception — expired cards are widely assumed inert, so cardholders discard them carelessly. The precondition is not wide availability; it is improper disposal by a subset of cardholders. Following issuer guidance to physically destroy the card eliminates the precondition entirely.</dd>
+<p class="text-muted"><small>Click a question to reveal the answer; click again to hide it.</small></p>
 
-  <dt>Q: What factors most determine whether the attack succeeds?</dt>
-  <dd>Three factors dominate: (i) which EMV kernel is in use and whether it cryptographically binds expiry-relevant fields; (ii) whether the issuer authorizes against the (PAN, expiry) tuple or just checks that the PAN is active; and (iii) whether the terminal's validation results reach the issuer via TVR. Transaction amount, merchant category, and POS terminal brand did not independently determine the outcome.</dd>
+<div id="faq" class="row">
 
-  <dt>Q: Does the attack work at any transaction amount?</dt>
-  <dd>Yes. Once the terminal accepts the modified expiry and the issuer does not enforce instrument-level checks, the attack succeeds across all tested amounts ($1, $100, $500). PIN thresholds in European deployments are a separate check orthogonal to the expiry-integrity gap.</dd>
+  <!-- ───────────── Column 1 ───────────── -->
+  <div class="col-sm-6">
 
-  <dt>Q: Does relay latency cause timeouts? Would Relay Resistance Protocol (RRP) block this?</dt>
-  <dd>The relay added 20–50 ms per APDU round-trip (~415 ms total) — within the 500 ms EMV response window; no timeouts occurred. RRP would defeat the relay by detecting added latency and aborting, but RRP is optional and was not deployed on any card or terminal we tested.</dd>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq1">What is the "Zombie Card" attack, in one sentence?</a></div>
+      <div id="faq1" class="panel-collapse collapse"><div class="panel-body">
+        It is an NFC man-in-the-middle attack that rewrites the expiration date a POS terminal reads from an expired card, making the card appear valid so the transaction is approved — without breaking any cryptography.
+      </div></div>
+    </div>
 
-  <dt>Q: Was IRB required? Did the experiments violate terms of service?</dt>
-  <dd>IRB approval was not required — no human subjects were involved. All controlled experiments used our own cards and merchant account. In-the-wild merchants were informed in advance and all charges were paid in full. Our use of standard EMV cards and commercial terminals falls within normal cardholder use.</dd>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq2">Is this a flaw in EMV's cryptography?</a></div>
+      <div id="faq2" class="panel-collapse collapse"><div class="panel-body">
+        No. The card's keys, signatures (SDAD), and cryptograms (ARQC) remain valid throughout. The gap is that Visa Kernel 3 does not bind the terminal-read expiration date to any authenticated data, so it can be modified in transit undetected. This is a lifecycle-enforcement gap, not a cryptographic break.
+      </div></div>
+    </div>
 
-  <dt>Q: Why is the relay code not released?</dt>
-  <dd>The implementation provides a direct capability to modify live financial transactions and could lower the barrier to fraud. As of publication, Visa and affected banks have not confirmed mitigation status. We release sanitized transaction logs and full protocol-level detail — consistent with prior EMV research that withheld exploit-capable artifacts while disclosing complete methodology.</dd>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq3">How realistic is it for an attacker to obtain an expired card?</a></div>
+      <div id="faq3" class="panel-collapse collapse"><div class="panel-body">
+        The attack exploits a documented misconception — expired cards are widely assumed inert, so cardholders discard them carelessly. The precondition is improper disposal by a subset of cardholders, not wide availability. Following issuer guidance to physically destroy the card eliminates the precondition entirely.
+      </div></div>
+    </div>
 
-  <dt>Q: Were Visa and the banks notified?</dt>
-  <dd>Yes — in May 2025 and December 2025, with a step-by-step reproduction guide, full APDU traces, and a video demonstration. Visa's report has passed initial triage and is undergoing reproduction by their red team. Neither Visa nor the notified banks has provided an update on the nature or timeline of mitigations.</dd>
-</dl>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq4">Which cards and banks are affected?</a></div>
+      <div id="faq4" class="panel-collapse collapse"><div class="panel-body">
+        Visa (Kernel 3) was the susceptible configuration; Mastercard (Kernel 2), AmEx (Kernel 4), and Discover (Kernel 6) rejected the modification. We tested five major US banks (anonymized as Bank A–E). Issuer behavior varied: some approved revived transactions, others declined and prompted for the replacement card.
+      </div></div>
+    </div>
 
-<hr />
-<p class="text-center text-muted"><small>Khwarizmi Lab &middot; University of Massachusetts Amherst &middot; <a href="mailto:rhasnain@cs.umass.edu">Contact</a></small></p>
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq5">Does this affect Apple Pay or Google Pay?</a></div>
+      <div id="faq5" class="panel-collapse collapse"><div class="panel-body">
+        Digital wallets are more resilient. Their tokens and expiry are refreshed over-the-air by the issuer's token service provider, without cardholder action, reducing the chance that an expired underlying credential stays usable. Centralized lifecycle management is more robust than terminal-local policy checks.
+      </div></div>
+    </div>
 
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq6">What factors most determine whether the attack succeeds?</a></div>
+      <div id="faq6" class="panel-collapse collapse"><div class="panel-body">
+        Three: (i) which EMV kernel is in use and whether it cryptographically binds expiry-relevant fields; (ii) whether the issuer authorizes against the (PAN, expiry) tuple or only checks that the PAN is active; and (iii) whether terminal validation results reach the issuer via TVR. Amount, merchant category, and POS brand did not independently determine the outcome.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq7">How is this different from prior EMV attacks?</a></div>
+      <div id="faq7" class="panel-collapse collapse"><div class="panel-body">
+        Prior work targeted PIN/CVM bypass, brand mix-ups, or relay proximity. We instead treat card expiry as an end-to-end lifecycle invariant and show it degrades into a policy-only attribute. The attack requires no induced authentication failure and no brand routing — only an unbound, terminal-consumed expiry field.
+      </div></div>
+    </div>
+
+  </div>
+
+  <!-- ───────────── Column 2 ───────────── -->
+  <div class="col-sm-6">
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq8">Does the attack work at any transaction amount?</a></div>
+      <div id="faq8" class="panel-collapse collapse"><div class="panel-body">
+        Yes. Once the terminal accepts the modified expiry and the issuer does not enforce instrument-level checks, the attack succeeds across all tested amounts ($1, $100, $500). PIN thresholds in European deployments are a separate check, orthogonal to the expiry-integrity gap.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq9">Does relay latency cause timeouts? Would Relay Resistance Protocol (RRP) block this?</a></div>
+      <div id="faq9" class="panel-collapse collapse"><div class="panel-body">
+        The relay added 20–50 ms per APDU round-trip (~415 ms total) — within the 500 ms EMV response window; no timeouts occurred. RRP would defeat the relay by detecting the added latency and aborting, but RRP is optional and was not deployed on any card or terminal we tested.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq10">As a normal cardholder, am I at risk — and what should I do?</a></div>
+      <div id="faq10" class="panel-collapse collapse"><div class="panel-body">
+        The simplest protection is to follow issuer guidance for expired cards: physically destroy them by cutting through the chip and magnetic stripe, or return them through an approved channel. An expired card you have securely destroyed cannot be used in this attack.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq11">Was IRB required? Did the experiments violate terms of service?</a></div>
+      <div id="faq11" class="panel-collapse collapse"><div class="panel-body">
+        IRB approval was not required — no human subjects were involved. Controlled experiments used our own cards and merchant account. In-the-wild merchants were informed in advance and all charges were paid in full. Use of standard EMV cards and commercial terminals falls within normal cardholder use.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq12">Why is the relay code not released?</a></div>
+      <div id="faq12" class="panel-collapse collapse"><div class="panel-body">
+        The implementation provides a direct capability to modify live financial transactions and could lower the barrier to fraud. As of publication, Visa and affected banks have not confirmed mitigation status. We release sanitized transaction logs and full protocol-level detail — consistent with prior EMV research that withheld exploit-capable artifacts.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq13">Were Visa and the banks notified?</a></div>
+      <div id="faq13" class="panel-collapse collapse"><div class="panel-body">
+        Yes — in May 2025 and December 2025, with a step-by-step reproduction guide, full APDU traces, and a video demonstration. Visa's report has passed initial triage and is undergoing reproduction by their red team. As of writing, neither Visa nor the notified banks has provided an update on mitigations.
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq14">Has a CVE been assigned to this issue?</a></div>
+      <div id="faq14" class="panel-collapse collapse"><div class="panel-body">
+        <!-- TODO: Confirm whether a CVE / tracking ID has been assigned and add it here. -->
+        [Answer to be added.]
+      </div></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><a data-toggle="collapse" href="#faq15">Does it also work on debit cards or contact (chip-insert) transactions?</a></div>
+      <div id="faq15" class="panel-collapse collapse"><div class="panel-body">
+        <!-- TODO: Confirm debit-card and contact-interface behavior and add details here. -->
+        [Answer to be added.]
+      </div></div>
+    </div>
+
+  </div>
+
+</div>
