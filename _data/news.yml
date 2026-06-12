@@ -1,3 +1,9 @@
+- date: May 14, 2026
+  headline: "Our paper 'Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments' has been accepted at USENIX Security 2026."
+
+- date: April 30, 2026
+  headline: "Our paper in collaboration with Microsoft, 'PPT-Eval: A Benchmark for Computer-Use Agents on PowerPoint Tasks,' has been accepted at ICML 2026."
+
 - date: April 27, 2026
   headline: "Paper '<a href='{{ site.url }}{{ site.baseurl }}/docs/InferNet.pdf' target='_blank'>InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference</a>' has been accepted for publication in ACM Transactions on AI Security and Privacy."
 
