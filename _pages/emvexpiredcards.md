@@ -162,11 +162,11 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 
 <div class="row" markdown="0">
 <div class="col-sm-6">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/cardemulator.jpg" alt="CardEmulator app showing relayed APDU commands and responses" class="img-responsive" />
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/CardEmulator.jpg" alt="CardEmulator app showing relayed APDU commands and responses" class="img-responsive" />
 <p class="text-center"><small>CardEmulator — relayed APDU commands and responses at the terminal side.</small></p>
 </div>
 <div class="col-sm-6">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/posemulator.jpg" alt="POSEmulator app showing card APDU reads" class="img-responsive" />
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/POSEmulator.jpg" alt="POSEmulator app showing card APDU reads" class="img-responsive" />
 <p class="text-center"><small>POSEmulator — APDU reads from the victim expired card.</small></p>
 </div>
 </div>
