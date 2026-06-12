@@ -125,3 +125,8 @@ blockquote {
 	display: block;
 	text-decoration: none;
 }
+
+/* Zombie Cards hero author byline: larger than body copy */
+.zombie-authors {
+	font-size: $font-size-large;
+}

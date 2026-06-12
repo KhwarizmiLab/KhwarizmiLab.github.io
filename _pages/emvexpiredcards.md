@@ -9,8 +9,8 @@ permalink: /emvexpiredcards/
 <!-- ─────────────────── HERO ─────────────────── -->
 <div class="text-center">
   <h1>Zombie Cards Back Online</h1>
-  <h4>Reviving Expired Credit Cards for Contactless Payments</h4>
-  <p>
+  <h2>Reviving Expired Credit Cards for Contactless Payments</h2>
+  <p class="zombie-authors">
     <a href="https://rhasnainanwar.me/" target="_blank">Raja Hasnain Anwar</a> &nbsp;·&nbsp;
     Gerard DeCunha &nbsp;·&nbsp;
     <a href="https://people.cs.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
