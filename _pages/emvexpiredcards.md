@@ -161,23 +161,11 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 </div>
 
 <div class="row" markdown="0">
-<div class="col-sm-6">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/CardEmulator.jpg" alt="CardEmulator app showing relayed APDU commands and responses" class="img-responsive" />
-<p class="text-center"><small>CardEmulator — relayed APDU commands and responses at the terminal side.</small></p>
-</div>
-<div class="col-sm-6">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/POSEmulator.jpg" alt="POSEmulator app showing card APDU reads" class="img-responsive" />
-<p class="text-center"><small>POSEmulator — APDU reads from the victim expired card.</small></p>
-</div>
-</div>
-
-<div class="row" markdown="0">
 <div class="col-sm-6 col-sm-offset-3">
 <img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png" alt="Receipt showing $100 approved transaction on an expired Visa card" class="img-responsive center-block" />
 <p class="text-center"><small>Transaction receipt for a $100 contactless payment approved on an expired Visa card ending in 8634, as shown in the video.</small></p>
 </div>
 </div>
-
 
 ## FAQ
 
