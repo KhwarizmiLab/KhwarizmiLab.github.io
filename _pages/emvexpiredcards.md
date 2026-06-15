@@ -44,27 +44,6 @@ enforce card lifecycle state. Based on these findings, we propose countermeasure
 issuers, and payments to ensure end-to-end transaction integrity and security.
 </div>
 
-<strong>BibTeX</strong>
-<pre>@inproceedings{anwar2026zombie,
-  title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
-  author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
-  booktitle={USENIX Security 26},
-  year={2026}
-}</pre>
-
-
-## Demo Video
-
-<!-- Replace VIDEO_ID with the actual YouTube video ID -->
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-</div>
-<p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
-
 <p>
 EMV (Europay, Mastercard, Visa) is the global standard governing chip-based card payments.
 In a <strong>contactless transaction</strong>, the card and a Point-of-Sale (POS) terminal exchange
@@ -112,6 +91,13 @@ NFC man-in-the-middle position can rewrite this field without invalidating any c
 the terminal performs.
 </p>
 
+<div class="row" markdown="0">
+<div class="col-sm-12">
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" />
+<p class="text-center"><small>Architecture of NFC relay for contactless transactions. The Card Emulator captures APDU commands from the POS terminal and forwards them to the card via a POS Emulator. Card responses, i.e., FCI data objects, are relayed back to the terminal along the reverse path.</small></p>
+</div>
+</div>
+
 <div class="panel panel-default" markdown="0">
 <div class="panel-heading"><strong>Attack Flow</strong></div>
 <ul class="list-group">
@@ -142,6 +128,18 @@ the specific card instrument is still valid) approve the transaction.</li>
 </ul>
 </div>
 
+## Demo Video
+
+<!-- Replace VIDEO_ID with the actual YouTube video ID -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+</div>
+<p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
+
 ## Experimental Setup
 
 <p>
@@ -166,6 +164,14 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 <p class="text-center"><small>Transaction receipt for a $100 contactless payment approved on an expired Visa card ending in 8634, as shown in the video.</small></p>
 </div>
 </div>
+
+<strong>BibTeX</strong>
+<pre>@inproceedings{anwar2026zombie,
+  title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
+  author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
+  booktitle={USENIX Security 26},
+  year={2026}
+}</pre>
 
 ## FAQ
 
