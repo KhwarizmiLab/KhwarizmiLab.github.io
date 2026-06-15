@@ -16,14 +16,15 @@ permalink: /emvexpiredcards/
     <a href="https://people.cs.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
   </p>
   <p>
+    <a class="btn btn-default" data-toggle="collapse" href="#abstract-collapse" aria-expanded="false">Abstract</a>
     <a class="btn btn-default" href="#">Paper (PDF)</a>
   </p>
 </div>
 
 ---
 
-## Abstract
-
+<div id="abstract-collapse" class="collapse" markdown="0">
+<h2 id="abstract">Abstract</h2>
 <div class="well well-sm">
 Contactless payment cards are widely assumed to stop working past their printed expiration dates,
 and many stakeholders rely on this assumption for authorization and access control.
@@ -42,6 +43,7 @@ indicate that the outcome of a "zombie card" transaction is determined by how se
 is divided between terminals, card manufacturers, and issuers, and by how consistently issuers
 enforce card lifecycle state. Based on these findings, we propose countermeasures that span kernels,
 issuers, and payments to ensure end-to-end transaction integrity and security.
+</div>
 </div>
 
 <p>
