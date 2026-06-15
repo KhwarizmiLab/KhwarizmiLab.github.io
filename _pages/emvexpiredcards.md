@@ -1,7 +1,7 @@
 ---
-title: "Zombie Cards Back Online"
+title: "Expired Card Attack"
 layout: textlay
-excerpt: "Zombie Cards: Reviving Expired Credit Cards for Contactless Payments"
+excerpt: "Zombie Cards: Reviving Expired Credit Cards for Contactless Payments. We demonstrate a practical Zombie Card attack that makes an expired card appear unexpired, allowing successful transactions despite the card being past its printed date."
 sitemap: true
 permalink: /emvexpiredcards/
 ---
