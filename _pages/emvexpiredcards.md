@@ -17,6 +17,7 @@ permalink: /emvexpiredcards/
   </p>
   <p>
     <a class="btn btn-default" data-toggle="collapse" href="#abstract-collapse" aria-expanded="false">Abstract</a>
+    <a class="btn btn-default" href="#bibtex">Citation (Bib)</a>
     <a class="btn btn-default" href="#">Paper (PDF)</a>
   </p>
 </div>
@@ -167,7 +168,7 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 </div>
 </div>
 
-<strong>BibTeX</strong>
+<strong id="bibtex">BibTeX</strong>
 <pre>@inproceedings{anwar2026zombie,
   title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
   author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
