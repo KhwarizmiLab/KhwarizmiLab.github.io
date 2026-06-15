@@ -17,8 +17,8 @@ permalink: /emvexpiredcards/
   </p>
   <p>
     <a class="btn btn-default" data-toggle="collapse" href="#abstract-collapse" aria-expanded="false">Abstract</a>
-    <a class="btn btn-default" href="#bibtex">Citation (Bib)</a>
     <a class="btn btn-default" href="#">Paper (PDF)</a>
+    <a class="btn btn-default" href="#bibtex">Citation (Bib)</a>
   </p>
 </div>
 
