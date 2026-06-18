@@ -5,7 +5,7 @@
   headline: "Our paper in collaboration with Microsoft, 'PPT-Eval: A Benchmark for Computer-Use Agents on PowerPoint Tasks,' has been accepted at ICML 2026."
 
 - date: April 27, 2026
-  headline: "Paper '<a href='{{ site.url }}{{ site.baseurl }}/docs/InferNet.pdf' target='_blank'>InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference</a>' has been accepted for publication in ACM Transactions on AI Security and Privacy."
+  headline: "Paper '<a href='https://dl.acm.org/doi/pdf/10.1145/3811923' target='_blank'>InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference</a>' has been accepted for publication in ACM Transactions on AI Security and Privacy."
 
 - date: March 23, 2026
   headline: "Paper titled 'Characterizing Cellular Network Dynamics for Federated Human Activity Recognition' accepted at <a href='https://fmsys-org.github.io/2026/index.html' target='_blank'>FMSys 2026</a>."

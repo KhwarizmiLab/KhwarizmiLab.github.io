@@ -1,12 +1,3 @@
-- title: "SynchroNB: Toward Robust Timing for 5G NB-IoT Networks"
-  year: 2026
-  image: synchro.png
-  description: "SynchroNB is an on-device framework that combines lightweight machine learning with a cross-layer control loop. It forecasts 5G network volatility and crystal drift to adaptively wake the cellular modem, reserves uplink resources just in time, switches into resilience mode when the wireless link degrades, and prioritizes time synchronization packets in the MAC-layer queue. Our experiments show that SynchroNB achieves single-millisecond-level synchronization accuracy under diverse wireless conditions, while requiring only 36% of the radio-on time and 25% of the bandwidth of the NTP baseline."
-  authors: "<b>Muhammad Abdullah Soomro</b>^, <b>Muhammad Shayan Nazeer</b>^, Collin DelSignore, Yasra Chandio, <b>Muhammad Taqi Raza</b>, and Fatima Muhammad Anwar<br><small>^ These authors contributed equally to this work.</small>"
-  link:
-    display: ACM SenSys
-  highlight: 1
-
 - title: "InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference"
   year: 2026
   description: "InferNet is an attack that uses simple, coarse-grained system-level information — GPU kernel calls, memory events, and system-level metrics — to fingerprint and infer the architecture of a victim's DNN without complex time-series analysis. It identifies both the architecture family (e.g., Inception vs. BERT) and specific variant (e.g., InceptionV1 vs. InceptionV3), achieving 100% model extraction accuracy using only a partial GPU profile across TensorFlow, PyTorch, multiple DNN types, and NVIDIA hardware platforms."
@@ -15,6 +6,15 @@
     url: https://dl.acm.org/doi/pdf/10.1145/3811923
     display: ACM Transactions on AI Security and Privacy (TAISAP)
   highlight: 0
+  
+- title: "SynchroNB: Toward Robust Timing for 5G NB-IoT Networks"
+  year: 2026
+  image: synchro.png
+  description: "SynchroNB is an on-device framework that combines lightweight machine learning with a cross-layer control loop. It forecasts 5G network volatility and crystal drift to adaptively wake the cellular modem, reserves uplink resources just in time, switches into resilience mode when the wireless link degrades, and prioritizes time synchronization packets in the MAC-layer queue. Our experiments show that SynchroNB achieves single-millisecond-level synchronization accuracy under diverse wireless conditions, while requiring only 36% of the radio-on time and 25% of the bandwidth of the NTP baseline."
+  authors: "<b>Muhammad Abdullah Soomro</b>^, <b>Muhammad Shayan Nazeer</b>^, Collin DelSignore, Yasra Chandio, <b>Muhammad Taqi Raza</b>, and Fatima Muhammad Anwar<br><small>^ These authors contributed equally to this work.</small>"
+  link:
+    display: ACM SenSys
+  highlight: 1
 
 - title: "Impacts of Process Automation on Software Development and the IT Workforce"
   year: 2025
