@@ -13,7 +13,7 @@ permalink: /emvexpiredcards/
   <p class="zombie-authors">
     <a href="https://rhasnainanwar.me/" target="_blank">Raja Hasnain Anwar</a> &nbsp;·&nbsp;
     Gerard DeCunha &nbsp;·&nbsp;
-    <a href="https://people.cs.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
+    <a href="https://people.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
   </p>
   <p>
     <a class="btn btn-default" data-toggle="collapse" href="#abstract-collapse" aria-expanded="false">Abstract</a>
@@ -136,7 +136,7 @@ the specific card instrument is still valid) approve the transaction.</li>
 <!-- Replace VIDEO_ID with the actual YouTube video ID -->
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item"
-          src="https://www.youtube.com/embed/VIDEO_ID"
+          src="https://drive.google.com/file/d/1zcY1UUgrwSN3ZZhwojZOSkexK7pHfSmR/preview"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
