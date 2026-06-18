@@ -7,6 +7,15 @@
     display: ACM SenSys
   highlight: 1
 
+- title: "InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference"
+  year: 2026
+  description: "InferNet is an attack that uses simple, coarse-grained system-level information — GPU kernel calls, memory events, and system-level metrics — to fingerprint and infer the architecture of a victim's DNN without complex time-series analysis. It identifies both the architecture family (e.g., Inception vs. BERT) and specific variant (e.g., InceptionV1 vs. InceptionV3), achieving 100% model extraction accuracy using only a partial GPU profile across TensorFlow, PyTorch, multiple DNN types, and NVIDIA hardware platforms."
+  authors: "<b>Raja Hasnain Anwar</b>, Jonah O'Brien Weiss, Tiago Alves, Sandip Kundu, and <b>Muhammad Taqi Raza</b>"
+  link:
+    url: https://dl.acm.org/doi/pdf/10.1145/3811923
+    display: ACM Transactions on AI Security and Privacy (TAISAP)
+  highlight: 0
+
 - title: "Impacts of Process Automation on Software Development and the IT Workforce"
   year: 2025
   description: "This study investigates the effects of process automation on software development and the IT workforce. Through a mixed-methods approach, we analyze how automation tools influence productivity, job satisfaction, and skill requirements among IT professionals. Our findings reveal significant shifts in workflow dynamics and highlight the need for continuous learning and adaptation in the evolving tech landscape."
@@ -79,7 +88,7 @@
     display:  International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems (MSWiM)
     pdf: 3616388.3617544.pdf
     slides: MSWiM'23talk.pptx
-  highlight: 1
+  highlight: 0
 
 - title: "Detecting Privacy Threats with Machine Learning: A Design Framework for Identifying Side-Channel Risks of Illegitimate User Profiling"
   year: 2023
