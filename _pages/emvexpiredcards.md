@@ -27,109 +27,75 @@ permalink: /emvexpiredcards/
 <div id="abstract-collapse" class="collapse" markdown="0">
 <h2 id="abstract">Abstract</h2>
 <div class="well well-sm">
-Contactless payment cards are widely assumed to stop working past their printed expiration dates,
-and many stakeholders rely on this assumption for authorization and access control.
-This paper shows that banks enforce the expiration as a <em>transaction policy check</em>, rather than an
-intrinsic property of the card, which allows an expired card to still initiate contactless payments.
-We demonstrate a practical <strong>"Zombie Card" attack</strong> that makes an expired card appear unexpired,
-allowing successful transactions despite the card being past its printed date.
-We evaluate the attack across real-world transaction configurations spanning multiple EMV kernels
-(Visa, Mastercard, and Discover), POS terminals, merchants, and five major US banks.
-Our results show that Visa contactless transactions are susceptible to man-in-the-middle tampering
-due to a lack of effective integrity protection. We further find that banks often rely on the POS
-terminal's decisions and skip critical security checks during transaction authorization for faster
-payments. Across our trials, the attack remains operational under typical in-store conditions using
-commodity NFC transceivers and does not require specialized hardware. Together, these findings
-indicate that the outcome of a "zombie card" transaction is determined by how security responsibility
-is divided between terminals, card manufacturers, and issuers, and by how consistently issuers
-enforce card lifecycle state. Based on these findings, we propose countermeasures that span kernels,
-issuers, and payments to ensure end-to-end transaction integrity and security.
+Most people reasonably assume that an expired card has become useless. Our research asks a simple
+question: <strong>is that always true?</strong> We found that, in some contactless Visa payment setups,
+an expired card can still be accepted when someone changes the expiry date shown to the checkout
+terminal. The card's built-in cryptography continues to look genuine, and some banks do not receive
+enough reliable information to recognize that the physical card has expired.
+
+We tested this finding with real cards, terminals, merchants, and five major US banks. Visa was the
+susceptible configuration in our experiments; the Mastercard, American Express, and Discover
+configurations we tested rejected the change. The result is not that card cryptography has been
+broken. It is a gap between systems that each assume someone else has checked whether a card should
+still be usable. We describe the gap and the changes that can close it.
 </div>
 </div>
 
+## Why We Looked at Expired Cards
+
 <p>
-EMV (Europay, Mastercard, Visa) is the global standard governing chip-based card payments.
-In a <strong>contactless transaction</strong>, the card and a Point-of-Sale (POS) terminal exchange
-Application Protocol Data Units (APDUs) over NFC. Five parties participate:
+When a replacement card arrives, the old one is often treated as harmless. People put it in a drawer,
+throw it away, or assume that the date printed on it automatically prevents any future use. That is a
+reasonable expectation. A card should not become usable again simply because different parts of the
+payment system disagree about whether it has expired.
 </p>
 
-<div class="row" markdown="0">
-<div class="col-sm-6">
-<ul>
-<li><strong>Card (Payment Device)</strong> — stores the payment application and cryptographic keys in a secure element.</li>
-<li><strong>POS Terminal</strong> — reads the card over NFC, applies kernel rules, and decides whether to approve locally or escalate online.</li>
-<li><strong>Acquirer</strong> — the merchant's bank; routes the transaction to the payment network.</li>
-</ul>
-</div>
-<div class="col-sm-6">
-<ul>
-<li><strong>Payment Network</strong> (Visa, Mastercard, Discover) — defines the kernel specification and routes between acquirer and issuer.</li>
-<li><strong>Issuer</strong> — the cardholder's bank; ultimately authorizes or declines based on its own risk engine.</li>
-</ul>
-</div>
-</div>
-
 <p>
-Each payment network defines a <strong>kernel</strong> — the protocol logic the terminal executes.
-Kernels differ in which fields they authenticate and how they handle edge cases.
-This paper focuses on <strong>Kernel 3 (Visa payWave)</strong> and compares it against Kernel 2 (Mastercard),
-Kernel 4 (AmEx), and Kernel 6 (Discover).
+Contactless payments involve a card, the shop's checkout terminal, the merchant's bank, a payment
+network such as Visa or Mastercard, and the cardholder's bank. Each has a small part of the decision.
+The important question is whether those parts agree on one basic fact: <strong>is this particular card
+still valid?</strong>
 </p>
 
 <blockquote>
-<strong>The Expiry Duality:</strong> Card expiration appears in <em>two separate fields</em>.
-The <strong>Application Expiration Date</strong> (<code>#5F24</code>) is read by the terminal for its local check.
-The expiry embedded in <strong>Track 2 Equivalent Data</strong> (<code>#57</code>) is forwarded to the issuer in the
-online authorization request. These two representations are consumed independently — and Kernel 3
-does <em>not</em> require them to be consistently bound end-to-end.
+<strong>The short version:</strong> the terminal and the bank can see expiry information in different
+places. In the Visa configuration we studied, the terminal's copy was not protected in the same way
+as the card's other security information. That left room for the two sides to reach different answers.
 </blockquote>
 
-## The Zombie Card Attack
+## What We Found
 
 <p>
-The key insight is that in Visa Kernel 3, the terminal's expiry check is a <strong>local policy decision</strong>,
-not a cryptographic proof from the card. The Application Expiration Date (<code>#5F24</code>) is transmitted
-in plaintext over NFC and is <em>excluded from the card's RSA signature</em> (SDAD). An attacker with an
-NFC man-in-the-middle position can rewrite this field without invalidating any cryptographic check
-the terminal performs.
+The card gives the checkout terminal an expiry date to read. In the Visa contactless configuration
+we tested, that particular date was not covered by the card's digital signature. Someone positioned
+between the card and terminal could therefore alter what the terminal sees while leaving the card's
+normal security checks looking valid.
 </p>
 
 <div class="row" markdown="0">
 <div class="col-sm-12">
 <img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" />
-<p class="text-center"><small>Architecture of NFC relay for contactless transactions. The Card Emulator captures APDU commands from the POS terminal and forwards them to the card via a POS Emulator. Card responses, i.e., FCI data objects, are relayed back to the terminal along the reverse path.</small></p>
+<p class="text-center"><small>Our controlled demonstration relays the conversation between a checkout terminal and an expired card. The relay changes the expiry information shown to the terminal while the card's normal security responses continue to travel between the two devices.</small></p>
 </div>
 </div>
 
 <div class="panel panel-default" markdown="0">
-<div class="panel-heading"><strong>Attack Flow</strong></div>
+<div class="panel-heading"><strong>How the gap leads to a payment</strong></div>
 <ul class="list-group">
-<li class="list-group-item"><strong>Step 1 — Relay Setup.</strong>
-The attacker places a <em>CardEmulator</em> phone near the POS terminal and a <em>POSEmulator</em> phone
-near the expired card. The two phones relay APDUs over Wi-Fi, creating a transparent NFC
-man-in-the-middle using commodity Android devices — no specialized hardware required.</li>
-<li class="list-group-item"><strong>Step 2 — Payload Injection.</strong>
-During the terminal's <code>READ RECORD</code> phase, the card returns its Application Expiration Date
-and Track 2 data in plaintext. The relay intercepts the response and rewrites
-<code>#5F24</code> from the expired date <em>D<sub>expired</sub></em> to a future date
-<em>D<sub>future</sub> &gt; D<sub>transaction</sub></em>.
-Track 2 (<code>#57</code>) is left untouched — it carries the expired date toward the issuer.</li>
-<li class="list-group-item"><strong>Step 3 — Integrity Checks Bypassed.</strong>
-Kernel 3 <strong>excludes <code>#5F24</code> from SDAD</strong>, so the RSA signature over the card's
-dynamic data remains valid. The terminal never learns the real expiry was manipulated.
-Additionally, Kernel 3 forwards a TVR of <em>all zeros</em> to the issuer, stripping out any
-flag the terminal might have set for "Expired Application."</li>
-<li class="list-group-item"><strong>Step 4 — Certificate Validity Holds.</strong>
-Per EMV spec, certificate lifetimes may extend beyond the card's printed expiry.
-The expired card's PKI certificates are still valid, so Offline Data Authentication (fDDA)
-succeeds normally.</li>
-<li class="list-group-item"><strong>Step 5 — Issuer Authorization.</strong>
-The card computes a valid ARQC using its still-valid issuer master keys. The issuer
-receives a valid cryptogram, an active PAN, and a zeroed TVR — indistinguishable from a
-legitimate transaction. Issuers that check only whether the account is open (not whether
-the specific card instrument is still valid) approve the transaction.</li>
+<li class="list-group-item"><strong>1. An old card is treated as disposable.</strong> The starting point is an expired card that was not securely destroyed.</li>
+<li class="list-group-item"><strong>2. The terminal is shown a different date.</strong> In our controlled setup, a relay sits between the card and checkout terminal and changes the expiry value the terminal reads.</li>
+<li class="list-group-item"><strong>3. The card still looks genuine.</strong> The altered value is outside the signature checked by this Visa configuration, so the terminal's usual cryptographic check does not reveal the change.</li>
+<li class="list-group-item"><strong>4. The bank may lack the warning it needs.</strong> The payment reaches the issuer with a valid card cryptogram, while the terminal's view of expiry and the issuer's view are not reliably tied together.</li>
+<li class="list-group-item"><strong>5. The outcome depends on the issuer.</strong> A bank that verifies the status of this exact card can decline it. A bank that mainly sees an active account may approve it.</li>
 </ul>
 </div>
+
+<p>
+This is why we call it a <strong>Zombie Card</strong>: the card is supposed to be retired, yet it can appear
+alive to part of the payment system. It does not mean every expired card works, and it does not mean
+an ordinary cardholder is expected to defend against a complex technical attack. It means expiry has
+to be enforced consistently by the payment system itself.
+</p>
 
 ## Demo Video
 
@@ -143,28 +109,32 @@ the specific card instrument is still valid) approve the transaction.</li>
 </div>
 <p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
 
-## Experimental Setup
+## What We Tested
 
 <p>
-We implemented a standard NFC relay on two OnePlus Nord 5 Android phones running a custom
-app in two roles: <strong>CardEmulator</strong> (near the POS terminal) and <strong>POSEmulator</strong>
-(near the expired card). Cards from Visa, Mastercard, Discover, and AmEx issued by five major US
-banks were tested, alongside Apple Pay and Google Pay wallets. POS terminals used were SumUp Plus
-and SumUp Solo readers, with additional in-the-wild validation at campus retail and grocery merchants.
-Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 ms EMV response window.
+We tested the issue using our own expired cards, Android phones in a controlled relay setup, and
+commercial payment terminals. We also validated the behavior with informed merchants and paid every
+test charge in full. The study covered Visa, Mastercard, Discover, and American Express cards from
+five major US banks, as well as Apple Pay and Google Pay.
+
+The result was specific, not universal: the Visa configuration we tested could be affected; the
+Mastercard, American Express, and Discover configurations we tested rejected the altered expiry
+information. Banks also differed. Some declined the payment or asked for the replacement card, while
+others approved it. That variation is the central lesson: the protection depends on the whole payment
+chain, not on the plastic card alone.
 </p>
 
 <div class="row" markdown="0">
 <div class="col-sm-12">
 <img src="{{ site.url }}{{ site.baseurl }}/images/emv/setup.jpg" alt="Experimental setup: SumUp terminals, CardEmulator phone, POSEmulator phone, and victim card" class="img-responsive center-block" />
-<p class="text-center"><small>Experimental setup. (1) SumUp Plus terminal, (2) companion merchant app, (3) SumUp Solo terminal, (4) CardEmulator phone presenting card data to the terminal, (5) victim expired card, (6) POSEmulator phone reading and relaying card APDUs.</small></p>
+<p class="text-center"><small>Our test equipment: commercial terminals, a companion merchant app, two Android phones used for the controlled relay, and an expired test card.</small></p>
 </div>
 </div>
 
 <div class="row" markdown="0">
 <div class="col-sm-6 col-sm-offset-3">
 <img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png" alt="Receipt showing $100 approved transaction on an expired Visa card" class="img-responsive center-block" />
-<p class="text-center"><small>Transaction receipt for a $100 contactless payment approved on an expired Visa card ending in 8634, as shown in the video.</small></p>
+<p class="text-center"><small>A receipt from our controlled test: a $100 contactless payment was approved on an expired Visa card.</small></p>
 </div>
 </div>
 
@@ -188,49 +158,49 @@ Each APDU round-trip added 20–50 ms of relay overhead — well within the 500 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq1">What is the "Zombie Card" attack, in one sentence?</a></div>
 <div id="faq1" class="panel-collapse collapse"><div class="panel-body">
-It is an NFC man-in-the-middle attack that rewrites the expiration date a POS terminal reads from an expired card, making the card appear valid so the transaction is approved — without breaking any cryptography.
+It is a way to make a checkout terminal see an expired contactless card as current, even though the card's printed date has passed.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq2">Is this a flaw in EMV's cryptography?</a></div>
 <div id="faq2" class="panel-collapse collapse"><div class="panel-body">
-No. The card's keys, signatures (SDAD), and cryptograms (ARQC) remain valid throughout. The gap is that Visa Kernel 3 does not bind the terminal-read expiration date to any authenticated data, so it can be modified in transit undetected. This is a lifecycle-enforcement gap, not a cryptographic break.
+Not in the usual sense. We did not break the card's keys or forge its security responses. The problem is that the expiry date checked by the terminal is not bound tightly enough to the information the bank uses to authorize the payment. It is a gap in how the system enforces the card's lifecycle.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq3">How realistic is it for an attacker to obtain an expired card?</a></div>
 <div id="faq3" class="panel-collapse collapse"><div class="panel-body">
-The attack exploits a documented misconception — expired cards are widely assumed inert, so cardholders discard them carelessly. The precondition is improper disposal by a subset of cardholders, not wide availability. Following issuer guidance to physically destroy the card eliminates the precondition entirely.
+The attack begins with a physical expired card, so it is not a remote attack against every cardholder. The concern is that expired cards are commonly seen as worthless and may be discarded carelessly. Cutting through the chip and magnetic stripe, or returning the card through the issuer's approved process, removes that starting point.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq4">Which cards and banks are affected?</a></div>
 <div id="faq4" class="panel-collapse collapse"><div class="panel-body">
-Visa (Kernel 3) was the susceptible configuration; Mastercard (Kernel 2), AmEx (Kernel 4), and Discover (Kernel 6) rejected the modification. We tested five major US banks (anonymized as Bank A–E). Issuer behavior varied: some approved revived transactions, others declined and prompted for the replacement card.
+In our tests, the susceptible configuration was Visa contactless. The Mastercard, American Express, and Discover configurations we tested rejected the changed expiry information. We tested cards from five major US banks, which we anonymize as Banks A-E. Bank behavior varied: some payments were declined or prompted for the replacement card, while others were approved. These results describe our tested cards and transactions, not every card issued by a network or bank.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq5">Does this affect Apple Pay or Google Pay?</a></div>
 <div id="faq5" class="panel-collapse collapse"><div class="panel-body">
-Digital wallets are more resilient. Their tokens and expiry are refreshed over-the-air by the issuer's token service provider, without cardholder action, reducing the chance that an expired underlying credential stays usable. Centralized lifecycle management is more robust than terminal-local policy checks.
+Digital wallets are generally better placed to handle card replacement because their payment tokens can be updated remotely. In our testing, their centralized lifecycle management reduced the chance that an expired physical credential would remain usable. That is not a promise that every wallet implementation is immune; it is a reason to make expiry checks end-to-end rather than leave them to a terminal alone.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq6">What factors most determine whether the attack succeeds?</a></div>
 <div id="faq6" class="panel-collapse collapse"><div class="panel-body">
-Three: (i) which EMV kernel is in use and whether it cryptographically binds expiry-relevant fields; (ii) whether the issuer authorizes against the (PAN, expiry) tuple or only checks that the PAN is active; and (iii) whether terminal validation results reach the issuer via TVR. Amount, merchant category, and POS brand did not independently determine the outcome.
+Three things matter most: the payment network's terminal rules, whether the issuing bank checks the status of this exact card rather than only the account, and whether the bank receives a trustworthy expiry warning from the terminal. In our tests, payment amount, merchant type, and terminal brand did not by themselves explain the outcome.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq7">How is this different from prior EMV attacks?</a></div>
 <div id="faq7" class="panel-collapse collapse"><div class="panel-body">
-Prior work targeted PIN/CVM bypass, brand mix-ups, or relay proximity. We instead treat card expiry as an end-to-end lifecycle invariant and show it degrades into a policy-only attribute. The attack requires no induced authentication failure and no brand routing — only an unbound, terminal-consumed expiry field.
+Prior EMV research has shown problems involving PIN checks, card-brand handling, and relay attacks. Our focus is different: a card's expiry should be a simple end-to-end promise that it is no longer usable. We show how that promise can become only a local terminal check, rather than a fact the entire payment chain verifies.
 </div></div>
 </div>
 
@@ -242,58 +212,56 @@ Prior work targeted PIN/CVM bypass, brand mix-ups, or relay proximity. We instea
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq8">Does the attack work at any transaction amount?</a></div>
 <div id="faq8" class="panel-collapse collapse"><div class="panel-body">
-Yes. Once the terminal accepts the modified expiry and the issuer does not enforce instrument-level checks, the attack succeeds across all tested amounts ($1, $100, $500). PIN thresholds in European deployments are a separate check, orthogonal to the expiry-integrity gap.
+In our tests, the underlying expiry issue did not depend on the amount: we observed it at $1, $100, and $500 when the terminal and issuer conditions allowed it. Other rules, such as a PIN requirement in some countries, may still stop a particular payment. Those rules are separate from the expiry problem.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq9">Does relay latency cause timeouts? Would Relay Resistance Protocol (RRP) block this?</a></div>
 <div id="faq9" class="panel-collapse collapse"><div class="panel-body">
-The relay added 20–50 ms per APDU round-trip (~415 ms total) — within the 500 ms EMV response window; no timeouts occurred. RRP would defeat the relay by detecting the added latency and aborting, but RRP is optional and was not deployed on any card or terminal we tested.
+In our setup, the extra delay stayed within the payment system's normal response allowance, so we saw no timeouts. A protection called Relay Resistance Protocol can detect an added relay and stop the transaction, but it is optional and was not enabled on the cards or terminals we tested.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq10">As a normal cardholder, am I at risk — and what should I do?</a></div>
 <div id="faq10" class="panel-collapse collapse"><div class="panel-body">
-The simplest protection is to follow issuer guidance for expired cards: physically destroy them by cutting through the chip and magnetic stripe, or return them through an approved channel. An expired card you have securely destroyed cannot be used in this attack.
+You do not need to change how you use contactless payments. When a card expires, follow your bank's disposal guidance: cut through the chip and magnetic stripe, or return it through an approved channel. An expired card that has been securely destroyed cannot be used in this way.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq11">Was IRB required? Did the experiments violate terms of service?</a></div>
 <div id="faq11" class="panel-collapse collapse"><div class="panel-body">
-IRB approval was not required — no human subjects were involved. Controlled experiments used our own cards and merchant account. In-the-wild merchants were informed in advance and all charges were paid in full. Use of standard EMV cards and commercial terminals falls within normal cardholder use.
+IRB approval was not required because the study did not involve human subjects. We used our own cards and merchant account for controlled tests. For tests at operating merchants, merchants were informed in advance and every charge was paid in full.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq12">Why is the relay code not released?</a></div>
 <div id="faq12" class="panel-collapse collapse"><div class="panel-body">
-The implementation provides a direct capability to modify live financial transactions and could lower the barrier to fraud. As of publication, Visa and affected banks have not confirmed mitigation status. We release sanitized transaction logs and full protocol-level detail — consistent with prior EMV research that withheld exploit-capable artifacts.
+The code could be used to alter live financial transactions and would lower the barrier to fraud. Because the affected organizations have not confirmed a mitigation, we are not releasing exploit-capable software. We do provide sanitized transaction logs and the protocol detail needed to understand and address the issue.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq13">Were Visa and the banks notified?</a></div>
 <div id="faq13" class="panel-collapse collapse"><div class="panel-body">
-Yes — in May 2025 and December 2025, with a step-by-step reproduction guide, full APDU traces, and a video demonstration. Visa's report has passed initial triage and is undergoing reproduction by their red team. As of writing, neither Visa nor the notified banks has provided an update on mitigations.
+Yes. We notified Visa and the relevant banks in May and December 2025, providing a reproduction guide, transaction traces, and a video demonstration. Visa's report passed initial triage and was being reproduced by its red team. At the time of writing, neither Visa nor the notified banks had confirmed a mitigation.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq14">Has a CVE been assigned to this issue?</a></div>
 <div id="faq14" class="panel-collapse collapse"><div class="panel-body">
-<!-- TODO: Confirm whether a CVE / tracking ID has been assigned and add it here. -->
-[Answer to be added.]
+No CVE has been assigned as of the publication date. The issue concerns how payment-network rules, terminals, and issuer checks work together, rather than a single consumer software product. We will update this page if a public tracking identifier becomes available.
 </div></div>
 </div>
 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq15">Does it also work on debit cards or contact (chip-insert) transactions?</a></div>
 <div id="faq15" class="panel-collapse collapse"><div class="panel-body">
-<!-- TODO: Confirm debit-card and contact-interface behavior and add details here. -->
-[Answer to be added.]
+Our reported result concerns contactless Visa transactions. Whether a particular debit card is affected depends on its payment application, the terminal rules, and the issuing bank's checks; it should not be inferred from the card's label alone. We did not establish that the same issue applies to chip-insert transactions, which use a different interaction path and should be evaluated separately.
 </div></div>
 </div>
 
