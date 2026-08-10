@@ -20,7 +20,7 @@ permalink: /emvexpiredcards/
   </p>
   <p>
     <a class="btn btn-default" data-toggle="collapse" href="#abstract-collapse" aria-expanded="false">Abstract</a>
-    <a class="btn btn-default" href="#">Paper (PDF)</a>
+    <a class="btn btn-default" href="https://www.usenix.org/conference/usenixsecurity26/presentation/anwar">Paper</a>
     <a class="btn btn-default" href="#bibtex">Citation (Bib)</a>
   </p>
 </div>
@@ -250,7 +250,7 @@ The code could be used to alter live financial transactions and would lower the 
 <div class="panel panel-default">
 <div class="panel-heading"><a data-toggle="collapse" href="#faq13">Were Visa and the banks notified?</a></div>
 <div id="faq13" class="panel-collapse collapse"><div class="panel-body">
-Yes. We notified Visa and the relevant banks in May and December 2025, providing a reproduction guide, transaction traces, and a video demonstration. Visa's report passed initial triage and was being reproduced by its red team. At the time of writing, neither Visa nor the notified banks had confirmed a mitigation.
+Yes. We notified Visa and the relevant banks in May and December 2025, providing a reproduction guide, transaction traces, and a video demonstration. Visa's report passed initial triage and was being reproduced by its red team. At the time of paper publication, neither Visa nor the notified banks had confirmed a mitigation.
 </div></div>
 </div>
 
