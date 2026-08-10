@@ -76,8 +76,8 @@ normal security checks looking valid.
 </p>
 
 <div class="row" markdown="0">
-<div class="col-sm-12">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" style="max-width: 70%; height: auto;" />
+<div class="col-sm-8 col-sm-offset-2">
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" />
 <p class="text-center"><small>Our controlled demonstration relays the conversation between a checkout terminal and an expired card. The relay changes the expiry information shown to the terminal while the card's normal security responses continue to travel between the two devices.</small></p>
 </div>
 </div>
@@ -135,7 +135,7 @@ chain, not on the plastic card alone.
 </div>
 
 <div class="row" markdown="0">
-<div class="col-sm-6 col-sm-offset-3">
+<div class="col-sm-8 col-sm-offset-2">
 <img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png" alt="Receipt showing $100 approved transaction on an expired Visa card" class="img-responsive center-block" />
 <p class="text-center"><small>A receipt from our controlled test: a $100 contactless payment was approved on an expired Visa card.</small></p>
 </div>
