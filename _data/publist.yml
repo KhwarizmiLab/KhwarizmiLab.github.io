@@ -1,3 +1,10 @@
+- title: "ORACLE: Reconciling Next-G Cellular Core Operations for Correctness"
+  year: 2026
+  authors: "<b>Muhammad Shayan Nazeer</b>, Muhammad Taqi Raza"
+  link:
+    display: IEEE International Conference on Communications (ICC)
+  highlight: 0
+
 - title: "InferNet: Exploiting Aggregate GPU Profiles as Side-Channel for DNN Architecture Inference"
   year: 2026
   description: "InferNet is an attack that uses simple, coarse-grained system-level information — GPU kernel calls, memory events, and system-level metrics — to fingerprint and infer the architecture of a victim's DNN without complex time-series analysis. It identifies both the architecture family (e.g., Inception vs. BERT) and specific variant (e.g., InceptionV1 vs. InceptionV3), achieving 100% model extraction accuracy using only a partial GPU profile across TensorFlow, PyTorch, multiple DNN types, and NVIDIA hardware platforms."
