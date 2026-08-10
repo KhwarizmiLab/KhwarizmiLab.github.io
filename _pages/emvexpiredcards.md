@@ -77,7 +77,7 @@ normal security checks looking valid.
 
 <div class="row" markdown="0">
 <div class="col-sm-12">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" />
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/attack_setup.jpg" alt="Theoretical attack setup: POS terminals, NFC relay over smartphones, and victim card" class="img-responsive center-block" style="max-width: 70%; height: auto;" />
 <p class="text-center"><small>Our controlled demonstration relays the conversation between a checkout terminal and an expired card. The relay changes the expiry information shown to the terminal while the card's normal security responses continue to travel between the two devices.</small></p>
 </div>
 </div>
