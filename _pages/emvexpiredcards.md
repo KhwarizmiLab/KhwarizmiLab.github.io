@@ -2,6 +2,9 @@
 title: "Expired Card Attack"
 layout: textlay
 excerpt: "Zombie Cards: Reviving Expired Credit Cards for Contactless Payments. We demonstrate a practical Zombie Card attack that makes an expired card appear unexpired, allowing successful transactions despite the card being past its printed date."
+seo_title: "Zombie Cards Back Online: Expired Card Attack"
+seo_description: "Research showing how an expired contactless Visa card can appear valid when payment systems do not consistently enforce card expiry."
+seo_image: "/images/emv/attack_setup.jpg"
 sitemap: true
 permalink: /emvexpiredcards/
 ---
@@ -41,7 +44,7 @@ still be usable. We describe the gap and the changes that can close it.
 </div>
 </div>
 
-## Why We Looked at Expired Cards
+## Why Expired Cards?
 
 <p>
 When a replacement card arrives, the old one is often treated as harmless. People put it in a drawer,

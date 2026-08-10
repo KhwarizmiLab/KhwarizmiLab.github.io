@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Publications"
 layout: gridlay
 excerpt: "Khwarizmi Lab -- Publications."
+seo_description: "Browse research publications and patents from the Khwarizmi Lab at UMass Amherst, spanning systems security, payments, quantum networks, and mobile systems."
 sitemap: true
 permalink: /publications/
 ---

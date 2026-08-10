@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Team"
 layout: gridlay
 excerpt: "Khwarizmi Lab: Team members"
+seo_description: "Meet the faculty, students, and researchers of the Khwarizmi Lab at UMass Amherst and learn about their research interests."
 sitemap: true
 permalink: /team/
 ---

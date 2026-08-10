@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Home"
 layout: homelay
 excerpt: "Khwarizmi Lab @ UMass Amherst."
+seo_description: "Khwarizmi Lab at UMass Amherst conducts research on secure, efficient, and scalable systems for fintech, quantum networks, and critical infrastructure."
 sitemap: true
 permalink: /
 ---

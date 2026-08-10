@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Vacancies"
 layout: textlay
 excerpt: "Openings @ Khwarizmi Lab"
+seo_description: "Explore student research opportunities at the Khwarizmi Lab at UMass Amherst in networked systems, cellular networks, and payment security."
 sitemap: true
 permalink: /vacancies
 ---

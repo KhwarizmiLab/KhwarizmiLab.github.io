@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Media and Press Coverage"
 layout: textlay
 excerpt: "Media and Press Coverage @ Khwarizmi Lab"
+seo_description: "See media and press coverage of Khwarizmi Lab research on digital payment security, mobile wallets, quantum computing, and secure systems."
 sitemap: true
 permalink: /media.html
 ---

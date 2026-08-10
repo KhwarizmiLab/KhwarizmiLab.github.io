@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - AOA"
 layout: textlay
 excerpt: "AOA"
+seo_description: "View the Khwarizmi Lab calendar for upcoming talks, meetings, and academic activities."
 sitemap: true
 permalink: /aoa.html
 ---

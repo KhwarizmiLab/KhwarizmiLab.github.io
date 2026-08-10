@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Research"
 layout: textlay
 excerpt: "Khwarizmi Lab -- Research"
+seo_description: "Explore Khwarizmi Lab research at UMass Amherst in system security, fintech, quantum security, and next-generation mobile networks."
 sitemap: true
 permalink: /research/
 ---

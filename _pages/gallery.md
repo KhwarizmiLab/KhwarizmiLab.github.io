@@ -2,6 +2,7 @@
 title: "Khwarizmi Lab - Gallery"
 layout: piclay
 excerpt: "Khwarizmi Lab -- Gallery"
+seo_description: "Browse photos from Khwarizmi Lab research, events, and group activities at UMass Amherst."
 sitemap: true
 permalink: /gallery/
 ---
