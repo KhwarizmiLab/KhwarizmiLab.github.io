@@ -105,10 +105,10 @@ to be enforced consistently by the payment system itself.
 <!-- Replace VIDEO_ID with the actual YouTube video ID -->
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item"
-          src="https://drive.google.com/file/d/1zcY1UUgrwSN3ZZhwojZOSkexK7pHfSmR/preview"
+          title="Zombie Cards Back Online"
+          src="https://www.youtube.com/embed/4lSSENmAXsg?si=dlttXbXK_4FpSOW7"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
 
