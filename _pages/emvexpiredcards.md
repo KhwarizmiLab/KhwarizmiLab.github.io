@@ -134,18 +134,11 @@ chain, not on the plastic card alone.
 </div>
 </div>
 
-<div class="row" markdown="0">
-<div class="col-sm-8 col-sm-offset-2">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png" alt="Receipt showing $100 approved transaction on an expired Visa card" class="img-responsive center-block" />
-<p class="text-center"><small>A receipt from our controlled test: a $100 contactless payment was approved on an expired Visa card.</small></p>
-</div>
-</div>
-
 <strong id="bibtex">BibTeX</strong>
 <pre>@inproceedings{anwar2026zombie,
   title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
   author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
-  booktitle={USENIX Security 26},
+  booktitle={USENIX Security Symposium},
   year={2026}
 }</pre>
 
