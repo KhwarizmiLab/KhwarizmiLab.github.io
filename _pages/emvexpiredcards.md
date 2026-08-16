@@ -4,7 +4,7 @@ layout: textlay
 excerpt: "Zombie Cards: Reviving Expired Credit Cards for Contactless Payments. We demonstrate a practical Zombie Card attack that makes an expired card appear unexpired, allowing successful transactions despite the card being past its printed date."
 seo_title: "Zombie Cards Back Online: Expired Card Attack"
 seo_description: "Research showing how an expired contactless Visa card can appear valid when payment systems do not consistently enforce card expiry."
-seo_image: "/images/emv/attack_setup.jpg"
+seo_image: "/images/emv/setup.PNG"
 sitemap: true
 permalink: /emvexpiredcards/
 ---
@@ -105,10 +105,10 @@ to be enforced consistently by the payment system itself.
 <!-- Replace VIDEO_ID with the actual YouTube video ID -->
 <div class="embed-responsive embed-responsive-16by9">
   <iframe class="embed-responsive-item"
-          src="https://drive.google.com/file/d/1zcY1UUgrwSN3ZZhwojZOSkexK7pHfSmR/preview"
+          title="Zombie Cards Back Online"
+          src="https://www.youtube.com/embed/4lSSENmAXsg?si=dlttXbXK_4FpSOW7"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <p class="text-center"><small>A live demonstration of the Zombie Card attack: an expired Visa card completing a $100 contactless transaction at a real POS terminal.</small></p>
 
@@ -129,15 +129,8 @@ chain, not on the plastic card alone.
 
 <div class="row" markdown="0">
 <div class="col-sm-12">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/setup.jpg" alt="Experimental setup: SumUp terminals, CardEmulator phone, POSEmulator phone, and victim card" class="img-responsive center-block" />
+<img src="{{ site.url }}{{ site.baseurl }}/images/emv/setup.PNG" alt="Experimental setup: SumUp terminals, CardEmulator phone, POSEmulator phone, and victim card" class="img-responsive center-block" />
 <p class="text-center"><small>Our test equipment: commercial terminals, a companion merchant app, two Android phones used for the controlled relay, and an expired test card.</small></p>
-</div>
-</div>
-
-<div class="row" markdown="0">
-<div class="col-sm-8 col-sm-offset-2">
-<img src="{{ site.url }}{{ site.baseurl }}/images/emv/receipt.png" alt="Receipt showing $100 approved transaction on an expired Visa card" class="img-responsive center-block" />
-<p class="text-center"><small>A receipt from our controlled test: a $100 contactless payment was approved on an expired Visa card.</small></p>
 </div>
 </div>
 
@@ -145,7 +138,7 @@ chain, not on the plastic card alone.
 <pre>@inproceedings{anwar2026zombie,
   title={Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments},
   author={Anwar, Raja Hasnain and DeCunha, Gerard and Raza, Muhammad Taqi},
-  booktitle={USENIX Security 26},
+  booktitle={USENIX Security Symposium},
   year={2026}
 }</pre>
 
