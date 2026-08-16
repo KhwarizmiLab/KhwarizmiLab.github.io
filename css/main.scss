@@ -68,6 +68,29 @@ firstp {
   height: 240px;
   object-fit: cover;
 }
+#picid .gallery-columns {
+	column-count: 3;
+	column-gap: 32px;
+}
+#picid .gallery-item {
+	display: inline-block;
+	width: 100%;
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+#picid .gallery-item p {
+	margin-top: 0;
+}
+@media (max-width: $screen-sm-max) {
+	#picid .gallery-columns {
+		column-count: 2;
+	}
+}
+@media (max-width: $screen-xs-max) {
+	#picid .gallery-columns {
+		column-count: 1;
+	}
+}
 #gridid .row { margin-bottom: 24px; }
 
 
