@@ -15,11 +15,17 @@ We are a dynamic research group at the <a href="http://www.umass.edu" target="_b
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Items -->
     <div class="carousel-inner" markdown="0">
         <div class="item active">
+            <a href="{{ site.url }}{{ site.baseurl }}/emvexpiredcards"><img src="{{ site.url }}{{ site.baseurl }}/images/slider7001400/setup.png" alt="Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments" /></a>
+        </div>
+        <div class="item">
             <a href="{{ site.url }}{{ site.baseurl }}/publications"><img src="{{ site.url }}{{ site.baseurl }}/images/slider7001400/NFC-flow-diagram.png" alt="In Wallet We Trust: Bypassing the Digital Wallets Payment Security for Free Shopping" /></a>
         </div>
         <div class="item">
