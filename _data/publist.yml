@@ -1,3 +1,13 @@
+- title: "Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments"
+  year: 2026
+  image: setup.jpg
+  description: "Our study shows that expired contactless Visa cards can still be accepted when the expiry date shown to the terminal is altered, revealing a gap in how payment systems enforce card expiration."
+  authors: "<b>Raja Hasnain Anwar</b>, <b>Gerard DeCunha</b>, and <b>Muhammad Taqi Raza</b>"
+  link:
+    url: https://www.usenix.org/conference/usenixsecurity26/presentation/anwar
+    display: USENIX Security 26
+  highlight: 1
+
 - title: "ORACLE: Reconciling Next-G Cellular Core Operations for Correctness"
   year: 2026
   authors: "<b>Muhammad Shayan Nazeer</b>, Muhammad Taqi Raza"
