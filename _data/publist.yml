@@ -1,9 +1,10 @@
 - title: "Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments"
   year: 2026
-  image: setup.jpg
-  description: "Our study shows that expired contactless Visa cards can still be accepted when the expiry date shown to the terminal is altered, revealing a gap in how payment systems enforce card expiration."
+  image: setup.png
+  description: "Most people assume an expired card is useless, but our research shows that in some contactless Visa payment setups an expired card can still be accepted when the expiry date shown to the terminal is altered. We tested this with real cards, terminals, merchants, and five major US banks, and found that the issue is a gap in how the payment system enforces card expiration rather than a broken cryptographic scheme."
   authors: "<b>Raja Hasnain Anwar</b>, <b>Gerard DeCunha</b>, and <b>Muhammad Taqi Raza</b>"
   link:
+    pdf: usenixsecurity26-anwar.pdf
     url: https://www.usenix.org/conference/usenixsecurity26/presentation/anwar
     display: USENIX Security 26
   highlight: 1
