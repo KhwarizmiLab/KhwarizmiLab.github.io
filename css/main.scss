@@ -69,26 +69,30 @@ firstp {
   object-fit: cover;
 }
 #picid .gallery-columns {
-	column-count: 3;
-	column-gap: 32px;
+	display: flex;
+	gap: 32px;
 }
-#picid .gallery-item {
-	display: inline-block;
-	width: 100%;
-	break-inside: avoid;
-	page-break-inside: avoid;
+#picid .gallery-column {
+	flex: 1 1 0;
+	min-width: 0;
 }
 #picid .gallery-item p {
 	margin-top: 0;
 }
+#picid .gallery-list-mobile {
+	display: none;
+}
 @media (max-width: $screen-sm-max) {
 	#picid .gallery-columns {
-		column-count: 2;
+		gap: 24px;
 	}
 }
 @media (max-width: $screen-xs-max) {
 	#picid .gallery-columns {
-		column-count: 1;
+		display: none;
+	}
+	#picid .gallery-list-mobile {
+		display: block;
 	}
 }
 #gridid .row { margin-bottom: 24px; }
