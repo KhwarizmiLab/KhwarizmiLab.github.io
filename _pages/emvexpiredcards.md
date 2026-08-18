@@ -15,7 +15,7 @@ permalink: /emvexpiredcards/
   <h2>Reviving Expired Credit Cards for Contactless Payments</h2>
   <p class="zombie-authors">
     <a href="https://rhasnainanwar.me/" target="_blank">Raja Hasnain Anwar</a> &nbsp;·&nbsp;
-    Gerard DeCunha &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/gerard-decunha-2306b7261" target="_blank">Gerard DeCunha</a> &nbsp;·&nbsp;
     <a href="https://people.umass.edu/~taqi/" target="_blank">Muhammad Taqi Raza</a>
   </p>
   <p>
