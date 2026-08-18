@@ -146,10 +146,10 @@ chain, not on the plastic card alone.
 
 <div class="row" markdown="0">
 <div class="col-sm-6">
-<p><a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target="_blank">UMass News</a></p>
+<p><strong><a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target="_blank">UMass News</a></strong></p>
 </div>
 <div class="col-sm-6">
-<p><a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target="_blank">WWLP 22News</a></p>
+<p><strong><a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target="_blank">WWLP 22News</a></strong></p>
 </div>
 </div>
 
