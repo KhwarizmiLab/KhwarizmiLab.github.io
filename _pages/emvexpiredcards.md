@@ -142,6 +142,17 @@ chain, not on the plastic card alone.
   year={2026}
 }</pre>
 
+## Press & Media Coverage
+
+<div class="row" markdown="0">
+<div class="col-sm-6">
+<p><a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target="_blank">UMass News</a></p>
+</div>
+<div class="col-sm-6">
+<p><a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target="_blank">WWLP 22News</a></p>
+</div>
+</div>
+
 ## FAQ
 
 <p class="text-muted"><small>Click a question to reveal the answer; click again to hide it.</small></p>
