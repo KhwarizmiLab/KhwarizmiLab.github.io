@@ -10,6 +10,16 @@ permalink: /media.html
 # Media and Press Coverage
 
 ## Digital Payments Security
+### Zombie Credit Cards
+- <a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target='_blank'>UMass News</a>
+- <a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>WWLP 22News</a>
+- <a href="https://www.youtube.com/watch?v=4aDwvFD7wQc" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>YouTube</a>
+- <a href="https://www.yahoo.com/news/videos/zombie-credit-cards-umass-study-233451831.html" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>Yahoo News</a>
+- <a href="https://techxplore.com/news/2026-08-zombie-credit-cards-loophole-reanimate.html" title="When zombie credit cards attack: A loophole that can reanimate expired cards" target='_blank'>Tech Xplore</a>
+- <a href="https://www.lifetechnology.com/blogs/life-technology-technology-news/when-zombie-credit-cards-attack-a-loophole-that-can-reanimate-expired-cards" title="When zombie credit cards attack: A loophole that can reanimate expired cards" target='_blank'>Life Technology</a>
+- <a href="https://www.msn.com/en-us/news/other/zombie-credit-cards-umass-study-uncovers-fraud-risk/vi-AA2akiZm" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>MSN</a>
+
+### Digital Wallets
 - Global News Radio 640 Toronto Canada
 - <a href="https://www.forbes.com/sites/billhardekopf/2024/08/22/this-week-in-credit-card-news-people-using-cash-back-cards-to-help-during-tough-economy/" title="This Week In Credit Card News: Digital Wallets Can Allow Purchases with Stolen Credit Cards" target='_blank'>Forbes</a>
 - <a href="https://www.fox13seattle.com/video/1708835" title="Warnings of digital wallet fraud loophole" target='_blank'>Fox Television Stations (13 Seattle)</a>
