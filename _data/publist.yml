@@ -9,6 +9,13 @@
     display: USENIX Security 26
   highlight: 1
 
+- title: "Credit Without Debit: A Formal Verification of Banking Payment Systems"
+  year: 2026
+  authors: "<b>Ali Hamza Malik</b>, <b>Muhammad Taqi Raza</b>"
+  link:
+    display: ACM Conference on Computer and Communications Security (CCS)
+  highlight: 0
+
 - title: "Beyond the Quantum Promise: A Security Analysis of Classical Control in Quantum Key Distribution"
   year: 2026
   authors: "<b>Ali Hamza Malik</b>, <b>Raja Hasnain Anwar</b>, and <b>Muhammad Taqi Raza</b>"
