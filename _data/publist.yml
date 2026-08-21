@@ -1,3 +1,13 @@
+- title: "Credit Without Debit: A Formal Verification of Banking Payment Systems"
+  year: 2026
+  image: ach_framework.png
+  description: "The US ACH network moves trillions of dollars a year, yet the Nacha rules governing settlement between banks have never been formally verified. We built an executable model of the ACH lifecycle and used model checking to uncover access-control and state-synchronization flaws that expose funds prematurely. Testing with real accounts at two major US banks confirmed these vulnerabilities, which stem from ambiguities in the network specifications themselves rather than implementation bugs at individual institutions."
+  authors: "<b>Ali Hamza Malik</b>, <b>Muhammad Taqi Raza</b>"
+  link:
+    url: https://www.sigsac.org/ccs/CCS2026/
+    display: ACM CCS
+  highlight: 1
+
 - title: "Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments"
   year: 2026
   image: setup.png
@@ -8,13 +18,6 @@
     url: https://www.usenix.org/conference/usenixsecurity26/presentation/anwar
     display: USENIX Security 26
   highlight: 1
-
-- title: "Credit Without Debit: A Formal Verification of Banking Payment Systems"
-  year: 2026
-  authors: "<b>Ali Hamza Malik</b>, <b>Muhammad Taqi Raza</b>"
-  link:
-    display: ACM Conference on Computer and Communications Security (CCS)
-  highlight: 0
 
 - title: "Beyond the Quantum Promise: A Security Analysis of Classical Control in Quantum Key Distribution"
   year: 2026
