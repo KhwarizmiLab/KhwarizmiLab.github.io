@@ -11,9 +11,23 @@ permalink: /media.html
 
 ## Digital Payments Security
 ### Zombie Credit Cards
+- <a href="https://www.techjuice.pk/zombie-card-attack-expired-visa-nfc-relay/" title="Zombie Card Attack: Hackers Can Revives Expired Visa Cards for Contactless NFC Payments" target='_blank'>TechJuice</a>
+- <a href="https://www.malwarebytes.com/blog/news/2026/08/zombie-card-an-expired-visa-credit-card-can-be-used-for-purchases" title="Zombie Card: An expired Visa credit card can be used for purchases" target='_blank'>Malwarebytes</a>
+- <a href="https://www.techradar.com/pro/security/experts-warn-expired-credit-cards-can-be-brought-back-from-the-dead-to-make-contactless-payments" title="Experts warn expired credit cards can be brought back from the dead to make contactless payments" target='_blank'>TechRadar</a>
+- <a href="https://cybernews.com/security/expired-credit-cards-revived-loophole/" title="Loophole lets hackers revive zombie credit cards" target='_blank'>Cybernews</a>
+- <a href="https://thehackernews.com/2026/08/zombie-card-attack-can-revive-expired.html" title="Zombie Card Attack Can Revive Expired Visa Cards for Contactless Payments" target='_blank'>The Hacker News</a>
+- <a href="https://www.helpnetsecurity.com/2026/08/20/zombie-credit-card-attack-expired/" title="Researchers find a loophole that lets expired credit cards make unauthorized payments" target='_blank'>Help Net Security</a>
+- <a href="https://ciobulletin.com/payment-and-card/zombie-card-attack-turns-expired-credit-cards-into-threats" title="Can Zombie Card Attack Vulnerability Revive Expired Credit Cards?" target='_blank'>CIO Bulletin</a>
+- <a href="https://gbhackers.com/new-zombie-card-attack/" title="New Zombie Card Attack Lets Expired Visa Cards Make Contactless Payments" target='_blank'>GBHackers</a>
+- <a href="https://www.techspot.com/news/113546-researchers-found-way-bring-expired-credit-cards-back.html" title="Researchers found a way to bring expired credit cards back from the dead" target='_blank'>TechSpot</a>
+- <a href="https://cybersecuritynews.com/zombie-card-flaw-expired-cards/" title="New Zombie Card Flaw Lets Expired Visa Cards Make Contactless Payments" target='_blank'>Cyber Security News</a>
+- <a href="https://cyberpress.org/zombie-card-attack-lets-expired-visa-cards/" title="Zombie Card Attack Lets Expired Visa Cards Make Contactless Payments" target='_blank'>CyberPress</a>
+- <a href="https://xenospectrum.com/en/zombie-visa-cards-expired-contactless-payment-exploit-usenix-2026/" title="Attack Revives Expired Credit Cards Using Two Smartphones" target='_blank'>XenoSpectrum</a>
+- <a href="https://www.theregister.com/security/2026/08/18/expired-credit-cards-revived-by-researchers-to-make-unauthorized-payments/5289229" title="Expired credit cards revived by researchers to make unauthorized payments" target='_blank'>The Register</a>
+- <a href="https://thecudaily.com/vulnerability-allows-thieves-to-bring-expired-cards-back-to-live-researchers-report/" title="Vulnerability Allows Thieves to Bring Zombie Cards Back to Life, Researchers Report" target='_blank'>Credit Union Daily</a>
+- <a href="https://www.eurekalert.org/news-releases/1140376" title="When zombie credit cards attack: UMass researchers discover loophole that can reanimate expired cards" target='_blank'>EurekAlert!</a>
 - <a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target='_blank'>UMass News</a>
 - <a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>WWLP 22News</a>
-- <a href="https://www.youtube.com/watch?v=4aDwvFD7wQc" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>YouTube</a>
 - <a href="https://www.yahoo.com/news/videos/zombie-credit-cards-umass-study-233451831.html" title="Zombie credit cards: UMass study uncovers fraud risk" target='_blank'>Yahoo News</a>
 - <a href="https://techxplore.com/news/2026-08-zombie-credit-cards-loophole-reanimate.html" title="When zombie credit cards attack: A loophole that can reanimate expired cards" target='_blank'>Tech Xplore</a>
 - <a href="https://www.lifetechnology.com/blogs/life-technology-technology-news/when-zombie-credit-cards-attack-a-loophole-that-can-reanimate-expired-cards" title="When zombie credit cards attack: A loophole that can reanimate expired cards" target='_blank'>Life Technology</a>

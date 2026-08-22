@@ -55,11 +55,6 @@ Inspired by the pioneering work of Al-Khwarizmi, whose groundbreaking contributi
 
 **We are  looking for passionate Master's and Bachelor's students at UMass to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/vacancies) **!**
 
+{% include featured_media.html %}
 
 <!-- We are grateful for funding from Leiden University, [NWO](www.nwo.nl) ([Vidi talent scheme](http://www.nwo.nl/en/research-and-results/programmes/Talent+Scheme) and the [Frontiers in Nanoscience program](https://www.universiteitleiden.nl/en/research/research-projects/science/frontiers-of-nanoscience-nanofront)), and from an [ERC starting grant](https://erc.europa.eu/funding/starting-grants). -->
-
-<figure class="fourth">
-  <a href="https://www.umass.edu/" target="_blank"><img src="{{ site.url }}{{ site.baseurl }}/images/logopic/seal_workmark_source-lrg.png" style="width: 200px" alt="UMass Amherst"></a>
-  <a href="https://www.nsf.gov/" target="_blank"><img src="{{ site.url }}{{ site.baseurl }}/images/logopic/nsf.jfif" style="width: 200px" alt="National Science Foundation"></a>
-  <a href="https://cqn-erc.org/" target="_blank"><img src="{{ site.url }}{{ site.baseurl }}/images/logopic/cqn.png" style="width: 200px" alt="Center for Quantum Networks"></a>
-</figure>
