@@ -2,7 +2,7 @@
 <h2 id="featured-media-heading">Featured In</h2>
 <div class="featured-media-grid">
 {% for item in site.data.featured_media %}
-<a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ site.url }}{{ site.baseurl }}/images/media-logos/{{ item.logo }}" alt="{{ item.publisher }} logo"></a>
+<a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: item.logo | relative_url }}" alt="{{ item.publisher }} logo"></a>
 {% endfor %}
 </div>
 </div>

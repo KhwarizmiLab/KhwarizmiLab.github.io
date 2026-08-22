@@ -173,14 +173,17 @@ blockquote {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	min-width: 0;
 	min-height: 60px;
 }
 
-#homeid .featured-media-logo img {
+.featured-media-logo img {
 	display: block;
 	width: auto;
+	height: auto;
 	max-width: 100%;
 	max-height: 52px;
 	margin: 0;
 	border-radius: 0;
+	object-fit: contain;
 }
