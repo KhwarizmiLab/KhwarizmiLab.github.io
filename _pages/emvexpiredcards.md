@@ -145,6 +145,7 @@ chain, not on the plastic card alone.
 ## Press & Media Coverage
 
 <div class="featured-media-grid" markdown="0">
+<a class="featured-media-logo" href="https://www.wired.com/story/security-news-this-week-your-expired-visa-card-could-be-zombiefied-to-make-contactless-payments/" target="_blank" rel="noopener noreferrer" aria-label="Read the WIRED coverage"><img src="{{ '/images/media-logos/WIRED.svg' | relative_url }}" alt="WIRED"></a>
 <a class="featured-media-logo" href="https://cybernews.com/security/expired-credit-cards-revived-loophole/" target="_blank" rel="noopener noreferrer" aria-label="Read the Cybernews coverage"><img src="{{ '/images/media-logos/Cybernews.svg' | relative_url }}" alt="Cybernews"></a>
 <a class="featured-media-logo" href="https://www.malwarebytes.com/blog/news/2026/08/zombie-card-an-expired-visa-credit-card-can-be-used-for-purchases" target="_blank" rel="noopener noreferrer" aria-label="Read the Malwarebytes coverage"><img src="{{ '/images/media-logos/Malwarebytes.svg' | relative_url }}" alt="Malwarebytes"></a>
 <a class="featured-media-logo" href="https://www.techradar.com/pro/security/experts-warn-expired-credit-cards-can-be-brought-back-from-the-dead-to-make-contactless-payments" target="_blank" rel="noopener noreferrer" aria-label="Read the TechRadar coverage"><img src="{{ '/images/media-logos/TechRadar.jpeg' | relative_url }}" alt="TechRadar"></a>

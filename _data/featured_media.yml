@@ -1,3 +1,6 @@
+- publisher: "WIRED"
+  link: "https://www.wired.com/story/security-news-this-week-your-expired-visa-card-could-be-zombiefied-to-make-contactless-payments/"
+  logo: "WIRED.svg"
 - publisher: "Malwarebytes"
   link: "https://www.malwarebytes.com/blog/news/2026/08/zombie-card-an-expired-visa-credit-card-can-be-used-for-purchases"
   logo: "Malwarebytes.svg"

@@ -11,6 +11,7 @@ permalink: /media.html
 
 ## Digital Payments Security
 ### Zombie Credit Cards
+- <a href="https://www.wired.com/story/security-news-this-week-your-expired-visa-card-could-be-zombiefied-to-make-contactless-payments/" title="Your Expired Visa Card Could Be Zombified to Make Contactless Payments" target='_blank'>WIRED</a>
 - <a href="https://www.techjuice.pk/zombie-card-attack-expired-visa-nfc-relay/" title="Zombie Card Attack: Hackers Can Revives Expired Visa Cards for Contactless NFC Payments" target='_blank'>TechJuice</a>
 - <a href="https://www.malwarebytes.com/blog/news/2026/08/zombie-card-an-expired-visa-credit-card-can-be-used-for-purchases" title="Zombie Card: An expired Visa credit card can be used for purchases" target='_blank'>Malwarebytes</a>
 - <a href="https://www.techradar.com/pro/security/experts-warn-expired-credit-cards-can-be-brought-back-from-the-dead-to-make-contactless-payments" title="Experts warn expired credit cards can be brought back from the dead to make contactless payments" target='_blank'>TechRadar</a>
