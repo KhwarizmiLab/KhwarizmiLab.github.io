@@ -144,13 +144,12 @@ chain, not on the plastic card alone.
 
 ## Press & Media Coverage
 
-<div class="row" markdown="0">
-<div class="col-sm-6">
-<p><strong><a href="https://www.umass.edu/news/article/when-zombie-credit-cards-attack-umass-researchers-discover-loophole-can-reanimate" title="When Zombie Credit Cards Attack: UMass Researchers Discover Loophole That Can Reanimate Expired Cards" target="_blank">UMass News</a></strong></p>
-</div>
-<div class="col-sm-6">
-<p><strong><a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" title="Zombie credit cards: UMass study uncovers fraud risk" target="_blank">WWLP 22News</a></strong></p>
-</div>
+<div class="featured-media-grid" markdown="0">
+<a href="https://cybernews.com/security/expired-credit-cards-revived-loophole/" target="_blank" rel="noopener noreferrer" aria-label="Read the Cybernews coverage"><img class="featured-media-logo" src="{{ '/images/media-logos/Cybernews.svg' | relative_url }}" alt="Cybernews"></a>
+<a href="https://www.malwarebytes.com/blog/news/2026/08/zombie-card-an-expired-visa-credit-card-can-be-used-for-purchases" target="_blank" rel="noopener noreferrer" aria-label="Read the Malwarebytes coverage"><img class="featured-media-logo" src="{{ '/images/media-logos/Malwarebytes.svg' | relative_url }}" alt="Malwarebytes"></a>
+<a href="https://www.techradar.com/pro/security/experts-warn-expired-credit-cards-can-be-brought-back-from-the-dead-to-make-contactless-payments" target="_blank" rel="noopener noreferrer" aria-label="Read the TechRadar coverage"><img class="featured-media-logo" src="{{ '/images/media-logos/TechRadar.jpeg' | relative_url }}" alt="TechRadar"></a>
+<a href="https://thehackernews.com/2026/08/zombie-card-attack-can-revive-expired.html" target="_blank" rel="noopener noreferrer" aria-label="Read The Hacker News coverage"><img class="featured-media-logo" src="{{ '/images/media-logos/TheHackerNews.png' | relative_url }}" alt="The Hacker News"></a>
+<a href="https://www.wwlp.com/news/local-news/zombie-credit-cards-umass-study-uncovers-fraud-risk/" target="_blank" rel="noopener noreferrer" aria-label="Read the WWLP 22News coverage"><img class="featured-media-logo" src="{{ '/images/media-logos/WWLP.png' | relative_url }}" alt="WWLP 22News"></a>
 </div>
 
 ## FAQ
