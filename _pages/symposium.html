@@ -125,38 +125,6 @@ permalink: /symposium/
     <p class="symposium-agenda-note">The agenda is tentative and may change as participants and sessions are confirmed.</p>
   </section>
 
-  <section class="symposium-community" aria-labelledby="community-title">
-    <div class="symposium-community-copy">
-      <p class="symposium-eyebrow">{{ symposium.community.eyebrow }}</p>
-      <h2 id="community-title">{{ symposium.community.title }}</h2>
-      <p>{{ symposium.community.description }}</p>
-      <p class="symposium-community-note">{{ symposium.community.note }}</p>
-    </div>
-    <div class="symposium-community-stats" aria-label="Planned workshop participation">
-      {% for stat in symposium.community.stats %}
-      <div class="symposium-stat">
-        <strong>{{ stat.value }}</strong>
-        <span>{{ stat.label }}</span>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section id="participate" class="symposium-participation" aria-labelledby="participation-title">
-    <div>
-      <p class="symposium-eyebrow">{{ symposium.participation.eyebrow }}</p>
-      <h2 id="participation-title">{{ symposium.participation.title }}</h2>
-      <p>{{ symposium.participation.body }}</p>
-      <ul>
-        {% for bullet in symposium.participation.bullets %}
-        <li>{{ bullet }}</li>
-        {% endfor %}
-      </ul>
-      <p class="symposium-participation-status">{{ symposium.participation.status }}</p>
-    </div>
-    <a class="symposium-button" href="{{ symposium.participation.button_url }}">{{ symposium.participation.button_label }}</a>
-  </section>
-
   <section class="symposium-outcomes" aria-labelledby="outcomes-title">
     <p class="symposium-eyebrow">{{ symposium.outcomes.eyebrow }}</p>
     <h2 id="outcomes-title">{{ symposium.outcomes.title }}</h2>

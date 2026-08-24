@@ -400,8 +400,7 @@ blockquote {
 }
 
 .symposium-overview,
-.symposium-speakers,
-.symposium-participation {
+.symposium-speakers {
 	align-items: center;
 	border-radius: 14px;
 	display: grid;
@@ -417,14 +416,12 @@ blockquote {
 }
 
 .symposium-overview h2,
-.symposium-speakers h2,
-.symposium-participation h2 {
+.symposium-speakers h2 {
 	margin: 0;
 }
 
 .symposium-overview > p,
-.symposium-speakers > div > p:last-child,
-.symposium-participation > div > p:last-child {
+.symposium-speakers > div > p:last-child {
 	font-size: 17px;
 	line-height: 1.6;
 	margin-bottom: 0;
@@ -577,61 +574,13 @@ blockquote {
 	margin: 14px 0 0;
 }
 
-.symposium-community {
-	align-items: center;
-	background: #f4f7fa;
-	border-radius: 14px;
-	display: grid;
-	gap: 34px;
-	grid-template-columns: 1.25fr 0.75fr;
-	margin: 52px 0;
-	padding: 38px 42px;
-}
-
-.symposium-community h2,
 .symposium-outcomes h2 {
 	margin: 0 0 14px;
 }
 
-.symposium-community-copy > p:not(.symposium-eyebrow),
 .symposium-outcomes > p:last-child {
 	font-size: 17px;
 	line-height: 1.6;
-}
-
-.symposium-community-note {
-	color: var(--symposium-muted);
-	font-size: 14px !important;
-	margin: 18px 0 0;
-}
-
-.symposium-community-stats {
-	display: grid;
-	gap: 10px;
-}
-
-.symposium-stat {
-	align-items: center;
-	background: #fff;
-	border: 1px solid var(--symposium-line);
-	border-radius: 9px;
-	display: grid;
-	gap: 12px;
-	grid-template-columns: 74px minmax(0, 1fr);
-	padding: 14px 16px;
-}
-
-.symposium-stat strong {
-	color: var(--symposium-teal);
-	font-size: 24px;
-	line-height: 1;
-}
-
-.symposium-stat span {
-	color: var(--symposium-ink);
-	font-size: 13px;
-	font-weight: 700;
-	line-height: 1.25;
 }
 
 .symposium-speakers {
@@ -655,49 +604,6 @@ blockquote {
 .symposium-coming-soon .glyphicon {
 	color: var(--symposium-teal);
 	font-size: 26px;
-}
-
-.symposium-participation {
-	background: var(--symposium-navy);
-	color: #fff;
-	grid-template-columns: 1.5fr auto;
-}
-
-.symposium-participation h2,
-.symposium-participation .symposium-eyebrow {
-	color: #fff;
-}
-
-.symposium-participation ul {
-	line-height: 1.45;
-	margin: 18px 0;
-	padding-left: 20px;
-}
-
-.symposium-participation li + li {
-	margin-top: 8px;
-}
-
-.symposium-participation-status {
-	font-size: 14px !important;
-	font-weight: 700;
-}
-
-.symposium-button {
-	background: #fff;
-	border-radius: 999px;
-	color: var(--symposium-navy);
-	font-weight: 700;
-	padding: 13px 20px;
-	text-align: center;
-	white-space: nowrap;
-}
-
-.symposium-button:hover,
-.symposium-button:focus {
-	background: #dff4ee;
-	color: var(--symposium-navy);
-	text-decoration: none;
 }
 
 .symposium-outcomes {
@@ -732,9 +638,7 @@ blockquote {
 
 @media (max-width: $screen-xs-max) {
 	.symposium-hero-grid,
-	.symposium-overview,
-	.symposium-community,
-	.symposium-participation {
+	.symposium-overview {
 		grid-template-columns: 1fr;
 	}
 
@@ -765,9 +669,7 @@ blockquote {
 		transform: translateX(50%) scale(0.8);
 	}
 
-	.symposium-overview,
-	.symposium-community,
-	.symposium-participation {
+	.symposium-overview {
 		gap: 20px;
 		padding: 28px 24px;
 	}
@@ -777,7 +679,4 @@ blockquote {
 		grid-template-columns: 1fr;
 	}
 
-	.symposium-button {
-		white-space: normal;
-	}
 }
