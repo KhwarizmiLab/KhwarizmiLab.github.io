@@ -1,7 +1,7 @@
 ---
-title: "Khwarizmi Lab Research Symposium"
+title: "NeSQom 2026 - NSF Workshop on Quantum Communication and Networked Systems"
 layout: default
-seo_description: "Khwarizmi Lab Research Symposium at UMass Amherst, bringing together research in security, financial technology, quantum networks, and critical infrastructure."
+seo_description: "NeSQom 2026 at UMass Amherst brings classical networking, distributed systems, and quantum networking researchers together on September 9-10, 2026."
 sitemap: true
 permalink: /symposium/
 ---
@@ -16,7 +16,7 @@ permalink: /symposium/
         <h1 id="symposium-title">{{ symposium.title }}</h1>
         <p class="symposium-lede">{{ symposium.description }}</p>
 
-        <div class="symposium-actions" aria-label="Event links">
+        <div class="symposium-actions" aria-label="Workshop links">
           {% for action in symposium.actions %}
           <a class="symposium-action" href="{{ action.url }}">
             <span>{{ action.label }}</span>
@@ -36,7 +36,7 @@ permalink: /symposium/
     </div>
 
     <aside class="symposium-details" aria-labelledby="event-details-title">
-      <h2 id="event-details-title">Event details</h2>
+      <h2 id="event-details-title">Workshop details</h2>
       <dl>
         <dt>When</dt>
         <dd>{{ symposium.event.date }}</dd>
@@ -50,8 +50,15 @@ permalink: /symposium/
         <dt>Audience</dt>
         <dd>{{ symposium.event.audience }}</dd>
 
-        <dt>Organizer</dt>
-        <dd><a href="{{ symposium.event.organizer_url }}">{{ symposium.event.organizer }}</a></dd>
+        <dt>Organizers</dt>
+        <dd>
+          {% for organizer in symposium.event.organizers %}
+            {% if organizer.url %}<a href="{{ organizer.url }}" target="_blank" rel="noopener">{{ organizer.name }}</a>{% else %}{{ organizer.name }}{% endif %}{% unless forloop.last %}<br>{% endunless %}
+          {% endfor %}
+        </dd>
+
+        <dt>Remote access</dt>
+        <dd><span>{{ symposium.event.remote }}</span></dd>
       </dl>
     </aside>
   </section>
@@ -66,9 +73,9 @@ permalink: /symposium/
 
   <section id="program" class="symposium-section" aria-labelledby="program-title">
     <header class="symposium-section-heading">
-      <p class="symposium-eyebrow">Program themes</p>
-      <h2 id="program-title">Three connected research areas</h2>
-      <p>The program is organized around the lab's core research strengths and the connections between them.</p>
+      <p class="symposium-eyebrow">{{ symposium.program.eyebrow }}</p>
+      <h2 id="program-title">{{ symposium.program.title }}</h2>
+      <p>{{ symposium.program.description }}</p>
     </header>
 
     <div class="symposium-theme-grid">
@@ -87,24 +94,72 @@ permalink: /symposium/
     </div>
   </section>
 
-  <section class="symposium-speakers" aria-labelledby="speakers-title">
-    <div>
-      <p class="symposium-eyebrow">Perspectives from the field</p>
-      <h2 id="speakers-title">{{ symposium.speakers.title }}</h2>
-      <p>{{ symposium.speakers.description }}</p>
+  <section id="agenda" class="symposium-section symposium-agenda" aria-labelledby="agenda-title">
+    <header class="symposium-section-heading">
+      <p class="symposium-eyebrow">{{ symposium.agenda.eyebrow }}</p>
+      <h2 id="agenda-title">{{ symposium.agenda.title }}</h2>
+      <p>{{ symposium.agenda.description }}</p>
+    </header>
+
+    <div class="symposium-agenda-grid">
+      {% for day in symposium.agenda.days %}
+      <article class="symposium-agenda-day">
+        <header>
+          <span>{{ day.label }}</span>
+          <h3>{{ day.theme }}</h3>
+        </header>
+        <ol>
+          {% for item in day.items %}
+          <li>
+            <time>{{ item.time }}</time>
+            <div>
+              <strong>{{ item.title }}</strong>
+              {% if item.detail %}<small>{{ item.detail }}</small>{% endif %}
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </article>
+      {% endfor %}
     </div>
-    <div class="symposium-coming-soon">
-      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      <strong>{{ symposium.speakers.status }}</strong>
+    <p class="symposium-agenda-note">The agenda is tentative and may change as participants and sessions are confirmed.</p>
+  </section>
+
+  <section class="symposium-community" aria-labelledby="community-title">
+    <div class="symposium-community-copy">
+      <p class="symposium-eyebrow">{{ symposium.community.eyebrow }}</p>
+      <h2 id="community-title">{{ symposium.community.title }}</h2>
+      <p>{{ symposium.community.description }}</p>
+      <p class="symposium-community-note">{{ symposium.community.note }}</p>
+    </div>
+    <div class="symposium-community-stats" aria-label="Planned workshop participation">
+      {% for stat in symposium.community.stats %}
+      <div class="symposium-stat">
+        <strong>{{ stat.value }}</strong>
+        <span>{{ stat.label }}</span>
+      </div>
+      {% endfor %}
     </div>
   </section>
 
-  <section class="symposium-participation" aria-labelledby="participation-title">
+  <section id="participate" class="symposium-participation" aria-labelledby="participation-title">
     <div>
       <p class="symposium-eyebrow">{{ symposium.participation.eyebrow }}</p>
       <h2 id="participation-title">{{ symposium.participation.title }}</h2>
       <p>{{ symposium.participation.body }}</p>
+      <ul>
+        {% for bullet in symposium.participation.bullets %}
+        <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+      <p class="symposium-participation-status">{{ symposium.participation.status }}</p>
     </div>
     <a class="symposium-button" href="{{ symposium.participation.button_url }}">{{ symposium.participation.button_label }}</a>
+  </section>
+
+  <section class="symposium-outcomes" aria-labelledby="outcomes-title">
+    <p class="symposium-eyebrow">{{ symposium.outcomes.eyebrow }}</p>
+    <h2 id="outcomes-title">{{ symposium.outcomes.title }}</h2>
+    <p>{{ symposium.outcomes.body }}</p>
   </section>
 </main>

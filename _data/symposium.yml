@@ -1,77 +1,183 @@
-# Edit this file to update the symposium page without touching its layout.
-name: "Khwarizmi Lab Research Symposium"
-title: "Building secure and dependable systems for an interconnected world"
+# Edit this file to update the workshop page without touching its layout.
+name: "NeSQom 2026"
+title: "NSF Workshop on Quantum Communication and Networked Systems"
 description: >-
-  A research gathering bringing together perspectives from security, financial
-  technology, quantum networks, and critical infrastructure.
+  Bringing classical networking, distributed systems, quantum networking,
+  and quantum information science together to shape the systems architecture
+  of future quantum networks.
 
 event:
-  date: "To be announced"
-  location: "UMass Amherst"
-  address: "Venue to be announced"
-  format: "Talks, panels, and research discussions"
-  audience: "Researchers, students, practitioners, and collaborators"
-  organizer: "Khwarizmi Lab"
-  organizer_url: "/team/"
+  date: "September 9-10, 2026"
+  location: "University of Massachusetts Amherst"
+  address: "Amherst, Massachusetts"
+  format: "A one-and-a-half-day interdisciplinary workshop with paired talks, panels, working groups, and a poster session"
+  audience: "Approximately 40 researchers from classical and quantum networking communities"
+  organizers:
+    - name: "Taqi Raza"
+      url: "https://people.umass.edu/taqi/"
+    - name: "Don Towsley"
+  remote: "Workshop sessions are planned to be livestreamed"
 
 actions:
-  - label: "Express interest"
-    detail: "Contact the organizers"
-    url: "mailto:taqi@umass.edu?subject=Khwarizmi%20Lab%20Research%20Symposium"
-  - label: "Agenda"
-    detail: "Coming soon"
-    url: "#program"
+  - label: "Tentative agenda"
+    detail: "September 9-10"
+    url: "#agenda"
+  - label: "Position abstracts"
+    detail: "2-3 pages"
+    url: "#participate"
 
 overview:
-  eyebrow: "About the event"
-  title: "Research across systems and algorithms"
+  eyebrow: "About NeSQom"
+  title: "Connecting classical networking and quantum systems"
   body: >-
-    The symposium will create a focused setting for sharing new results,
-    identifying open problems, and forming collaborations across communities.
-    It reflects the Khwarizmi Lab's goal of developing secure, effective, and
-    trustworthy networked systems.
+    Quantum networks will be hybrid systems in which quantum communication
+    and classical networking are tightly integrated. NeSQom will convene
+    researchers across both communities to identify where established
+    networking principles transfer, where they break down, and what new
+    abstractions are needed for correct, scalable, and manageable systems.
+
+program:
+  eyebrow: "Technical program"
+  title: "Four themes for a shared research agenda"
+  description: >-
+    Paired presentations and cross-disciplinary working groups will turn
+    contrasting assumptions into concrete research questions.
 
 themes:
   - number: "01"
-    title: "Financial Technology & Security"
+    title: "Routing and Resource Allocation"
     description: >-
-      Security, privacy, authentication, and trustworthy operation in payment
-      platforms and other large-scale financial systems.
+      How should quantum networks route a resource that cannot be copied,
+      degrades over time, and is consumed when used?
     topics:
-      - Payment and digital-wallet security
-      - Authentication and access control
-      - Measurement and verification of deployed systems
+      - Entanglement routing and path selection
+      - Quantum-memory allocation and generation scheduling
+      - Fidelity, coherence-time, and hardware constraints
   - number: "02"
-    title: "Quantum Networks"
+    title: "Control Planes and Orchestration"
     description: >-
-      Practical approaches to secure quantum communication and the systems
-      needed to move quantum networking from theory to deployment.
+      How should quantum networks coordinate state, control, and management
+      under tight latency and hardware constraints?
     topics:
-      - Quantum key distribution
-      - Post-quantum and hybrid systems
-      - End-to-end security under real-world constraints
+      - Control- and data-plane separation
+      - Fidelity monitoring and adaptive routing
+      - Centralized versus distributed control
   - number: "03"
-    title: "Critical & Mobile Infrastructure"
+    title: "Hybrid Classical-Quantum Architectures"
     description: >-
-      Resilient, efficient, and secure designs for next-generation mobile
-      networks and the critical infrastructure that depends on them.
+      How should permanent dependencies between classical and quantum
+      infrastructure shape interfaces, security, and system design?
     topics:
-      - 5G and next-generation networks
-      - Industrial control systems
-      - Reliability, safety, and scalable operation
+      - Classical-quantum layer interfaces
+      - Coordination for QKD and distributed computing
+      - Security and performance tradeoffs
+  - number: "04"
+    title: "Performance and Experimental Methods"
+    description: >-
+      What models, metrics, simulators, and testbeds are needed for meaningful
+      evaluation of quantum network systems?
+    topics:
+      - Analytical models, simulation, and testbeds
+      - Fidelity, generation-rate, and purification metrics
+      - Shared evaluation standards
 
-speakers:
-  title: "Invited speakers"
+agenda:
+  eyebrow: "Tentative agenda"
+  title: "One and a half days of discussion and synthesis"
   description: >-
-    The speaker lineup will feature researchers and practitioners working
-    across the symposium's themes.
-  status: "Speakers will be announced soon."
+    The format prioritizes interaction: paired perspectives establish common
+    ground, working groups frame open problems, and panels synthesize a
+    near-term research agenda.
+  days:
+    - label: "Day 1"
+      theme: "Establishing Common Ground and Context"
+      items:
+        - time: "08:00-09:00"
+          title: "Registration and breakfast"
+        - time: "09:00-09:15"
+          title: "Opening remarks"
+        - time: "09:15-10:45"
+          title: "Paired Presentations I: Routing and Resource Allocation"
+          detail: "Classical and quantum perspectives"
+        - time: "10:45-11:00"
+          title: "Coffee break"
+        - time: "11:00-12:15"
+          title: "Paired Presentations II: Reliability, Error Handling, and Protocol Design"
+          detail: "Classical and quantum perspectives"
+        - time: "12:15-13:15"
+          title: "Lunch"
+        - time: "13:15-14:30"
+          title: "Panel I: What Internet History Can Teach Quantum Networking"
+        - time: "14:30-14:45"
+          title: "Coffee break"
+        - time: "14:45-16:30"
+          title: "Working Groups I"
+          detail: "Routing, control plane, hybrid architectures, and performance evaluation"
+        - time: "16:30-17:30"
+          title: "Working Groups II"
+          detail: "Draft one-page problem statements"
+        - time: "17:30-18:30"
+          title: "One-on-one meetings for early-career researchers"
+        - time: "18:30-20:00"
+          title: "Dinner and poster session"
+    - label: "Day 2"
+      theme: "Synthesis and Research Agenda"
+      items:
+        - time: "08:00-09:00"
+          title: "Breakfast"
+        - time: "09:00-10:15"
+          title: "Panel II: Near-Term Research Agenda for Quantum Networked Systems"
+        - time: "10:15-10:30"
+          title: "Coffee break"
+        - time: "10:30-11:30"
+          title: "Open Discussion: Cross-community synthesis"
+        - time: "11:30-12:30"
+          title: "Working Groups III"
+          detail: "Draft research agenda document"
+        - time: "12:30-13:30"
+          title: "Lunch"
+        - time: "13:30-14:00"
+          title: "Final plenary and closing remarks"
+
+community:
+  eyebrow: "Participants and community"
+  title: "A deliberately cross-disciplinary group"
+  description: >-
+    NeSQom is designed for approximately 40 participants, balanced across
+    classical networking and distributed systems, quantum networking and
+    quantum information science, and researchers who already bridge both.
+    Individual participants will be announced after confirmations.
+  stats:
+    - value: "~40"
+      label: "participants"
+    - value: "25 / 15"
+      label: "classical / quantum target mix"
+    - value: "10+"
+      label: "early-career places"
+  note: >-
+    The workshop plans to support graduating Ph.D. students and postdoctoral
+    researchers, and to livestream sessions for remote participation.
 
 participation:
-  eyebrow: "Join the conversation"
-  title: "Interested in participating?"
+  eyebrow: "Contribute to the workshop"
+  title: "Call for position abstracts"
   body: >-
-    Program, submission, and registration details are being prepared. Contact
-    the organizers to receive updates or discuss participation.
+    Prospective contributors will be invited to submit a 2-3 page abstract
+    presenting a clear perspective, challenging an existing assumption, or
+    proposing a research direction at the intersection of classical and
+    quantum networking.
+  bullets:
+    - "Original research, work in progress, and position statements are welcome"
+    - "Reviews will consider relevance, clarity, and potential to stimulate interdisciplinary discussion"
+    - "Selected contributors may participate through posters or moderated panels"
+  status: "Submission dates and instructions will be announced."
   button_label: "Contact the organizers"
-  button_url: "mailto:taqi@umass.edu?subject=Khwarizmi%20Lab%20Research%20Symposium"
+  button_url: "mailto:taqi@umass.edu?subject=NeSQom%202026%20Workshop"
+
+outcomes:
+  eyebrow: "Workshop outcomes"
+  title: "From discussion to a concrete research agenda"
+  body: >-
+    Working groups will produce open-problem statements and contribute to a
+    research agenda for NSF. The workshop website is planned to host paired
+    presentation slides, working-group reports, and a recorded plenary summary.

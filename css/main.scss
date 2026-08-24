@@ -451,7 +451,7 @@ blockquote {
 .symposium-theme-grid {
 	display: grid;
 	gap: 18px;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	margin-top: 30px;
 }
 
@@ -493,6 +493,147 @@ blockquote {
 	margin-top: 8px;
 }
 
+.symposium-agenda {
+	padding-top: 48px;
+}
+
+.symposium-agenda-grid {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+	margin-top: 30px;
+}
+
+.symposium-agenda-day {
+	background: #fff;
+	border: 1px solid var(--symposium-line);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.symposium-agenda-day > header {
+	background: var(--symposium-navy);
+	color: #fff;
+	padding: 20px 22px;
+}
+
+.symposium-agenda-day > header span {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.symposium-agenda-day > header h3 {
+	color: #fff;
+	font-size: 20px;
+	line-height: 1.25;
+	margin: 5px 0 0;
+}
+
+.symposium-agenda-day ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.symposium-agenda-day li {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 92px minmax(0, 1fr);
+	padding: 14px 20px;
+}
+
+.symposium-agenda-day li + li {
+	border-top: 1px solid var(--symposium-line);
+}
+
+.symposium-agenda-day time {
+	color: var(--symposium-teal);
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.symposium-agenda-day strong,
+.symposium-agenda-day small {
+	display: block;
+}
+
+.symposium-agenda-day strong {
+	color: var(--symposium-ink);
+	line-height: 1.35;
+}
+
+.symposium-agenda-day small {
+	color: var(--symposium-muted);
+	line-height: 1.4;
+	margin-top: 3px;
+}
+
+.symposium-agenda-note {
+	color: var(--symposium-muted);
+	font-size: 13px;
+	font-style: italic;
+	margin: 14px 0 0;
+}
+
+.symposium-community {
+	align-items: center;
+	background: #f4f7fa;
+	border-radius: 14px;
+	display: grid;
+	gap: 34px;
+	grid-template-columns: 1.25fr 0.75fr;
+	margin: 52px 0;
+	padding: 38px 42px;
+}
+
+.symposium-community h2,
+.symposium-outcomes h2 {
+	margin: 0 0 14px;
+}
+
+.symposium-community-copy > p:not(.symposium-eyebrow),
+.symposium-outcomes > p:last-child {
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+.symposium-community-note {
+	color: var(--symposium-muted);
+	font-size: 14px !important;
+	margin: 18px 0 0;
+}
+
+.symposium-community-stats {
+	display: grid;
+	gap: 10px;
+}
+
+.symposium-stat {
+	align-items: center;
+	background: #fff;
+	border: 1px solid var(--symposium-line);
+	border-radius: 9px;
+	display: grid;
+	gap: 12px;
+	grid-template-columns: 74px minmax(0, 1fr);
+	padding: 14px 16px;
+}
+
+.symposium-stat strong {
+	color: var(--symposium-teal);
+	font-size: 24px;
+	line-height: 1;
+}
+
+.symposium-stat span {
+	color: var(--symposium-ink);
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
 .symposium-speakers {
 	background: #f4f7fa;
 	grid-template-columns: 1.2fr 0.8fr;
@@ -527,6 +668,21 @@ blockquote {
 	color: #fff;
 }
 
+.symposium-participation ul {
+	line-height: 1.45;
+	margin: 18px 0;
+	padding-left: 20px;
+}
+
+.symposium-participation li + li {
+	margin-top: 8px;
+}
+
+.symposium-participation-status {
+	font-size: 14px !important;
+	font-weight: 700;
+}
+
 .symposium-button {
 	background: #fff;
 	border-radius: 999px;
@@ -542,6 +698,14 @@ blockquote {
 	background: #dff4ee;
 	color: var(--symposium-navy);
 	text-decoration: none;
+}
+
+.symposium-outcomes {
+	border-bottom: 1px solid var(--symposium-line);
+	border-top: 1px solid var(--symposium-line);
+	margin: 48px 0 20px;
+	max-width: 760px;
+	padding: 34px 0;
 }
 
 @media (max-width: $screen-sm-max) {
@@ -560,12 +724,16 @@ blockquote {
 	.symposium-theme-grid {
 		grid-template-columns: 1fr;
 	}
+
+	.symposium-agenda-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
 @media (max-width: $screen-xs-max) {
 	.symposium-hero-grid,
 	.symposium-overview,
-	.symposium-speakers,
+	.symposium-community,
 	.symposium-participation {
 		grid-template-columns: 1fr;
 	}
@@ -598,10 +766,15 @@ blockquote {
 	}
 
 	.symposium-overview,
-	.symposium-speakers,
+	.symposium-community,
 	.symposium-participation {
 		gap: 20px;
 		padding: 28px 24px;
+	}
+
+	.symposium-agenda-day li {
+		gap: 7px;
+		grid-template-columns: 1fr;
 	}
 
 	.symposium-button {
