@@ -1,0 +1,77 @@
+# Edit this file to update the symposium page without touching its layout.
+name: "Khwarizmi Lab Research Symposium"
+title: "Building secure and dependable systems for an interconnected world"
+description: >-
+  A research gathering bringing together perspectives from security, financial
+  technology, quantum networks, and critical infrastructure.
+
+event:
+  date: "To be announced"
+  location: "UMass Amherst"
+  address: "Venue to be announced"
+  format: "Talks, panels, and research discussions"
+  audience: "Researchers, students, practitioners, and collaborators"
+  organizer: "Khwarizmi Lab"
+  organizer_url: "/team/"
+
+actions:
+  - label: "Express interest"
+    detail: "Contact the organizers"
+    url: "mailto:taqi@umass.edu?subject=Khwarizmi%20Lab%20Research%20Symposium"
+  - label: "Agenda"
+    detail: "Coming soon"
+    url: "#program"
+
+overview:
+  eyebrow: "About the event"
+  title: "Research across systems and algorithms"
+  body: >-
+    The symposium will create a focused setting for sharing new results,
+    identifying open problems, and forming collaborations across communities.
+    It reflects the Khwarizmi Lab's goal of developing secure, effective, and
+    trustworthy networked systems.
+
+themes:
+  - number: "01"
+    title: "Financial Technology & Security"
+    description: >-
+      Security, privacy, authentication, and trustworthy operation in payment
+      platforms and other large-scale financial systems.
+    topics:
+      - Payment and digital-wallet security
+      - Authentication and access control
+      - Measurement and verification of deployed systems
+  - number: "02"
+    title: "Quantum Networks"
+    description: >-
+      Practical approaches to secure quantum communication and the systems
+      needed to move quantum networking from theory to deployment.
+    topics:
+      - Quantum key distribution
+      - Post-quantum and hybrid systems
+      - End-to-end security under real-world constraints
+  - number: "03"
+    title: "Critical & Mobile Infrastructure"
+    description: >-
+      Resilient, efficient, and secure designs for next-generation mobile
+      networks and the critical infrastructure that depends on them.
+    topics:
+      - 5G and next-generation networks
+      - Industrial control systems
+      - Reliability, safety, and scalable operation
+
+speakers:
+  title: "Invited speakers"
+  description: >-
+    The speaker lineup will feature researchers and practitioners working
+    across the symposium's themes.
+  status: "Speakers will be announced soon."
+
+participation:
+  eyebrow: "Join the conversation"
+  title: "Interested in participating?"
+  body: >-
+    Program, submission, and registration details are being prepared. Contact
+    the organizers to receive updates or discuss participation.
+  button_label: "Contact the organizers"
+  button_url: "mailto:taqi@umass.edu?subject=Khwarizmi%20Lab%20Research%20Symposium"

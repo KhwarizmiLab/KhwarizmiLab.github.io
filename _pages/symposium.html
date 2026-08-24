@@ -1,0 +1,110 @@
+---
+title: "Khwarizmi Lab Research Symposium"
+layout: default
+seo_description: "Khwarizmi Lab Research Symposium at UMass Amherst, bringing together research in security, financial technology, quantum networks, and critical infrastructure."
+sitemap: true
+permalink: /symposium/
+---
+
+{% assign symposium = site.data.symposium %}
+
+<main class="symposium-page col-sm-12">
+  <section class="symposium-hero-grid" aria-labelledby="symposium-title">
+    <div class="symposium-hero">
+      <div class="symposium-hero-content">
+        <p class="symposium-eyebrow">{{ symposium.name }}</p>
+        <h1 id="symposium-title">{{ symposium.title }}</h1>
+        <p class="symposium-lede">{{ symposium.description }}</p>
+
+        <div class="symposium-actions" aria-label="Event links">
+          {% for action in symposium.actions %}
+          <a class="symposium-action" href="{{ action.url }}">
+            <span>{{ action.label }}</span>
+            <small>{{ action.detail }}</small>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="symposium-mark" aria-hidden="true">
+        <span class="symposium-mark-ring symposium-mark-ring-a"></span>
+        <span class="symposium-mark-ring symposium-mark-ring-b"></span>
+        <span class="symposium-mark-node symposium-mark-node-a"></span>
+        <span class="symposium-mark-node symposium-mark-node-b"></span>
+        <span class="symposium-mark-node symposium-mark-node-c"></span>
+      </div>
+    </div>
+
+    <aside class="symposium-details" aria-labelledby="event-details-title">
+      <h2 id="event-details-title">Event details</h2>
+      <dl>
+        <dt>When</dt>
+        <dd>{{ symposium.event.date }}</dd>
+
+        <dt>Where</dt>
+        <dd>{{ symposium.event.location }}<br><span>{{ symposium.event.address }}</span></dd>
+
+        <dt>Format</dt>
+        <dd>{{ symposium.event.format }}</dd>
+
+        <dt>Audience</dt>
+        <dd>{{ symposium.event.audience }}</dd>
+
+        <dt>Organizer</dt>
+        <dd><a href="{{ symposium.event.organizer_url }}">{{ symposium.event.organizer }}</a></dd>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="symposium-overview" aria-labelledby="symposium-overview-title">
+    <div>
+      <p class="symposium-eyebrow">{{ symposium.overview.eyebrow }}</p>
+      <h2 id="symposium-overview-title">{{ symposium.overview.title }}</h2>
+    </div>
+    <p>{{ symposium.overview.body }}</p>
+  </section>
+
+  <section id="program" class="symposium-section" aria-labelledby="program-title">
+    <header class="symposium-section-heading">
+      <p class="symposium-eyebrow">Program themes</p>
+      <h2 id="program-title">Three connected research areas</h2>
+      <p>The program is organized around the lab's core research strengths and the connections between them.</p>
+    </header>
+
+    <div class="symposium-theme-grid">
+      {% for theme in symposium.themes %}
+      <article class="symposium-theme-card">
+        <span class="symposium-theme-number">{{ theme.number }}</span>
+        <h3>{{ theme.title }}</h3>
+        <p>{{ theme.description }}</p>
+        <ul>
+          {% for topic in theme.topics %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="symposium-speakers" aria-labelledby="speakers-title">
+    <div>
+      <p class="symposium-eyebrow">Perspectives from the field</p>
+      <h2 id="speakers-title">{{ symposium.speakers.title }}</h2>
+      <p>{{ symposium.speakers.description }}</p>
+    </div>
+    <div class="symposium-coming-soon">
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      <strong>{{ symposium.speakers.status }}</strong>
+    </div>
+  </section>
+
+  <section class="symposium-participation" aria-labelledby="participation-title">
+    <div>
+      <p class="symposium-eyebrow">{{ symposium.participation.eyebrow }}</p>
+      <h2 id="participation-title">{{ symposium.participation.title }}</h2>
+      <p>{{ symposium.participation.body }}</p>
+    </div>
+    <a class="symposium-button" href="{{ symposium.participation.button_url }}">{{ symposium.participation.button_label }}</a>
+  </section>
+</main>
