@@ -145,6 +145,9 @@ chain, not on the plastic card alone.
 ## Press & Media Coverage
 
 <div class="featured-media-grid" markdown="0">
+<a class="featured-media-logo" href="https://www.latribune.fr/article/tech/informatique/50102393136479/zombie-card-une-carte-bancaire-expiree-peut-encore-etre-utilisee-pour-payer" target="_blank" rel="noopener noreferrer" aria-label="Read the La Tribune coverage"><img src="{{ '/images/media-logos/LaTribune.svg' | relative_url }}" alt="La Tribune"></a>
+<a class="featured-media-logo" href="https://x.com/BFMTV/status/2092134736831381782" target="_blank" rel="noopener noreferrer" aria-label="Read the BFM TV coverage"><img src="{{ '/images/media-logos/BFM.svg' | relative_url }}" alt="BFM TV"></a>
+<a class="featured-media-logo" href="https://www.cnews.fr/france/2026-08-21/des-zombies-attention-des-paiements-sans-contact-sont-possibles-avec-vos-vieilles" target="_blank" rel="noopener noreferrer" aria-label="Read the CNEWS coverage"><img src="{{ '/images/media-logos/CNEWS.png' | relative_url }}" alt="CNEWS"></a>
 <a class="featured-media-logo" href="https://arynews.tv/zombie-card-attack-revives-expired-visa-cards-for-real-purchases" target="_blank" rel="noopener noreferrer" aria-label="Read the ARY News coverage"><img src="{{ '/images/media-logos/ARYNews.svg' | relative_url }}" alt="ARY News"></a>
 <a class="featured-media-logo" href="https://www.wired.com/story/security-news-this-week-your-expired-visa-card-could-be-zombiefied-to-make-contactless-payments/" target="_blank" rel="noopener noreferrer" aria-label="Read the WIRED coverage"><img src="{{ '/images/media-logos/WIRED.svg' | relative_url }}" alt="WIRED"></a>
 <a class="featured-media-logo" href="https://www.techjuice.pk/zombie-card-attack-expired-visa-nfc-relay/" target="_blank" rel="noopener noreferrer" aria-label="Read the TechJuice coverage"><img src="{{ '/images/media-logos/TechJuice.svg' | relative_url }}" alt="TechJuice"></a>
