@@ -7,9 +7,6 @@
 - date: August 12, 2026
   headline: "Paper '<a href='https://arxiv.org/abs/2608.07626' target='_blank'>Beyond the Quantum Promise: A Security Analysis of Classical Control in Quantum Key Distribution</a>' accepted at <a href='https://qce.quantum.ieee.org/2026/' target='_blank'>IEEE QCE 2026</a>."
 
-- date: June 1, 2026
-  headline: "Paper 'ORACLE: Reconciling Next-G Cellular Core Operations for Correctness' accepted at <a href='https://icc2026.ieee-icc.org/' target='_blank'>IEEE ICC 2026</a>."
-
 - date: May 14, 2026
   headline: "Our paper '<a href='https://www.usenix.org/conference/usenixsecurity26/presentation/anwar' target='_blank'>Zombie Cards Back Online: Reviving Expired Credit Cards for Contactless Payments</a>' has been accepted at <a href='https://www.usenix.org/conference/usenixsecurity26' target='_blank'>USENIX Security 2026</a>."
 
@@ -27,6 +24,9 @@
 
 - date: March 2, 2026
   headline: "Taqi Raza invited to speak at the <a href='https://www.nsf-hwiq-workshop.org/2026/' target='_blank'>2026 NSF Workshop on Hardware Security in the Era of Quantum Computing &amp; Post-Quantum Cryptography (HWiQ 2026)</a>."
+
+- date: February 13, 2026
+  headline: "Paper 'ORACLE: Reconciling Next-G Cellular Core Operations for Correctness' accepted at <a href='https://icc2026.ieee-icc.org/' target='_blank'>IEEE ICC 2026</a>."
 
 - date: January 23, 2026
   headline: "Abdullah Soomro gave a talk at New England Systems Day 2026 titled 'Millisecond Time Synchronization for 5G NB-IoT Networks'!"

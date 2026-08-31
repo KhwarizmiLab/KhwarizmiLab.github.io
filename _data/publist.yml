@@ -16,7 +16,7 @@
   link:
     pdf: usenixsecurity26-anwar.pdf
     url: https://www.usenix.org/conference/usenixsecurity26/presentation/anwar
-    display: USENIX Security 26
+    display: USENIX Security
   highlight: 1
 
 - title: "Beyond the Quantum Promise: A Security Analysis of Classical Control in Quantum Key Distribution"
