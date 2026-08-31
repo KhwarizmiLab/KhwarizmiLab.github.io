@@ -10,13 +10,13 @@ event:
   date: "September 9-10, 2026"
   location: "University of Massachusetts Amherst"
   address: "Amherst, Massachusetts"
-  format: "A one-and-a-half-day interdisciplinary workshop with paired talks, panels, working groups, and a poster session"
-  audience: "Approximately 40 researchers from classical and quantum networking communities"
+  format: "A one-and-a-half-day interdisciplinary workshop with presentations, panels, and interactive discussion, followed by breakout sessions and lightning talks."
+  audience: "Approximately 50 researchers from classical and quantum networking communities"
   organizers:
     - name: "Taqi Raza"
       url: "https://people.umass.edu/taqi/"
     - name: "Don Towsley"
-  remote: "Workshop sessions are planned to be livestreamed"
+  attendance: "Attendance is by invitation only"
 
 actions:
   - label: "Tentative agenda"
@@ -36,10 +36,6 @@ overview:
 program:
   eyebrow: "Technical program"
   title: "Four themes for a shared research agenda"
-  description: >-
-    Paired presentations and cross-disciplinary working groups will turn
-    contrasting assumptions into concrete research questions.
-
 themes:
   - number: "01"
     title: "Routing and Resource Allocation"
@@ -81,10 +77,6 @@ themes:
 agenda:
   eyebrow: "Tentative agenda"
   title: "One and a half days of discussion and synthesis"
-  description: >-
-    The format prioritizes interaction: paired perspectives establish common
-    ground, working groups frame open problems, and panels synthesize a
-    near-term research agenda.
   days:
     - label: "Day 1"
       theme: "Establishing Common Ground and Context"
@@ -140,6 +132,21 @@ outcomes:
   eyebrow: "Workshop outcomes"
   title: "From discussion to a concrete research agenda"
   body: >-
-    Working groups will produce open-problem statements and contribute to a
-    research agenda for NSF. The workshop website is planned to host paired
-    presentation slides, working-group reports, and a recorded plenary summary.
+    This workshop will produce open-problem statements and contribute to a research agenda for NSF.
+
+logistics:
+  eyebrow: "Visitor information"
+  title: "Travel and logistics"
+  items:
+    - label: "Flight"
+      body: >-
+        If you are travelling by air, the closest airport is Bradley
+        International Airport (BDL) in Connecticut, about a 40-minute drive
+        from campus. Boston Logan International Airport (BOS) is approximately
+        1.5-2 hours away. Uber and Lyft are available from both airports.
+    - label: "Hotel"
+      body: >-
+        The UMass Hotel is located in the Campus Center at UMass Amherst.
+  map:
+    title: "Map showing the UMass Hotel at UMass Amherst"
+    url: "https://www.google.com/maps?q=UMass+Hotel,+Amherst,+MA&output=embed"

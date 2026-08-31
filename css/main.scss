@@ -614,6 +614,55 @@ blockquote {
 	padding: 34px 0;
 }
 
+.symposium-logistics {
+	background: #f4f7fa;
+	border-radius: 14px;
+	margin: 42px 0 20px;
+	padding: 36px 42px;
+}
+
+.symposium-logistics h2 {
+	margin: 0 0 24px;
+}
+
+.symposium-logistics dl,
+.symposium-logistics dd {
+	margin-bottom: 0;
+}
+
+.symposium-logistics dl {
+	display: grid;
+	gap: 24px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.symposium-logistics dt {
+	color: var(--symposium-teal);
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.symposium-logistics dd {
+	line-height: 1.6;
+}
+
+.symposium-map {
+	border: 1px solid var(--symposium-line);
+	border-radius: 10px;
+	height: 360px;
+	margin-top: 28px;
+	overflow: hidden;
+}
+
+.symposium-map iframe {
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
 @media (max-width: $screen-sm-max) {
 	.symposium-hero-grid {
 		grid-template-columns: minmax(0, 1.8fr) minmax(220px, 0.9fr);
@@ -638,7 +687,8 @@ blockquote {
 
 @media (max-width: $screen-xs-max) {
 	.symposium-hero-grid,
-	.symposium-overview {
+	.symposium-overview,
+	.symposium-logistics dl {
 		grid-template-columns: 1fr;
 	}
 
@@ -672,6 +722,14 @@ blockquote {
 	.symposium-overview {
 		gap: 20px;
 		padding: 28px 24px;
+	}
+
+	.symposium-logistics {
+		padding: 28px 24px;
+	}
+
+	.symposium-map {
+		height: 300px;
 	}
 
 	.symposium-agenda-day li {

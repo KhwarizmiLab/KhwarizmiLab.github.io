@@ -57,8 +57,8 @@ permalink: /symposium/
           {% endfor %}
         </dd>
 
-        <dt>Remote access</dt>
-        <dd><span>{{ symposium.event.remote }}</span></dd>
+        <dt>Attendance</dt>
+        <dd><span>{{ symposium.event.attendance }}</span></dd>
       </dl>
     </aside>
   </section>
@@ -129,5 +129,27 @@ permalink: /symposium/
     <p class="symposium-eyebrow">{{ symposium.outcomes.eyebrow }}</p>
     <h2 id="outcomes-title">{{ symposium.outcomes.title }}</h2>
     <p>{{ symposium.outcomes.body }}</p>
+  </section>
+
+  <section class="symposium-logistics" aria-labelledby="logistics-title">
+    <p class="symposium-eyebrow">{{ symposium.logistics.eyebrow }}</p>
+    <h2 id="logistics-title">{{ symposium.logistics.title }}</h2>
+    <dl>
+      {% for item in symposium.logistics.items %}
+      <div>
+        <dt>{{ item.label }}</dt>
+        <dd>{{ item.body }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    <div class="symposium-map">
+      <iframe
+        src="{{ symposium.logistics.map.url }}"
+        title="{{ symposium.logistics.map.title }}"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 </main>
