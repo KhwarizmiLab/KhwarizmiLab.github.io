@@ -1888,9 +1888,16 @@ td.week-cell {
   color: var(--accent-teal-700);
 }
 
+.admin-week {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
 .admin-session {
-  max-width: 34rem;
-  margin: 0 0 1rem;
+  min-width: 0;
+  margin: 0;
   padding: 0.75rem 0.85rem;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -2005,6 +2012,10 @@ td.week-cell {
 }
 
 @media (max-width: 720px) {
+  .admin-week {
+    grid-template-columns: 1fr;
+  }
+
   .admin-row-controls {
     width: 100%;
   }

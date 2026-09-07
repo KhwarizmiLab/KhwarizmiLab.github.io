@@ -665,9 +665,14 @@
       weeks[session.week].push(session);
     });
     Object.keys(weeks).sort(function (a, b) { return a - b; }).forEach(function (week) {
-      weeks[week].forEach(function (session) {
-        calendar.appendChild(renderSession(session));
+      var row = document.createElement('div');
+      row.className = 'admin-week';
+      weeks[week].sort(function (a, b) {
+        return a.slot === 'tue' ? -1 : b.slot === 'tue' ? 1 : 0;
+      }).forEach(function (session) {
+        row.appendChild(renderSession(session));
       });
+      calendar.appendChild(row);
     });
     groupsEl.appendChild(calendar);
     groupsEl.appendChild(renderListEditor('Assignments', draft.assignments, 'assignment-', 'assets/assignment/'));
