@@ -57,7 +57,7 @@ window.ECE371Calendar = {
       "id": "w1-tue",
       "week": 1,
       "slot": "tue",
-      "date": "2026-09-08",
+      "date": "2026-09-10",
       "title": "Syllabus & Introduction to Security Engineering",
       "kind": "lecture",
       "tags": [
@@ -70,7 +70,7 @@ window.ECE371Calendar = {
         "id": "lecture-1",
         "label": "[slides]",
         "href": "assets/slides/Lecture1.pdf",
-        "release": "2026-09-08"
+        "release": "2026-09-10"
       }
     },
     {
