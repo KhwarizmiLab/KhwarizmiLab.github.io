@@ -515,7 +515,50 @@
       if (text && text.indexOf('Resource not accessible by personal access token') !== -1) {
         return 'This token cannot write to the Khwarizmi Lab repo. Create a classic token with the public_repo scope (link above), replace the saved token, and Publish again.';
       }
+      if (text && text.indexOf('does not match') !== -1) {
+        return 'The live schedule changed just now. Click Publish schedule again.';
+      }
       return text;
+    }
+
+    function githubGet(token) {
+      var url = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_PATH +
+        '?ref=' + GH_BRANCH;
+      return fetch(url, {
+        headers: githubHeaders(token),
+        cache: 'no-store'
+      }).then(function (response) {
+        return response.json().then(function (body) {
+          if (!response.ok) {
+            throw new Error(githubMessage(body, 'Could not read the live schedule (' + response.status + ').'));
+          }
+          return body;
+        });
+      });
+    }
+
+    function githubPut(token, sha) {
+      var url = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_PATH;
+      return fetch(url, {
+        method: 'PUT',
+        headers: githubHeaders(token),
+        cache: 'no-store',
+        body: JSON.stringify({
+          message: 'Update ECE 371 release schedule.',
+          content: utf8ToBase64(generateFile()),
+          sha: sha,
+          branch: GH_BRANCH
+        })
+      }).then(function (response) {
+        return response.json().then(function (body) {
+          if (!response.ok) {
+            var error = new Error(githubMessage(body, 'GitHub returned ' + response.status));
+            error.conflict = !!(body && body.message && body.message.indexOf('does not match') !== -1);
+            throw error;
+          }
+          return body;
+        });
+      });
     }
 
     function publishSchedule() {
@@ -534,34 +577,16 @@
       button.disabled = true;
       button.textContent = 'Publishing…';
 
-      var url = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_PATH;
-      fetch(url + '?ref=' + GH_BRANCH, { headers: githubHeaders(token) })
-        .then(function (response) {
-          return response.json().then(function (body) {
-            if (!response.ok) {
-              throw new Error(githubMessage(body, 'Could not read the live schedule (' + response.status + ').'));
-            }
-            return body;
-          });
-        })
+      githubGet(token)
         .then(function (file) {
-          return fetch(url, {
-            method: 'PUT',
-            headers: githubHeaders(token),
-            body: JSON.stringify({
-              message: 'Update ECE 371 release schedule.',
-              content: utf8ToBase64(generateFile()),
-              sha: file.sha,
-              branch: GH_BRANCH
-            })
-          });
+          return githubPut(token, file.sha);
         })
-        .then(function (response) {
-          return response.json().then(function (body) {
-            if (!response.ok) {
-              throw new Error(githubMessage(body, 'GitHub returned ' + response.status));
-            }
-            return body;
+        .catch(function (err) {
+          if (!err.conflict) {
+            throw err;
+          }
+          return githubGet(token).then(function (file) {
+            return githubPut(token, file.sha);
           });
         })
         .then(function () {
