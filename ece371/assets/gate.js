@@ -29,12 +29,15 @@
   /* -------------------------------------------------------------- schedule */
 
   function parseDate(value) {
+    if (schedule.opensAt) {
+      return schedule.opensAt(value);
+    }
     var parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
     if (!parts) {
       return null;
     }
-    /* Build in local time so a release lands at local midnight, not UTC. */
-    return new Date(+parts[1], +parts[2] - 1, +parts[3]);
+    /* Fallback: 9:00 AM local if an older release.js has no opensAt helper. */
+    return new Date(+parts[1], +parts[2] - 1, +parts[3], 9, 0, 0);
   }
 
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -90,7 +93,7 @@
   /* --------------------------------------------------------------- markup */
 
   function availabilityText(status) {
-    return status.date ? 'Opens ' + formatDate(status.date) : 'Not yet posted';
+    return status.date ? 'Opens ' + formatDate(status.date) + ' at 9:00 AM' : 'Not yet posted';
   }
 
   /* Swaps the link inside a gated element for inert text, so students still
@@ -124,7 +127,7 @@
     badge.className = 'gate-badge';
     badge.textContent = status.date ? formatDate(status.date) : 'hidden';
     badge.title = status.date
-      ? 'Hidden from students until ' + formatDate(status.date)
+      ? 'Hidden from students until 9:00 AM Eastern on ' + formatDate(status.date)
       : 'Hidden from students';
     element.appendChild(badge);
     element.classList.add('is-admin-hidden');
@@ -190,7 +193,7 @@
     var message = document.createElement('p');
     message.className = 'gate-page-message';
     message.textContent = status.date
-      ? 'This handout opens on ' + formatDate(status.date) + '.'
+      ? 'This handout opens at 9:00 AM Eastern on ' + formatDate(status.date) + '.'
       : 'This handout has not been posted yet.';
 
     var hint = document.createElement('p');
@@ -220,7 +223,7 @@
     var notice = document.createElement('p');
     notice.className = 'gate-admin-notice';
     notice.textContent = status.date
-      ? 'Students cannot see this page until ' + formatDate(status.date) + '.'
+      ? 'Students cannot see this page until 9:00 AM Eastern on ' + formatDate(status.date) + '.'
       : 'Students cannot see this page yet.';
     main.insertBefore(notice, main.firstChild);
   }

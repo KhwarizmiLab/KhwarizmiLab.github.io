@@ -1,16 +1,14 @@
 /*
  * Release schedule — controls what students can open, and when.
  *
- * This file is the single source of truth for the whole site. Edit it by hand,
- * or use admin.html to click through the changes and download a replacement
- * copy. Either way the change only reaches students once this file is
- * committed and deployed.
+ * Edit this from admin.html and click Publish. Dated items open on their
+ * own at 9:00 AM Eastern — you do not need to come back on the release day.
  *
  * Each entry takes one of three values:
  *
  *   'open'         visible to students immediately
  *   'locked'       hidden from students until you change it
- *   'YYYY-MM-DD'   unlocks for students at midnight (local time) on that date
+ *   'YYYY-MM-DD'   unlocks for students at 9:00 AM Eastern on that date
  *
  * Instructors always see everything regardless of what is set here.
  */
@@ -50,4 +48,25 @@ window.ECE371Release = {
     'lab-4': '2026-11-12',
     'lab-5': '2026-12-03'
   }
+};
+
+/* 9:00 AM America/New_York on YYYY-MM-DD, including DST. */
+window.ECE371Release.opensAt = function (value) {
+  var parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!parts) {
+    return null;
+  }
+  var guess = new Date(Date.UTC(+parts[1], +parts[2] - 1, +parts[3], 14, 0, 0));
+  var hour = parseInt(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    hour12: false,
+    hourCycle: 'h23'
+  }).format(guess), 10);
+  if (hour === 10) {
+    guess = new Date(guess.getTime() - 60 * 60 * 1000);
+  } else if (hour === 8) {
+    guess = new Date(guess.getTime() + 60 * 60 * 1000);
+  }
+  return guess;
 };
