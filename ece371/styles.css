@@ -1103,7 +1103,8 @@ td.week-cell {
 .page-calendar td.day-lecture,
 .page-calendar td.day-lab,
 .page-calendar td.day-tba,
-.page-calendar td.day-off {
+.page-calendar td.day-off,
+.page-calendar td.day-exam {
   border-left: 4px solid transparent;
 }
 
@@ -1115,6 +1116,11 @@ td.week-cell {
 .page-calendar td.day-lab {
   background: var(--accent-teal-50);
   border-left-color: var(--accent-teal-700);
+}
+
+.page-calendar td.day-exam {
+  background: var(--accent-bronze-50);
+  border-left-color: var(--accent-bronze-700);
 }
 
 /* Dashed edge reads as "not settled yet" without spending another hue. */
@@ -1172,6 +1178,11 @@ td.week-cell {
 .legend-swatch--lab {
   background: var(--accent-teal-50);
   border-left-color: var(--accent-teal-700);
+}
+
+.legend-swatch--exam {
+  background: var(--accent-bronze-50);
+  border-left-color: var(--accent-bronze-700);
 }
 
 .legend-swatch--tba {
@@ -1876,8 +1887,101 @@ td.week-cell {
   color: var(--accent-teal-700);
 }
 
-.admin-status.is-hidden {
-  color: var(--accent-rust-700);
+.admin-session {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--maroon);
+  border-radius: 4px;
+}
+
+.admin-session.day-lab {
+  border-left-color: var(--accent-teal-700);
+  background: var(--accent-teal-50);
+}
+
+.admin-session.day-exam {
+  border-left-color: var(--accent-bronze-700);
+  background: var(--accent-bronze-50);
+}
+
+.admin-session.day-off {
+  border-left-color: var(--ink-light);
+  background: var(--stone);
+}
+
+.admin-session.day-tba {
+  border-left-style: dashed;
+  border-left-color: var(--border-strong);
+  background: var(--cream);
+}
+
+.admin-session-title {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+.admin-session-grid,
+.admin-file-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-items: end;
+  margin-bottom: 0.5rem;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.admin-title {
+  min-width: 16rem;
+  flex: 1 1 16rem;
+  padding: 0.3rem 0.45rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+}
+
+.admin-kind,
+.admin-tag-add {
+  padding: 0.3rem 0.4rem;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+}
+
+.admin-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.admin-tag {
+  padding: 0.15rem 0.45rem;
+  color: var(--note-text);
+  background: var(--note-bg);
+  border: 1px solid var(--note-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-file-name {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
 }
 
 @media (max-width: 720px) {

@@ -11,7 +11,9 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="assets/auth.js"></script>
+  <script src="assets/calendar-data.js"></script>
   <script src="assets/release.js"></script>
+  <script src="assets/calendar-render.js" defer></script>
   <script src="assets/gate.js" defer></script>
 
 </head>
@@ -61,20 +63,12 @@
       <div class="split-grid">
         <div>
           <h3 class="sub-heading">Assignments</h3>
-          <ul class="link-list">
-            <li data-gate="assignment-1"><a href="assets/assignment/assignment1.html">Assignment 1</a></li>
-            <li data-gate="assignment-2"><a href="assets/assignment/assignment2.html">Assignment 2</a></li>
-            <li data-gate="assignment-3"><a href="assets/assignment/assignment3.html">Assignment 3</a></li>
+          <ul class="link-list" id="assignment-list">
           </ul>
         </div>
         <div>
           <h3 class="sub-heading">Labs</h3>
-          <ul class="link-list">
-            <li data-gate="lab-1"><a href="assets/labs/lab1.html">Lab 1</a></li>
-            <li data-gate="lab-2"><a href="assets/labs/lab2.html">Lab 2</a></li>
-            <li data-gate="lab-3"><a href="assets/labs/lab3.html">Lab 3</a></li>
-            <li data-gate="lab-4"><a href="assets/labs/lab4.html">Lab 4</a></li>
-            <li data-gate="lab-5"><a href="assets/labs/lab5.html">Lab 5</a></li>
+          <ul class="link-list" id="lab-list">
           </ul>
         </div>
       </div>
