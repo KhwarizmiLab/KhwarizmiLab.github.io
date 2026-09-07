@@ -87,6 +87,11 @@
       <label class="admin-token-label" for="gh-token">Token for this publish only</label>
       <input id="gh-token" class="admin-token" type="password" autocomplete="off" spellcheck="false">
       <p id="publish-error" class="admin-publish-error" hidden></p>
+      <p id="token-delete-nudge" class="admin-token-nudge" hidden>
+        GitHub still has this token.
+        <a id="btn-delete-token" href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer">Open token settings and click Delete</a>
+        on <strong>ECE371 one-time publish</strong>.
+      </p>
     </details>
 
     <div id="admin-groups"></div>
@@ -474,21 +479,73 @@
       toast('Generate a new token, paste it, then click Publish.');
     }
 
-    function revokeTokenOnGitHub(token) {
+    function hideDeleteNudge() {
+      document.getElementById('token-delete-nudge').hidden = true;
+    }
+
+    function showDeleteNudge() {
+      document.getElementById('publish-setup').open = true;
+      document.getElementById('token-delete-nudge').hidden = false;
+    }
+
+    function tokenStillWorks(token) {
+      return fetch('https://api.github.com/user', {
+        headers: {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer ' + token
+        },
+        cache: 'no-store',
+        credentials: 'omit'
+      }).then(function (response) {
+        return response.ok;
+      }).catch(function () {
+        return false;
+      });
+    }
+
+    function sendRevoke(token) {
       return fetch('https://api.github.com/credentials/revoke', {
         method: 'POST',
         headers: {
           'Accept': 'application/vnd.github+json',
-          'Content-Type': 'application/json',
-          'X-GitHub-Api-Version': '2022-11-28'
+          'Content-Type': 'application/json'
         },
         cache: 'no-store',
+        credentials: 'omit',
         body: JSON.stringify({ credentials: [token] })
       }).then(function (response) {
         return response.status === 202 || response.ok;
       }).catch(function () {
         return false;
       });
+    }
+
+    function wait(ms) {
+      return new Promise(function (resolve) {
+        window.setTimeout(resolve, ms);
+      });
+    }
+
+    function revokeAndConfirm(token) {
+      return sendRevoke(token)
+        .then(function () {
+          return wait(800);
+        })
+        .then(function () {
+          return tokenStillWorks(token);
+        })
+        .then(function (alive) {
+          if (!alive) {
+            return true;
+          }
+          return sendRevoke(token).then(function () {
+            return wait(800);
+          }).then(function () {
+            return tokenStillWorks(token);
+          }).then(function (stillAlive) {
+            return !stillAlive;
+          });
+        });
     }
 
     function githubHeaders(token) {
@@ -576,11 +633,12 @@
 
     function publishSchedule() {
       var tokenField = document.getElementById('gh-token');
-      var token = tokenField.value.trim();
+      var token = tokenField.value.replace(/\s+/g, '');
       var button = document.getElementById('btn-publish');
       var errorBox = document.getElementById('publish-error');
       errorBox.hidden = true;
       errorBox.textContent = '';
+      hideDeleteNudge();
       if (!token) {
         promptForNewToken();
         return;
@@ -604,13 +662,14 @@
         .then(function () {
           markPublished();
           clearTokenField();
-          return revokeTokenOnGitHub(token).then(function (revoked) {
+          return revokeAndConfirm(token).then(function (revoked) {
             if (revoked) {
+              hideDeleteNudge();
               toast('Published. Token deleted here and revoked on GitHub.', 8000);
               return;
             }
-            window.open(TOKEN_LIST_URL, '_blank', 'noopener');
-            toast('Published. Token cleared here — delete it on the GitHub tab that just opened.', 8000);
+            showDeleteNudge();
+            toast('Published here, but GitHub still has the token. Use the Delete link below.', 10000);
           });
         })
         .catch(function (err) {

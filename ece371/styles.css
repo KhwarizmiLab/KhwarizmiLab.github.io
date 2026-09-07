@@ -1780,6 +1780,17 @@ td.week-cell {
   font-weight: 600;
 }
 
+.admin-token-nudge {
+  margin: 0.75rem 0 0;
+  padding: 0.6rem 0.75rem;
+  color: var(--accent-rust-700);
+  background: var(--surface);
+  border: 1px solid var(--accent-rust-700);
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
 .admin-toast {
   color: var(--accent-teal-700);
   font-size: 0.875rem;
