@@ -560,9 +560,9 @@
       refreshAll();
     });
 
-    grid.appendChild(labeled('Date', date));
-    grid.appendChild(labeled('Title', title));
-    grid.appendChild(labeled('Block color', kind));
+    grid.appendChild(labeled('Date', date, 'admin-field-date'));
+    grid.appendChild(labeled('Title', title, 'admin-field-title'));
+    grid.appendChild(labeled('Block color', kind, 'admin-field-kind'));
     card.appendChild(grid);
     card.appendChild(renderTags(session));
 
@@ -604,9 +604,9 @@
     return card;
   }
 
-  function labeled(text, control) {
+  function labeled(text, control, extraClass) {
     var label = document.createElement('label');
-    label.className = 'admin-field';
+    label.className = extraClass ? 'admin-field ' + extraClass : 'admin-field';
     var span = document.createElement('span');
     span.textContent = text;
     label.appendChild(span);

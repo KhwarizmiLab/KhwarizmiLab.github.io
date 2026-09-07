@@ -1814,6 +1814,7 @@ td.week-cell {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem 1rem;
+  max-width: 34rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border);
 }
@@ -1825,8 +1826,8 @@ td.week-cell {
 .admin-row-name {
   display: flex;
   flex-direction: column;
-  min-width: 16rem;
-  flex: 1 1 20rem;
+  min-width: 0;
+  flex: 1 1 12rem;
 }
 
 .admin-row-detail {
@@ -1888,8 +1889,9 @@ td.week-cell {
 }
 
 .admin-session {
+  max-width: 34rem;
   margin: 0 0 1rem;
-  padding: 0.85rem 1rem;
+  padding: 0.75rem 0.85rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 4px solid var(--maroon);
@@ -1922,32 +1924,50 @@ td.week-cell {
   font-size: 0.95rem;
 }
 
-.admin-session-grid,
+.admin-session-grid {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(8rem, 1fr);
+  gap: 0.45rem 0.75rem;
+  align-items: end;
+  margin-bottom: 0.5rem;
+}
+
+.admin-session-grid .admin-field-title {
+  grid-column: 1 / -1;
+}
+
 .admin-file-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem 1rem;
+  gap: 0.45rem 0.75rem;
   align-items: end;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .admin-field {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  min-width: 0;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
 }
 
 .admin-title {
-  min-width: 16rem;
-  flex: 1 1 16rem;
+  width: 100%;
+  max-width: 28rem;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 0.3rem 0.45rem;
   font-family: inherit;
   font-size: 0.875rem;
   border: 1px solid var(--border-strong);
   border-radius: 4px;
+}
+
+.admin-session .admin-title {
+  max-width: none;
 }
 
 .admin-kind,
