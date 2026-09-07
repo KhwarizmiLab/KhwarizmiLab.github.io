@@ -70,25 +70,22 @@
     </section>
 
     <details class="admin-setup" id="publish-setup">
-      <summary>GitHub token (paste once in this browser)</summary>
+      <summary>One-time GitHub token</summary>
       <p>
-        Use a <strong>classic</strong> token, not a fine-grained one. Lab org
-        repos often reject fine-grained tokens with
-        &ldquo;Resource not accessible by personal access token.&rdquo;
+        Each publish needs a <strong>new classic token</strong>. After the
+        schedule is saved, this page deletes the token here and revokes it
+        on GitHub.
       </p>
       <ol class="admin-setup-steps">
         <li>
-          Open
-          <a href="https://github.com/settings/tokens/new?description=ECE371%20schedule%20publish&amp;scopes=public_repo" target="_blank" rel="noopener noreferrer">this GitHub token form</a>
-          (scope <code>public_repo</code> is already checked).
+          Click Publish &mdash; GitHub will open so you can
+          <strong>Generate token</strong> (<code>public_repo</code> is already checked).
         </li>
-        <li>Click <strong>Generate token</strong> and copy it.</li>
-        <li>If GitHub shows <strong>Authorize</strong> next to KhwarizmiLab, click that too.</li>
-        <li>Paste the token below, save it, then Publish again.</li>
+        <li>Paste the token below and click Publish again.</li>
+        <li>If GitHub shows <strong>Authorize</strong> next to KhwarizmiLab, click that first.</li>
       </ol>
-      <label class="admin-token-label" for="gh-token">Token</label>
+      <label class="admin-token-label" for="gh-token">Token for this publish only</label>
       <input id="gh-token" class="admin-token" type="password" autocomplete="off" spellcheck="false">
-      <button type="button" id="btn-save-token" class="admin-btn">Save token</button>
       <p id="publish-error" class="admin-publish-error" hidden></p>
     </details>
 
@@ -117,6 +114,8 @@
 
     var DRAFT_KEY = 'ece371.releaseDraft';
     var TOKEN_KEY = 'ece371.githubToken';
+    var TOKEN_NEW_URL = 'https://github.com/settings/tokens/new?description=ECE371%20one-time%20publish&scopes=public_repo';
+    var TOKEN_LIST_URL = 'https://github.com/settings/tokens';
     var GH_REPO = 'KhwarizmiLab/KhwarizmiLab.github.io';
     var GH_PATH = 'ece371/assets/release.js';
     var GH_BRANCH = 'gh-pages';
@@ -451,31 +450,45 @@
     /* Exposed so the file the panel produces can be exercised directly. */
     window.ECE371Admin = { generateFile: generateFile };
 
-    function toast(message) {
+    function toast(message, ms) {
       toastEl.textContent = message;
       window.setTimeout(function () {
         toastEl.textContent = '';
-      }, 4000);
+      }, ms || 4000);
     }
 
-    function getToken() {
+    function clearTokenField() {
+      var field = document.getElementById('gh-token');
+      field.value = '';
       try {
-        return window.localStorage.getItem(TOKEN_KEY) || '';
+        window.localStorage.removeItem(TOKEN_KEY);
       } catch (err) {
-        return '';
+        /* already gone */
       }
     }
 
-    function setToken(value) {
-      try {
-        if (value) {
-          window.localStorage.setItem(TOKEN_KEY, value);
-        } else {
-          window.localStorage.removeItem(TOKEN_KEY);
-        }
-      } catch (err) {
-        toast('This browser would not store the token.');
-      }
+    function promptForNewToken() {
+      document.getElementById('publish-setup').open = true;
+      document.getElementById('gh-token').focus();
+      window.open(TOKEN_NEW_URL, '_blank', 'noopener');
+      toast('Generate a new token, paste it, then click Publish.');
+    }
+
+    function revokeTokenOnGitHub(token) {
+      return fetch('https://api.github.com/credentials/revoke', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28'
+        },
+        cache: 'no-store',
+        body: JSON.stringify({ credentials: [token] })
+      }).then(function (response) {
+        return response.status === 202 || response.ok;
+      }).catch(function () {
+        return false;
+      });
     }
 
     function githubHeaders(token) {
@@ -513,7 +526,7 @@
     function githubMessage(body, fallback) {
       var text = (body && body.message) || fallback;
       if (text && text.indexOf('Resource not accessible by personal access token') !== -1) {
-        return 'This token cannot write to the Khwarizmi Lab repo. Create a classic token with the public_repo scope (link above), replace the saved token, and Publish again.';
+        return 'This token cannot write to the Khwarizmi Lab repo. Generate a classic token with public_repo, paste it, and Publish again.';
       }
       if (text && text.indexOf('does not match') !== -1) {
         return 'The live schedule changed just now. Click Publish schedule again.';
@@ -562,15 +575,14 @@
     }
 
     function publishSchedule() {
-      var token = getToken() || document.getElementById('gh-token').value.trim();
+      var tokenField = document.getElementById('gh-token');
+      var token = tokenField.value.trim();
       var button = document.getElementById('btn-publish');
       var errorBox = document.getElementById('publish-error');
       errorBox.hidden = true;
       errorBox.textContent = '';
       if (!token) {
-        document.getElementById('publish-setup').open = true;
-        document.getElementById('gh-token').focus();
-        toast('Paste a GitHub token once, save it, then click Publish.');
+        promptForNewToken();
         return;
       }
 
@@ -591,7 +603,15 @@
         })
         .then(function () {
           markPublished();
-          toast('Published. Dated items open automatically at 9:00 AM Eastern.');
+          clearTokenField();
+          return revokeTokenOnGitHub(token).then(function (revoked) {
+            if (revoked) {
+              toast('Published. Token deleted here and revoked on GitHub.', 8000);
+              return;
+            }
+            window.open(TOKEN_LIST_URL, '_blank', 'noopener');
+            toast('Published. Token cleared here — delete it on the GitHub tab that just opened.', 8000);
+          });
         })
         .catch(function (err) {
           showPublishError(err.message || 'Publish failed.');
@@ -604,20 +624,11 @@
 
     document.getElementById('btn-publish').addEventListener('click', publishSchedule);
 
-    (function restoreToken() {
-      var field = document.getElementById('gh-token');
-      var saved = getToken();
-      if (saved) {
-        field.value = saved;
-        field.placeholder = 'Token saved in this browser';
-      }
-    })();
-
-    document.getElementById('btn-save-token').addEventListener('click', function () {
-      var value = document.getElementById('gh-token').value.trim();
-      setToken(value);
-      toast(value ? 'Token saved in this browser.' : 'Token cleared.');
-    });
+    try {
+      window.localStorage.removeItem(TOKEN_KEY);
+    } catch (err) {
+      /* leftover token is gone on next successful publish */
+    }
 
     document.getElementById('btn-today').addEventListener('click', function () {
       var today = todayISO();
