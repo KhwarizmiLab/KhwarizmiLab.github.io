@@ -4,8 +4,6 @@
  * Edit this from admin.html and click Publish. Dated items open on their
  * own at 9:00 AM Eastern — you do not need to come back on the release day.
  *
- * Each entry takes one of three values:
- *
  *   'open'         visible to students immediately
  *   'locked'       hidden from students until you change it
  *   'YYYY-MM-DD'   unlocks for students at 9:00 AM Eastern on that date
@@ -16,7 +14,6 @@ window.ECE371Release = {
   updated: '2026-09-07',
 
   items: {
-    /* Lecture slides default to unlocking on the day of the lecture. */
     'lecture-1': '2026-09-08',
     'lecture-2': '2026-09-10',
     'lecture-3': '2026-09-15',
@@ -35,13 +32,9 @@ window.ECE371Release = {
     'lecture-16': '2026-11-19',
     'lecture-17': '2026-12-01',
     'lecture-18': '2026-12-08',
-
-    /* Assignments open roughly two weeks before they are due. */
     'assignment-1': '2026-09-10',
     'assignment-2': '2026-09-24',
     'assignment-3': '2026-10-22',
-
-    /* Labs open on the day of their matching lab lecture. */
     'lab-1': '2026-09-22',
     'lab-2': '2026-10-01',
     'lab-3': '2026-10-27',
