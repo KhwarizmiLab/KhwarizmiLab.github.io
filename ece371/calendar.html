@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ECE 371 weekly lecture calendar — slides, due dates, and holidays for Fall 2026.">
+  <title>Calendar - ECE 371/371H - Security Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/auth.js"></script>
+  <script src="assets/release.js"></script>
+  <script src="assets/gate.js" defer></script>
+
+</head>
+<body class="page-calendar">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-left">
+      <h1><a href="home.html">ECE 371/371H - Introduction to Security Engineering</a></h1>
+      <p class="header-meta">UMass Amherst · ECE Department · Fall 2026</p>
+    </div>
+    <div class="header-right">
+      <a href="https://www.engineering.umass.edu/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="assets/umass-engineering-logo.png"
+          alt="UMass Amherst Daniel J. Riccio Jr. College of Engineering"
+          class="site-logo"
+          width="800"
+          height="246"
+        >
+      </a>
+    </div>
+  </header>
+
+  <div class="site-top">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="calendar.html" class="nav-key" aria-current="page">Calendar</a></li>
+        <li><a href="assignments.html" class="nav-key">Assignments</a></li>
+        <li><a href="staff.html" class="nav-key">Staff</a></li>
+      </ul>
+    </nav>
+
+    <div class="textbook-banner textbook-banner-compact">
+      <p>
+        <strong>Textbook:</strong>
+        <a href="http://www.cl.cam.ac.uk/~rja14/book.html" target="_blank" rel="noopener noreferrer">Security Engineering<span class="visually-hidden"> (opens in new tab)</span></a>
+        <span class="textbook-free">Free online</span>
+      </p>
+    </div>
+  </div>
+
+
+  <main id="main-content" class="page-main page-calendar-main">
+<p class="page-guide">Each row is one week. Open <strong>[slides]</strong> after class. Yellow tags show due dates and holidays.</p>
+    <section class="calendar-section" aria-labelledby="calendar-heading">
+      <div class="calendar-toolbar">
+        <h2 id="calendar-heading">Course Calendar</h2>
+        <span class="schedule-compact">
+          <span class="schedule-highlight" data-requires="student"><strong>Tue/Thu</strong> 10:00&ndash;11:15 AM</span>
+          <span class="schedule-highlight schedule-highlight--teal" data-requires="student"><strong>Hasbrouck Lab Add.</strong> room 124</span>
+          <span class="locked-hint" data-signed-out><a href="login.html">Log in</a> for meeting time and room</span>
+        </span>
+      </div>
+
+      <ul class="calendar-legend">
+        <li><span class="legend-swatch legend-swatch--lecture"></span>Lecture</li>
+        <li><span class="legend-swatch legend-swatch--lab"></span>Lab session</li>
+        <li><span class="legend-swatch legend-swatch--tba"></span>To be announced</li>
+        <li><span class="legend-swatch legend-swatch--off"></span>No class</li>
+      </ul>
+
+      <div class="table-wrap table-wrap-primary">
+      <table aria-describedby="calendar-heading">
+        <caption class="table-caption">Weekly schedule — open <strong>[slides]</strong> for lecture PDFs; yellow tags mark due dates and holidays. Labs are due Tuesdays, assignments Thursdays, never in the same week.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Week</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Thursday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="week-cell">1</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/8:</span></div>
+                <div class="entry-content">Syllabus &amp; Introduction to Security Engineering</div>
+                <div class="entry-line" data-gate="lecture-1"><a href="assets/slides/Lecture1.pdf">[slides]</a></div>
+                <div class="entry-line note">First day of classes</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/10:</span></div>
+                <div class="entry-content">Introduction to Security, Labs &amp; Software Security</div>
+                <div class="entry-line" data-gate="lecture-2"><a href="assets/slides/Lecture2.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">2</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/15:</span></div>
+                <div class="entry-content">Key Security Functions</div>
+                <div class="entry-line" data-gate="lecture-3"><a href="assets/slides/Lecture3.pdf">[slides]</a></div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/17:</span></div>
+                <div class="entry-content">Encryption Basics</div>
+                <div class="entry-line" data-gate="lecture-4"><a href="assets/slides/Lecture4.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">3</td>
+            <td class="day-lab">
+              <div>
+                <div><span class="entry-date">9/22:</span></div>
+                <div class="entry-content">Lab: Buffer Overflow</div>
+                <div class="entry-line"><a href="assets/labs/lab1.html">[lab handout]</a></div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/24:</span></div>
+                <div class="entry-content">Random Functions &amp; Hashes</div>
+                <div class="entry-line" data-gate="lecture-5"><a href="assets/slides/Lecture5.pdf">[slides]</a></div>
+                <div class="entry-line note">Assignment 1 due</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">4</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">9/29:</span></div>
+                <div class="entry-content">Symmetric-Key Encryption: DES &amp; AES</div>
+                <div class="entry-line" data-gate="lecture-6"><a href="assets/slides/Lecture6.pdf">[slides]</a></div>
+              </div>
+            </td>
+            <td class="day-lab">
+              <div>
+                <div><span class="entry-date">10/1:</span></div>
+                <div class="entry-content">Lab: AES and Encryption Schemes</div>
+                <div class="entry-line"><a href="assets/labs/lab2.html">[lab handout]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">5</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/6:</span></div>
+                <div class="entry-content">Public-Key Encryption: RSA</div>
+                <div class="entry-line" data-gate="lecture-7"><a href="assets/slides/Lecture7.pdf">[slides]</a></div>
+                <div class="entry-line note">Lab 1 due</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/8:</span></div>
+                <div class="entry-content">Diffie-Hellman &amp; Digital Signatures</div>
+                <div class="entry-line" data-gate="lecture-8"><a href="assets/slides/Lecture8.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">6</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/13:</span></div>
+                <div class="entry-content">Network Security: Fundamentals</div>
+                <div class="entry-line" data-gate="lecture-9"><a href="assets/slides/Lecture9.pdf">[slides]</a></div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/15:</span></div>
+                <div class="entry-content">Network Security: DoS &amp; TCP Attacks</div>
+                <div class="entry-line" data-gate="lecture-10"><a href="assets/slides/Lecture10.pdf">[slides]</a></div>
+                <div class="entry-line note">Assignment 2 due</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">7</td>
+            <td class="day-tba">
+              <div>
+                <div><span class="entry-date">10/20:</span></div>
+                <div class="entry-content">To be announced</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/22:</span></div>
+                <div class="entry-content">Authentication &amp; Key Agreement: Wireless Security</div>
+                <div class="entry-line" data-gate="lecture-11"><a href="assets/slides/Lecture11.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">8</td>
+            <td class="day-lab">
+              <div>
+                <div><span class="entry-date">10/27:</span></div>
+                <div class="entry-content">Lab: Secure Hashing and Network Security</div>
+                <div class="entry-line"><a href="assets/labs/lab3.html">[lab handout]</a></div>
+                <div class="entry-line note">Lab 2 due</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">10/29:</span></div>
+                <div class="entry-content">Side-Channel Attacks</div>
+                <div class="entry-line" data-gate="lecture-12"><a href="assets/slides/Lecture12.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">9</td>
+            <td class="day-off">
+              <div>
+                <div><span class="entry-date">11/3:</span></div>
+                <div class="entry-content no-class">No class &mdash; Election Day</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">11/5:</span></div>
+                <div class="entry-content">Security Middleboxes: Firewalls &amp; IDS</div>
+                <div class="entry-line" data-gate="lecture-13"><a href="assets/slides/Lecture13.pdf">[slides]</a></div>
+                <div class="entry-line note">Assignment 3 due</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">10</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">11/10:</span></div>
+                <div class="entry-content">Cloud Security: Infrastructure Security (SDN)</div>
+                <div class="entry-line" data-gate="lecture-14"><a href="assets/slides/Lecture14.pdf">[slides]</a></div>
+              </div>
+            </td>
+            <td class="day-lab">
+              <div>
+                <div><span class="entry-date">11/12:</span></div>
+                <div class="entry-content">Lab: Hardware Security Primitives &mdash; LFSR, PRNG</div>
+                <div class="entry-line"><a href="assets/labs/lab4.html">[lab handout]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">11</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">11/17:</span></div>
+                <div class="entry-content">Adversarial Machine Learning</div>
+                <div class="entry-line" data-gate="lecture-15"><a href="assets/slides/Lecture15.pdf">[slides]</a></div>
+                <div class="entry-line note">Lab 3 due</div>
+              </div>
+            </td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">11/19:</span></div>
+                <div class="entry-content">Bias in the Vision &amp; Language of AI</div>
+                <div class="entry-line" data-gate="lecture-16"><a href="assets/slides/Lecture16.pdf">[slides]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">12</td>
+            <td class="day-off">
+              <div>
+                <div><span class="entry-date">11/24:</span></div>
+                <div class="entry-content no-class">No class &mdash; Wednesday schedule observed</div>
+              </div>
+            </td>
+            <td class="day-off">
+              <div>
+                <div><span class="entry-date">11/26:</span></div>
+                <div class="entry-content no-class">No class &mdash; Thanksgiving recess</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">13</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">12/1:</span></div>
+                <div class="entry-content">Ethics in Security</div>
+                <div class="entry-line" data-gate="lecture-17"><a href="assets/slides/Lecture17.pdf">[slides]</a></div>
+                <div class="entry-line note">Classes resume</div>
+                <div class="entry-line note">Lab 4 due</div>
+              </div>
+            </td>
+            <td class="day-lab">
+              <div>
+                <div><span class="entry-date">12/3:</span></div>
+                <div class="entry-content">Lab: Power Side Channel Analysis</div>
+                <div class="entry-line"><a href="assets/labs/lab5.html">[lab handout]</a></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">14</td>
+            <td class="day-lecture">
+              <div>
+                <div><span class="entry-date">12/8:</span></div>
+                <div class="entry-content">Quantum Security</div>
+                <div class="entry-line" data-gate="lecture-18"><a href="assets/slides/Lecture18.pdf">[slides]</a></div>
+              </div>
+            </td>
+            <td class="day-tba">
+              <div>
+                <div><span class="entry-date">12/10:</span></div>
+                <div class="entry-content">To be announced</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="week-cell">15</td>
+            <td class="day-tba">
+              <div>
+                <div><span class="entry-date">12/15:</span></div>
+                <div class="entry-content">To be announced</div>
+                <div class="entry-line note">Lab 5 due</div>
+                <div class="entry-line note">Last day of classes</div>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+
+                </tbody>
+      </table>
+      </div>
+
+      <details class="calendar-notes">
+        <summary>Schedule notes</summary>
+        <p><strong>Labs are due on Tuesdays and assignments on Thursdays</strong>, on class days. A lab and an assignment are never due in the same week, so you always have a full week between deadlines.</p>
+        <p>Exam dates are not set yet and will be posted here once confirmed.</p>
+        <p>Dates are tentative. Slides posted after each lecture. No class when another day&rsquo;s schedule is observed on Tue/Thu. Class held when a deferred session is scheduled.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ECE 371/371H &mdash; Security Engineering &middot; University of Massachusetts Amherst</p>
+    <p>Department of Electrical and Computer Engineering</p>
+  </footer>
+
+
+</body>
+</html>

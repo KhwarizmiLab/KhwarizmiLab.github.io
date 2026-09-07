@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Sign in to the ECE 371/371H Security Engineering course site.">
+  <title>Sign In - ECE 371/371H - Security Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/auth.js" data-auth="login"></script>
+</head>
+<body class="page-login">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-left">
+      <h1><a href="home.html">ECE 371/371H - Introduction to Security Engineering</a></h1>
+      <p class="header-meta">UMass Amherst · ECE Department · Fall 2026</p>
+    </div>
+    <div class="header-right">
+      <a href="https://www.engineering.umass.edu/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="assets/umass-engineering-logo.png"
+          alt="UMass Amherst Daniel J. Riccio Jr. College of Engineering"
+          class="site-logo"
+          width="800"
+          height="246"
+        >
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="login-card" aria-labelledby="login-heading">
+      <h2 id="login-heading">Sign in</h2>
+      <p class="login-intro">Signing in adds the meeting time and room, staff contact details, and the lecture slides and handouts. Use the credentials given in the first lecture or on Canvas.</p>
+
+      <form id="login-form" novalidate>
+        <p id="login-error" class="login-error" role="alert" hidden></p>
+
+        <div class="login-field">
+          <label for="login-username">Username</label>
+          <input
+            type="text"
+            id="login-username"
+            name="username"
+            autocomplete="username"
+            autocapitalize="none"
+            autocorrect="off"
+            spellcheck="false"
+            required
+          >
+        </div>
+
+        <div class="login-field">
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            name="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="login-submit">Sign in</button>
+      </form>
+
+      <p class="login-help">Trouble signing in? Email the instructor at <a href="mailto:taqi@umass.edu">taqi@umass.edu</a>.</p>
+      <p class="login-help">You can also <a href="home.html">browse the public course pages</a> without signing in.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ECE 371/371H &mdash; Security Engineering &middot; University of Massachusetts Amherst</p>
+    <p>Department of Electrical and Computer Engineering</p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var auth = window.ECE371Auth;
+      var params = new URLSearchParams(window.location.search);
+      var next = auth.safeNext(params.get('next'));
+      var destination = next || auth.homeUrl;
+
+      if (auth.session()) {
+        window.location.replace(destination);
+        return;
+      }
+
+      var form = document.getElementById('login-form');
+      var username = document.getElementById('login-username');
+      var password = document.getElementById('login-password');
+      var error = document.getElementById('login-error');
+
+      username.focus();
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (auth.signIn(username.value, password.value)) {
+          window.location.replace(destination);
+          return;
+        }
+
+        error.textContent = 'That username and password combination was not recognized.';
+        error.hidden = false;
+        password.value = '';
+        password.focus();
+      });
+    })();
+  </script>
+</body>
+</html>

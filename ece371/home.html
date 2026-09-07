@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ECE 371/371H Security Engineering course site — calendar, assignments, labs, staff, and syllabus.">
+  <title>ECE 371/371H - Security Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/auth.js"></script>
+  <script src="assets/release.js"></script>
+  <script src="assets/gate.js" defer></script>
+
+</head>
+<body class="page-home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-left">
+      <h1><a href="home.html">ECE 371/371H - Introduction to Security Engineering</a></h1>
+      <p class="header-meta">UMass Amherst · ECE Department · Fall 2026</p>
+    </div>
+    <div class="header-right">
+      <a href="https://www.engineering.umass.edu/" target="_blank" rel="noopener noreferrer">
+        <img
+          src="assets/umass-engineering-logo.png"
+          alt="UMass Amherst Daniel J. Riccio Jr. College of Engineering"
+          class="site-logo"
+          width="800"
+          height="246"
+        >
+      </a>
+    </div>
+  </header>
+
+  <div class="site-top">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="home.html" aria-current="page">Home</a></li>
+        <li><a href="calendar.html" class="nav-key">Calendar</a></li>
+        <li><a href="assignments.html" class="nav-key">Assignments</a></li>
+        <li><a href="staff.html" class="nav-key">Staff</a></li>
+      </ul>
+    </nav>
+
+    <div class="textbook-banner textbook-banner-compact">
+      <p>
+        <strong>Textbook:</strong>
+        <a href="http://www.cl.cam.ac.uk/~rja14/book.html" target="_blank" rel="noopener noreferrer">Security Engineering<span class="visually-hidden"> (opens in new tab)</span></a>
+        <span class="textbook-free">Free online</span>
+      </p>
+    </div>
+  </div>
+
+
+  <main id="main-content" class="page-main">
+<p class="page-guide">New to the course? Use the three buttons below — <strong>Calendar</strong> for schedule and slides, <strong>Assignments</strong> for homework and labs, <strong>Staff</strong> for help.</p>
+    <section class="quick-access" aria-labelledby="quick-access-heading">
+      <h2 id="quick-access-heading">Start Here</h2>
+      <div class="quick-grid">
+        <a class="quick-card quick-card-primary" href="calendar.html">
+          <span class="quick-label">Calendar &rarr;</span>
+          <span class="quick-desc">When is class? Get slides. See what&rsquo;s due.</span>
+        </a>
+        <a class="quick-card quick-card-primary quick-card--work" href="assignments.html">
+          <span class="quick-label">Assignments &amp; Labs &rarr;</span>
+          <span class="quick-desc">Open homework and lab instructions.</span>
+        </a>
+        <a class="quick-card quick-card-primary quick-card--staff" href="staff.html">
+          <span class="quick-label">Staff &rarr;</span>
+          <span class="quick-desc">Email instructor or TAs. Office hours &amp; Zoom.</span>
+        </a>
+      </div>
+      <ul class="at-a-glance">
+        <li data-requires="student"><strong>When:</strong> Tue &amp; Thu, 10:00&ndash;11:15 AM</li>
+        <li data-requires="student"><strong>Where:</strong> Hasbrouck Lab Add., room 124</li>
+        <li data-requires="student"><strong>Office hours:</strong> 2:30&ndash;3:30 PM Tue/Thu, KEB 309H (Taqi Raza)</li>
+        <li data-signed-out class="locked-hint"><strong>Meeting time, room &amp; office hours:</strong> <a href="login.html">log in</a> to view</li>
+        <li><strong>Instructors:</strong> Taqi Raza &amp; Nikhil Saxena &middot; <a href="staff.html">details</a></li>
+        <li><strong>Exams:</strong> dates to be announced &middot; see <a href="calendar.html">calendar</a></li>
+        <li><strong>Deadlines:</strong> labs due Tuesdays, assignments due Thursdays &mdash; never the same week</li>
+      </ul>
+    </section>
+
+    <section class="essentials-section" aria-labelledby="grading-heading">
+      <h2 id="grading-heading">Grading</h2>
+      <div class="grading-layout">
+        <div class="grading-main">
+          <p>Course grades for ECE 371/371H will be determined based on the following breakdown:</p>
+          <ul>
+            <li>In-class Quizzes/Attendance: 10%</li>
+            <li>Assignments: 10%</li>
+            <li>5 Labs: 40%</li>
+            <li>Midterm Exam: 20%</li>
+            <li>Final Exam: 20%</li>
+          </ul>
+        </div>
+        <aside class="grading-aside" aria-label="Grading notes">
+          <p>
+            Extra credit may be available for participation in discussions, Piazza, and optional seminars with essays (to be decided). Please note that assignments and labs are due by the date listed on the <a href="calendar.html">calendar</a> &mdash; labs are due on Tuesdays and assignments on Thursdays, and the two are never due in the same week. Midterm and final exam dates have not been set yet and will be posted on the calendar once confirmed.
+          </p>
+        </aside>
+      </div>
+
+      <details class="syllabus-extra">
+        <summary>Course overview &amp; organization</summary>
+        <div class="details-body">
+          <p>This course provides an introduction to security engineering with an emphasis on threats, vulnerabilities, and countermeasures across hardware, software, and networked systems. Five labs provide hands-on experience analyzing and repairing vulnerabilities.</p>
+          <p>This webpage is the primary source for course information. Canvas is used for grades. Prerequisites: E&amp;C-ENG 241, 231, 214, CompSci 250. Co-requisite: E&amp;C-ENG 322. Expect 12&ndash;15 hours per week.</p>
+        </div>
+      </details>
+
+      <details class="syllabus-extra">
+        <summary>Quizzes and attendance</summary>
+        <div class="details-body" id="attendance-heading">
+          <p>In-class quizzes and attendance count for 10%. <strong>No makeup quizzes.</strong> Notify the instructor before the midterm or final if you need a makeup exam for an approved reason.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="policies-section" aria-labelledby="policies-heading">
+      <h2 id="policies-heading">Policies</h2>
+      <p class="policies-intro">Expand any section below for full policy text.</p>
+
+    <details>
+      <summary>Academic Integrity</summary>
+      <div class="details-body" id="integrity-heading">
+      <p>
+        UMass Amherst is strongly committed to academic integrity, which is defined as completing all academic work without cheating, lying, stealing, or receiving unauthorized assistance from any other person, or using any source of information not appropriately authorized or attributed. As a community, we hold each other accountable and support each other&rsquo;s knowledge and understanding of academic integrity. Academic dishonesty is prohibited in all programs of the University and includes but is not limited to: cheating, fabrication, plagiarism, lying, and facilitating dishonesty, via analogue and digital means. Sanctions may be imposed on any student who has committed or participated in an academic integrity infraction. Any person who has reason to believe that a student has committed an academic integrity infraction should bring such information to the attention of the appropriate course instructor as soon as possible. All students at the University of Massachusetts Amherst have read and acknowledged the Commitment to Academic Integrity and are knowingly responsible for completing all work with integrity and in accordance with the policy: (<a href="https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy">https://www.umass.edu/senate/book/academic-regulations-academic-integrity-policy</a>).
+      </p>
+      <p>
+        <strong>Special note on using generative AI for assignments:</strong> The purpose of the assignments and labs is to provide familiarity and experience with security engineering topics in practice. The purpose of the exams is to assess your command of the topics learned in the class from attending lectures, reading the book, and working on assignments and labs. Given that context, you may use generative AI tools, such as ChatGPT, Copilot, Gemini, etc., on assignments and labs with some important caveats. First, the purpose of the assignments and labs is to gain familiarity with the course topics and to prepare you for the exams. Second, if any submission has significant work that is largely the same as another student&rsquo;s submission, this qualifies as plagiarism and the academic integrity policy above will apply regardless of whether the output was generated independently by AI or directly copied from another student. In general, AI tools should not be used to simply generate solutions, but as an aid in programming and analysis, such as for correcting syntax, finding bugs, asking questions you might otherwise ask myself or a TA, etc. While these tools are useful for learning complex concepts, it is essential you remain part of the problem solving loop. If it is not clear how you arrived at a solution, you may be asked to orally defend your answer.
+      </p>
+      <p>
+        Finally, if these tools are used, you are required to provide a disclosure as to how they were utilized to formulate problem solutions. Use of AI for exams and quizzes is strictly disallowed and if discovered will result in a zero for the exam or quiz, potentially with other disciplinary action according to the guidelines of the university.
+      </p>
+      <p>Each class you enroll in may have different policies &mdash; if you have any questions make sure that you ask!</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Accommodation Statement</summary>
+      <div class="details-body" id="accommodation-heading">
+      <p>
+        The University of Massachusetts Amherst is committed to providing an equal educational opportunity for all students. If you have a documented physical, psychological, or learning disability on file with Disability Services (DS), you may be eligible for reasonable academic accommodations to help you succeed in this course. If you have a documented disability that requires an accommodation, please notify me within the first two weeks of the semester so that we may make appropriate arrangements. For further information, please visit Disability Services (<a href="https://www.umass.edu/disability/">https://www.umass.edu/disability/</a>).
+      </p>
+      <p>
+        Your success in this class is important to me. We all learn differently and bring different strengths and needs to the class. The University of Massachusetts Amherst is committed to making reasonable, effective, and appropriate accommodations to meet the needs of all students and help create a barrier-free campus. If you have a documented disability on file with Disability Services, please login to Clockwork and select this class if you believe you will need accommodations. Disability Services staff will then provide you note access. This is your responsibility. If you are eligible for exam accommodations, I will ask you to use the Disability Services exam proctoring center. Contact Disability Services immediately and comply with their exam scheduling policies, including the requirement that you book your exams at least seven days in advance of the exam date. Exam dates for this class have not been scheduled yet; they will be posted on the <a href="calendar.html">calendar</a> as soon as they are confirmed, with enough notice for you to book proctoring.
+      </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Title IX Statement</summary>
+      <div class="details-body" id="titleix-heading">
+      <p>
+        In accordance with Title IX of the Education Amendments of 1972 that prohibits gender-based discrimination in educational settings that receive federal funds, the University of Massachusetts Amherst is committed to providing a safe learning environment for all students, free from all forms of discrimination, including sexual assault, sexual harassment, domestic violence, dating violence, stalking, and retaliation. This includes interactions in person or online through digital platforms and social media. Title IX also protects against discrimination on the basis of pregnancy, childbirth, false pregnancy, miscarriage, abortion, or related conditions, including recovery. There are resources here on campus to support you. A summary of the available Title IX resources (confidential and non-confidential) can be found at the following link: <a href="https://www.umass.edu/titleix/resources">https://www.umass.edu/titleix/resources</a>. You do not need to make a formal report to access them. If you need immediate support, you are not alone. Free and confidential support is available 24 hours a day / 7 days a week / 365 days a year at the SASA Hotline 413-545-0800.
+      </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Inclusivity</summary>
+      <div class="details-body" id="inclusivity-heading">
+      <p>
+        Everyone should feel that they are an integral part of this community. A diversity of perspective and experience provides a valuable source of ideas, problem solving strategies, and engineering creativity. If you feel that your contribution is not being valued or respected for any reason, please speak with me privately. If you wish to communicate anonymously, you may do so in writing or speak with Dr. Paula Rees, Director of Engineering Diversity Programs (<a href="mailto:rees@umass.edu">rees@umass.edu</a>, 413.545.6324, Marston 128).
+      </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Health and Wellbeing</summary>
+      <div class="details-body" id="wellbeing-heading">
+      <p>
+        Your health and wellbeing are important to us, and we are committed to helping you thrive and succeed. Success in this course and college in general depends heavily on your personal health and wellbeing. Recognize that while some stress is an expected part of the college experience, it can be compounded by unexpected setbacks or life changes outside the classroom. Strive to reframe challenges as an unavoidable pathway to success. Reflect on your role in taking care of yourself before the demands of exams and projects reach their peak. Please feel free to reach out to me about any difficulty you may have that may impact your performance as soon as it occurs and before it becomes too overwhelming.
+      </p>
+      <p>
+        Within the College, in addition to myself, you may also reach out to your academic advisor, the Office of Student Affairs (<a href="mailto:coeadvising@umass.edu">coeadvising@umass.edu</a>), and the Office of Diversity, Equity, and Inclusion (<a href="mailto:engindiversity@umass.edu">engindiversity@umass.edu</a>) for support navigating support resources. I encourage you to contact support services on campus that stand ready to assist you. Remember that as your instructor, I am here to help you find the resources you need.
+      </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Pronouns and Names</summary>
+      <div class="details-body" id="pronouns-heading">
+      <p>
+        Everyone has the right to be addressed by the name and pronouns that they use for themselves. Students can indicate their preferred/chosen first name and pronouns on SPIRE, which appear on class rosters. Please let me know what name and pronouns I should use for you if they are not on the roster. Please kindly correct me and fellow classmates when we make mistakes.
+      </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Policy Against Discrimination, Harassment, and Related Interpersonal Violence</summary>
+      <div class="details-body" id="discrimination-heading">
+      <p>
+        In synergy with the aspirations of our department and the college, I strive to ensure that my classroom is a place where all students can not only succeed, but also thrive. Federal and state laws as well as University policies provide several protections to support these efforts.
+      </p>
+      <p>
+        The University of Massachusetts Amherst, through this Policy Against Discrimination, Harassment, and Related Interpersonal Violence prohibits unlawful discrimination, harassment, and retaliation on the basis of race, color, religion, caste, creed, sex, sex stereotypes, sex characteristics, sexual orientation, gender identity and expression, pregnancy and pregnancy-related condition(s), age, marital status, national origin, mental or physical disability, political belief or affiliation, veteran status, genetic information, natural and protective hairstyle, and any other legally protected class of individuals protected from discrimination under state or federal law in any aspect of the access to, admission, employment, or treatment in the University&rsquo;s educational program and activity. The University affirms its commitment to provide a welcoming and respectful work and educational environment, in which all individuals within the University community may benefit from each other&rsquo;s experiences and foster mutual respect and appreciation of divergent views. Any member of the campus community, guest, or other person who acts to deny or limit the access to educational, employment, residential, and/or social programs or activities, benefits, and/or opportunities of any (other) member of the campus community, guest, or visitor on the basis of their actual or perceived membership in classes protected by this Policy will be in violation of this Policy.
+      </p>
+      <p>
+        Please see other important syllabus information at the following link: <a href="https://www.umass.edu/senate/book/required-syllabus-statements">https://www.umass.edu/senate/book/required-syllabus-statements</a>
+      </p>
+      </div>
+    </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ECE 371/371H &mdash; Security Engineering &middot; University of Massachusetts Amherst</p>
+    <p>Department of Electrical and Computer Engineering</p>
+  </footer>
+
+
+</body>
+</html>

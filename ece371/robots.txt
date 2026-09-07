@@ -1,0 +1,7 @@
+# The course pages are public and may be indexed.
+# Course materials and the sign-in page are not.
+User-agent: *
+Allow: /$
+Disallow: /assets/
+Disallow: /login.html
+Disallow: /admin.html
