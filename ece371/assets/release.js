@@ -14,7 +14,7 @@ window.ECE371Release = {
   updated: '2026-09-07',
 
   items: {
-    'lecture-1': '2026-09-07',
+    'lecture-1': '2026-09-10',
     'lecture-2': '2026-09-10',
     'lecture-3': '2026-09-15',
     'lecture-4': '2026-09-17',
