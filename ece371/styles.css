@@ -1763,6 +1763,23 @@ td.week-cell {
   border-radius: 4px;
 }
 
+.admin-setup-steps {
+  margin: 0.5rem 0 0.75rem 1.2rem;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+.admin-setup-steps li {
+  margin: 0.35rem 0;
+}
+
+.admin-publish-error {
+  margin: 0.75rem 0 0;
+  color: var(--accent-rust-700);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
 .admin-toast {
   color: var(--accent-teal-700);
   font-size: 0.875rem;

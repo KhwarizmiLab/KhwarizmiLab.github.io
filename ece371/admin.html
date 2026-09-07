@@ -72,15 +72,24 @@
     <details class="admin-setup" id="publish-setup">
       <summary>GitHub token (paste once in this browser)</summary>
       <p>
-        Publish writes the schedule to the live lab site. Create a
-        <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener noreferrer">fine-grained token</a>
-        with <strong>Contents: Read and write</strong> on
-        <code>KhwarizmiLab/KhwarizmiLab.github.io</code>, paste it here, and save.
-        It stays in this browser only.
+        Use a <strong>classic</strong> token, not a fine-grained one. Lab org
+        repos often reject fine-grained tokens with
+        &ldquo;Resource not accessible by personal access token.&rdquo;
       </p>
+      <ol class="admin-setup-steps">
+        <li>
+          Open
+          <a href="https://github.com/settings/tokens/new?description=ECE371%20schedule%20publish&amp;scopes=public_repo" target="_blank" rel="noopener noreferrer">this GitHub token form</a>
+          (scope <code>public_repo</code> is already checked).
+        </li>
+        <li>Click <strong>Generate token</strong> and copy it.</li>
+        <li>If GitHub shows <strong>Authorize</strong> next to KhwarizmiLab, click that too.</li>
+        <li>Paste the token below, save it, then Publish again.</li>
+      </ol>
       <label class="admin-token-label" for="gh-token">Token</label>
       <input id="gh-token" class="admin-token" type="password" autocomplete="off" spellcheck="false">
       <button type="button" id="btn-save-token" class="admin-btn">Save token</button>
+      <p id="publish-error" class="admin-publish-error" hidden></p>
     </details>
 
     <div id="admin-groups"></div>
@@ -493,9 +502,28 @@
       refreshAll();
     }
 
+    function showPublishError(message) {
+      var box = document.getElementById('publish-error');
+      document.getElementById('publish-setup').open = true;
+      box.hidden = false;
+      box.textContent = message;
+      toast(message);
+    }
+
+    function githubMessage(body, fallback) {
+      var text = (body && body.message) || fallback;
+      if (text && text.indexOf('Resource not accessible by personal access token') !== -1) {
+        return 'This token cannot write to the Khwarizmi Lab repo. Create a classic token with the public_repo scope (link above), replace the saved token, and Publish again.';
+      }
+      return text;
+    }
+
     function publishSchedule() {
       var token = getToken() || document.getElementById('gh-token').value.trim();
       var button = document.getElementById('btn-publish');
+      var errorBox = document.getElementById('publish-error');
+      errorBox.hidden = true;
+      errorBox.textContent = '';
       if (!token) {
         document.getElementById('publish-setup').open = true;
         document.getElementById('gh-token').focus();
@@ -509,10 +537,12 @@
       var url = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + GH_PATH;
       fetch(url + '?ref=' + GH_BRANCH, { headers: githubHeaders(token) })
         .then(function (response) {
-          if (!response.ok) {
-            throw new Error('Could not read the live schedule (' + response.status + '). Check the token.');
-          }
-          return response.json();
+          return response.json().then(function (body) {
+            if (!response.ok) {
+              throw new Error(githubMessage(body, 'Could not read the live schedule (' + response.status + ').'));
+            }
+            return body;
+          });
         })
         .then(function (file) {
           return fetch(url, {
@@ -529,7 +559,7 @@
         .then(function (response) {
           return response.json().then(function (body) {
             if (!response.ok) {
-              throw new Error(body.message || ('GitHub returned ' + response.status));
+              throw new Error(githubMessage(body, 'GitHub returned ' + response.status));
             }
             return body;
           });
@@ -539,7 +569,7 @@
           toast('Published. Dated items open automatically at 9:00 AM Eastern.');
         })
         .catch(function (err) {
-          toast(err.message || 'Publish failed.');
+          showPublishError(err.message || 'Publish failed.');
         })
         .then(function () {
           button.disabled = false;
