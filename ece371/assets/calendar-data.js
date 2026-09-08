@@ -1,5 +1,5 @@
 window.ECE371Calendar = {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "assignments": [
     {
       "id": "assignment-1",
@@ -70,7 +70,7 @@ window.ECE371Calendar = {
         "id": "lecture-1",
         "label": "[slides]",
         "href": "assets/slides/Lecture1.pdf",
-        "release": "2026-09-08"
+        "release": "2026-09-16"
       }
     },
     {

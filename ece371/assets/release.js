@@ -3,7 +3,7 @@
  * Dated items open at 9:00 AM Eastern.
  */
 window.ECE371Release = {
-  updated: '2026-09-07',
+  updated: '2026-09-08',
   items: {
     'assignment-1': '2026-09-10',
     'assignment-2': '2026-09-24',
@@ -13,7 +13,7 @@ window.ECE371Release = {
     'lab-3': '2026-10-27',
     'lab-4': '2026-11-12',
     'lab-5': '2026-12-03',
-    'lecture-1': '2026-09-08',
+    'lecture-1': '2026-09-16',
     'lecture-2': '2026-09-10',
     'lecture-3': '2026-09-15',
     'lecture-4': '2026-09-17',
