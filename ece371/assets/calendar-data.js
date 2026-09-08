@@ -5,19 +5,19 @@ window.ECE371Calendar = {
       "id": "assignment-1",
       "title": "Assignment 1",
       "href": "assets/assignment/assignment1.html",
-      "release": "2026-09-10"
+      "release": "locked"
     },
     {
       "id": "assignment-2",
       "title": "Assignment 2",
       "href": "assets/assignment/assignment2.html",
-      "release": "2026-09-24"
+      "release": "locked"
     },
     {
       "id": "assignment-3",
       "title": "Assignment 3",
       "href": "assets/assignment/assignment3.html",
-      "release": "2026-10-22"
+      "release": "locked"
     }
   ],
   "labs": [
@@ -25,31 +25,31 @@ window.ECE371Calendar = {
       "id": "lab-1",
       "title": "Lab 1",
       "href": "assets/labs/lab1.html",
-      "release": "2026-09-22"
+      "release": "locked"
     },
     {
       "id": "lab-2",
       "title": "Lab 2",
       "href": "assets/labs/lab2.html",
-      "release": "2026-10-01"
+      "release": "locked"
     },
     {
       "id": "lab-3",
       "title": "Lab 3",
       "href": "assets/labs/lab3.html",
-      "release": "2026-10-27"
+      "release": "locked"
     },
     {
       "id": "lab-4",
       "title": "Lab 4",
       "href": "assets/labs/lab4.html",
-      "release": "2026-11-12"
+      "release": "locked"
     },
     {
       "id": "lab-5",
       "title": "Lab 5",
       "href": "assets/labs/lab5.html",
-      "release": "2026-12-03"
+      "release": "locked"
     }
   ],
   "sessions": [
@@ -70,7 +70,7 @@ window.ECE371Calendar = {
         "id": "lecture-1",
         "label": "[slides]",
         "href": "assets/slides/Lecture1.pdf",
-        "release": "2026-09-16"
+        "release": "locked"
       }
     },
     {
@@ -85,7 +85,7 @@ window.ECE371Calendar = {
         "id": "lecture-2",
         "label": "[slides]",
         "href": "assets/slides/Lecture2.pdf",
-        "release": "2026-09-10"
+        "release": "locked"
       }
     },
     {
@@ -100,7 +100,7 @@ window.ECE371Calendar = {
         "id": "lecture-3",
         "label": "[slides]",
         "href": "assets/slides/Lecture3.pdf",
-        "release": "2026-09-15"
+        "release": "locked"
       }
     },
     {
@@ -115,7 +115,7 @@ window.ECE371Calendar = {
         "id": "lecture-4",
         "label": "[slides]",
         "href": "assets/slides/Lecture4.pdf",
-        "release": "2026-09-17"
+        "release": "locked"
       }
     },
     {
@@ -130,7 +130,7 @@ window.ECE371Calendar = {
         "id": "lab-1",
         "label": "[lab handout]",
         "href": "assets/labs/lab1.html",
-        "release": "2026-09-22"
+        "release": "locked"
       }
     },
     {
@@ -150,7 +150,7 @@ window.ECE371Calendar = {
         "id": "lecture-5",
         "label": "[slides]",
         "href": "assets/slides/Lecture5.pdf",
-        "release": "2026-09-24"
+        "release": "locked"
       }
     },
     {
@@ -165,7 +165,7 @@ window.ECE371Calendar = {
         "id": "lecture-6",
         "label": "[slides]",
         "href": "assets/slides/Lecture6.pdf",
-        "release": "2026-09-29"
+        "release": "locked"
       }
     },
     {
@@ -180,7 +180,7 @@ window.ECE371Calendar = {
         "id": "lab-2",
         "label": "[lab handout]",
         "href": "assets/labs/lab2.html",
-        "release": "2026-10-01"
+        "release": "locked"
       }
     },
     {
@@ -200,7 +200,7 @@ window.ECE371Calendar = {
         "id": "lecture-7",
         "label": "[slides]",
         "href": "assets/slides/Lecture7.pdf",
-        "release": "2026-10-06"
+        "release": "locked"
       }
     },
     {
@@ -215,7 +215,7 @@ window.ECE371Calendar = {
         "id": "lecture-8",
         "label": "[slides]",
         "href": "assets/slides/Lecture8.pdf",
-        "release": "2026-10-08"
+        "release": "locked"
       }
     },
     {
@@ -230,7 +230,7 @@ window.ECE371Calendar = {
         "id": "lecture-9",
         "label": "[slides]",
         "href": "assets/slides/Lecture9.pdf",
-        "release": "2026-10-13"
+        "release": "locked"
       }
     },
     {
@@ -250,7 +250,7 @@ window.ECE371Calendar = {
         "id": "lecture-10",
         "label": "[slides]",
         "href": "assets/slides/Lecture10.pdf",
-        "release": "2026-10-15"
+        "release": "locked"
       }
     },
     {
@@ -275,7 +275,7 @@ window.ECE371Calendar = {
         "id": "lecture-11",
         "label": "[slides]",
         "href": "assets/slides/Lecture11.pdf",
-        "release": "2026-10-22"
+        "release": "locked"
       }
     },
     {
@@ -295,7 +295,7 @@ window.ECE371Calendar = {
         "id": "lab-3",
         "label": "[lab handout]",
         "href": "assets/labs/lab3.html",
-        "release": "2026-10-27"
+        "release": "locked"
       }
     },
     {
@@ -310,7 +310,7 @@ window.ECE371Calendar = {
         "id": "lecture-12",
         "label": "[slides]",
         "href": "assets/slides/Lecture12.pdf",
-        "release": "2026-10-29"
+        "release": "locked"
       }
     },
     {
@@ -345,7 +345,7 @@ window.ECE371Calendar = {
         "id": "lecture-13",
         "label": "[slides]",
         "href": "assets/slides/Lecture13.pdf",
-        "release": "2026-11-05"
+        "release": "locked"
       }
     },
     {
@@ -360,7 +360,7 @@ window.ECE371Calendar = {
         "id": "lecture-14",
         "label": "[slides]",
         "href": "assets/slides/Lecture14.pdf",
-        "release": "2026-11-10"
+        "release": "locked"
       }
     },
     {
@@ -375,7 +375,7 @@ window.ECE371Calendar = {
         "id": "lab-4",
         "label": "[lab handout]",
         "href": "assets/labs/lab4.html",
-        "release": "2026-11-12"
+        "release": "locked"
       }
     },
     {
@@ -395,7 +395,7 @@ window.ECE371Calendar = {
         "id": "lecture-15",
         "label": "[slides]",
         "href": "assets/slides/Lecture15.pdf",
-        "release": "2026-11-17"
+        "release": "locked"
       }
     },
     {
@@ -410,7 +410,7 @@ window.ECE371Calendar = {
         "id": "lecture-16",
         "label": "[slides]",
         "href": "assets/slides/Lecture16.pdf",
-        "release": "2026-11-19"
+        "release": "locked"
       }
     },
     {
@@ -464,7 +464,7 @@ window.ECE371Calendar = {
         "id": "lecture-17",
         "label": "[slides]",
         "href": "assets/slides/Lecture17.pdf",
-        "release": "2026-12-01"
+        "release": "locked"
       }
     },
     {
@@ -479,7 +479,7 @@ window.ECE371Calendar = {
         "id": "lab-5",
         "label": "[lab handout]",
         "href": "assets/labs/lab5.html",
-        "release": "2026-12-03"
+        "release": "locked"
       }
     },
     {
@@ -494,7 +494,7 @@ window.ECE371Calendar = {
         "id": "lecture-18",
         "label": "[slides]",
         "href": "assets/slides/Lecture18.pdf",
-        "release": "2026-12-08"
+        "release": "locked"
       }
     },
     {
