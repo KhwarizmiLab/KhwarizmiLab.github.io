@@ -70,7 +70,7 @@ window.ECE371Calendar = {
         "id": "lecture-1",
         "label": "[slides]",
         "href": "assets/slides/Lecture1.pdf",
-        "release": "locked"
+        "release": "2026-09-16"
       }
     },
     {

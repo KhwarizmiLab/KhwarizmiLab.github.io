@@ -13,7 +13,7 @@ window.ECE371Release = {
     'lab-3': 'locked',
     'lab-4': 'locked',
     'lab-5': 'locked',
-    'lecture-1': 'locked',
+    'lecture-1': '2026-09-16',
     'lecture-2': 'locked',
     'lecture-3': 'locked',
     'lecture-4': 'locked',
