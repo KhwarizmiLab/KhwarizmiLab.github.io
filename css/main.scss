@@ -578,6 +578,7 @@ blockquote {
 }
 
 .symposium-agenda-grid {
+	align-items: start;
 	display: grid;
 	gap: 20px;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -696,6 +697,76 @@ blockquote {
 
 .symposium-session-location .glyphicon {
 	flex: 0 0 auto;
+}
+
+.symposium-breakout-groups {
+	display: grid;
+	gap: 10px;
+	margin-top: 13px;
+}
+
+.symposium-breakout-group {
+	background: #f4f8f8;
+	border: 1px solid var(--symposium-line);
+	border-left: 3px solid var(--symposium-teal);
+	border-radius: 6px;
+	padding: 12px 13px;
+}
+
+.symposium-breakout-group header {
+	align-items: baseline;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px 10px;
+	justify-content: space-between;
+}
+
+.symposium-breakout-group h4 {
+	color: var(--symposium-navy);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 0;
+}
+
+.symposium-breakout-group header > span {
+	align-items: center;
+	color: var(--symposium-blue);
+	display: flex;
+	font-size: 12px;
+	font-weight: 700;
+	gap: 5px;
+}
+
+.symposium-breakout-group p,
+.symposium-breakout-common p {
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 9px 0 0;
+}
+
+.symposium-breakout-group small {
+	margin-top: 8px;
+}
+
+.symposium-breakout-group small b {
+	color: var(--symposium-ink);
+}
+
+.symposium-breakout-common {
+	background: #f7f8fb;
+	border: 1px dashed #a9bdc9;
+	border-radius: 6px;
+	margin-top: 10px;
+	padding: 12px 13px;
+}
+
+.symposium-breakout-common > strong {
+	font-size: 14px;
+}
+
+.symposium-breakout-common .symposium-session-label {
+	margin-bottom: 4px;
 }
 
 .symposium-session-meta b {

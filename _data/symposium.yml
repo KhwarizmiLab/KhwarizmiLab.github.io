@@ -92,28 +92,34 @@ agenda:
           label: "Presentation 1"
           title: "Realizing the Quantum Internet"
           speaker: "Chaohan Cui"
+          moderator: "Matheus Guedes De Andrade"
         - time: "9:50 a.m."
           label: "Presentation 2"
           title: "Quantum Networking and Communications at ORNL"
           speaker: "Aneesh Ramaswamy"
+          moderator: "Matheus Guedes De Andrade"
         - time: "10:10 a.m."
           label: "Presentation 3"
           title: "Non-Terrestrial Quantum Communication Networks"
           speaker: "Ruozhou Yu"
+          moderator: "Matheus Guedes De Andrade"
         - time: "10:30 a.m."
           title: "Coffee Break"
         - time: "10:50 a.m."
           label: "Presentation 4"
           title: "Hop-Independent Fidelity and Yield: A Composition Primitive for Quantum Networks"
           speaker: "Kaushik P. Seshadreesan"
+          moderator: "Aparimit Chandra"
         - time: "11:10 a.m."
           label: "Presentation 5"
           title: "Scalable Quantum Networks within Classical Infrastructure"
           speaker: "Gina Talcott"
+          moderator: "Aparimit Chandra"
         - time: "11:30 a.m."
           label: "Presentation 6"
           title: "Toward Intelligent and Efficient Optical Networks: Performance Modeling, Co-existence, and Field Trials"
           speaker: "Tingjun Chen"
+          moderator: "Aparimit Chandra"
         - time: "12:00 p.m."
           title: "Lunch"
         - time: "1:30 p.m."
@@ -127,6 +133,38 @@ agenda:
         - time: "2:30 p.m."
           title: "Breakout Session"
           location: "Hadley Room (10th floor), Room 804, and Room 803 at the Campus Center"
+          breakout:
+            groups:
+              - name: "Group 1"
+                room: "Hadley Room (10th floor)"
+                question: >-
+                  How can quantum networks remain robust in the face of loss,
+                  errors, and failures, and which ideas from classical
+                  fault-tolerant networking can be adapted?
+                moderator: "Eden Figueroa"
+              - name: "Group 2"
+                room: "Room 804"
+                question: >-
+                  How should quantum networks approach routing, path selection,
+                  and resource allocation, and which techniques can be adapted
+                  from classical networking?
+                moderator: "Raj Kettimuthu"
+              - name: "Group 3"
+                room: "Room 803"
+                question: >-
+                  What new services should quantum networks enable—such as
+                  distributed quantum computing and sensing—and which service
+                  abstractions can be adapted from classical networking?
+                moderator: "Zheshen Zhang"
+            common_question:
+              label: "If time permits"
+              title: "Question for all groups"
+              prompt: >-
+                What other networking challenges should the community explore?
+                Possibilities include quantum security, quantum-classical
+                coexistence, control- and data-plane separation, network
+                management, open-source tools and testbeds, and other emerging
+                priorities.
         - time: "3:30 p.m."
           title: "Coffee Break"
         - time: "3:45 p.m."
@@ -141,6 +179,11 @@ agenda:
       items:
         - time: "8:00 a.m."
           title: "Check-in and Breakfast"
+        - time: "8:30 a.m"
+          label: Presentation 7
+          title: "Quantum Networks and Protocols"
+          speaker: Moe Z Win
+          moderator: "Ali Malik"
         - time: "9:00 a.m."
           label: "Panel and Interactive Discussion"
           title: "What Can Quantum Networks Learn from Classical Networking?"
@@ -150,23 +193,22 @@ agenda:
             - "Raj Kettimuthu"
           moderator: "Moe Z Win"
         - time: "10:00 a.m."
-          label: "Presentation 7"
+          label: "Presentation 8"
           title: "Backpressure Entanglement Swapping for the Quantum Internet"
           speaker: "Dan Rubenstein"
+          moderator: "Ali Malik"
         - time: "10:30 a.m."
           title: "Coffee Break"
-        - time: "10:50 a.m."
-          label: "Presentation 8"
-          title: "Quantum Networks and Protocols"
-          speaker: "Moe Z Win"
         - time: "11:10 a.m."
           label: "Presentation 9"
           title: "Quantum Covert Communication"
           speaker: "Michael Bullock"
+          moderator: "Osama Ahmad"
         - time: "11:30 a.m."
           label: "Presentation 10"
-          title: "Qoreo: Choreographic Programming for Quantum Distributed Systems"
-          speaker: "Jennifer Paykin"
+          title: "Fidelity-aware Rate Allocation in a Quantum Network"
+          speaker: "Guoliang Xue"
+          moderator: "Osama Ahmad"
         - time: "11:50 a.m."
           title: "Closing Remarks"
         - time: "12:00 p.m."

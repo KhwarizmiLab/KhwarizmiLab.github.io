@@ -162,6 +162,25 @@ permalink: /symposium/
               {% if item.panelists %}<small class="symposium-session-meta"><b>Panelists:</b> {{ item.panelists | join: ", " }}</small>{% endif %}
               {% if item.moderator %}<small class="symposium-session-meta"><b>Moderator:</b> {{ item.moderator }}</small>{% endif %}
               {% if item.location %}<small class="symposium-session-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{ item.location }}</small>{% endif %}
+              {% if item.breakout %}
+              <div class="symposium-breakout-groups" aria-label="Breakout discussion groups">
+                {% for group in item.breakout.groups %}
+                <section class="symposium-breakout-group">
+                  <header>
+                    <h4>{{ group.name }}</h4>
+                    <span><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{ group.room }}</span>
+                  </header>
+                  <p>{{ group.question }}</p>
+                  <small><b>Moderator:</b> {{ group.moderator }}</small>
+                </section>
+                {% endfor %}
+              </div>
+              <aside class="symposium-breakout-common">
+                <span class="symposium-session-label">{{ item.breakout.common_question.label }}</span>
+                <strong>{{ item.breakout.common_question.title }}</strong>
+                <p>{{ item.breakout.common_question.prompt }}</p>
+              </aside>
+              {% endif %}
             </div>
           </li>
           {% endfor %}
