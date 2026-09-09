@@ -24,6 +24,17 @@ permalink: /symposium/
           </a>
           {% endfor %}
         </div>
+
+        <div class="symposium-action-venues" aria-label="Workshop locations">
+          {% for day in symposium.agenda.days %}
+          {% if day.location %}
+          <p>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            <span><strong>{{ day.theme }}:</strong> {{ day.location }}</span>
+          </p>
+          {% endif %}
+          {% endfor %}
+        </div>
       </div>
 
       <div class="symposium-mark" aria-hidden="true">
@@ -42,7 +53,22 @@ permalink: /symposium/
         <dd>{{ symposium.event.date }}</dd>
 
         <dt>Where</dt>
-        <dd>{{ symposium.event.location }}<br><span>{{ symposium.event.address }}</span></dd>
+        <dd>
+          {{ symposium.event.location }}<br><span>{{ symposium.event.address }}</span>
+          <ul class="symposium-hero-venues" aria-label="Workshop rooms">
+            {% for day in symposium.agenda.days %}
+            {% if day.location %}
+            <li>
+              <span class="glyphicon glyphicon-map-marker symposium-venue-icon" aria-hidden="true"></span>
+              <div>
+                <strong>{{ day.theme }}</strong>
+                <span>{{ day.location }}</span>
+              </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </dd>
 
         <dt>Format</dt>
         <dd>{{ symposium.event.format }}</dd>

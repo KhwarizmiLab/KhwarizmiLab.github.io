@@ -315,6 +315,33 @@ blockquote {
 	padding-left: 12px;
 }
 
+.symposium-action-venues {
+	display: grid;
+	gap: 6px;
+	margin-top: 13px;
+	max-width: 620px;
+}
+
+.symposium-action-venues p {
+	align-items: baseline;
+	color: var(--symposium-muted);
+	display: flex;
+	font-size: 13px;
+	gap: 7px;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.symposium-action-venues .glyphicon {
+	color: var(--symposium-teal);
+	flex: 0 0 auto;
+	font-size: 11px;
+}
+
+.symposium-action-venues strong {
+	color: var(--symposium-ink);
+}
+
 .symposium-mark {
 	bottom: 12px;
 	height: 180px;
@@ -409,6 +436,50 @@ blockquote {
 .symposium-details dd span {
 	color: var(--symposium-muted);
 	font-weight: 400;
+}
+
+.symposium-hero-venues {
+	list-style: none;
+	margin: 13px 0 0;
+	padding: 0;
+}
+
+.symposium-hero-venues li {
+	align-items: start;
+	background: #f3f8f8;
+	border-left: 3px solid var(--symposium-teal);
+	border-radius: 5px;
+	display: grid;
+	gap: 9px;
+	grid-template-columns: 13px minmax(0, 1fr);
+	padding: 9px 10px;
+}
+
+.symposium-hero-venues li + li {
+	margin-top: 7px;
+}
+
+.symposium-hero-venues strong,
+.symposium-hero-venues span {
+	display: block;
+}
+
+.symposium-hero-venues strong {
+	color: var(--symposium-ink);
+	font-size: 12px;
+	line-height: 1.35;
+}
+
+.symposium-hero-venues span {
+	font-size: 12px;
+	line-height: 1.4;
+	margin-top: 2px;
+}
+
+.symposium-details .symposium-venue-icon {
+	color: var(--symposium-teal);
+	font-size: 12px;
+	margin-top: 3px;
 }
 
 .symposium-overview,
