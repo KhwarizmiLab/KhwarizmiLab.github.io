@@ -119,7 +119,7 @@ agenda:
           label: "Panel and Interactive Discussion"
           title: "Quantum Networking Landscape: Open Problems and Challenges"
           panelists:
-            - "Reza Nejabati"
+            - "Chaohan Cui"
             - "Zheshen Zhang"
             - "Eden Figueroa"
           moderator: "Kaushik P. Seshadreesan"
@@ -179,6 +179,18 @@ logistics:
   eyebrow: "Visitor information"
   title: "Travel and logistics"
   items:
+    - label: "Parking"
+      body: >-
+        Parking is available at the Campus Center. A discounted parking coupon
+        has been emailed to attendees.
+    - label: "Workshop location — Thursday, September 10"
+      body: "Hadley Room, 10th floor, Campus Center."
+    - label: "Workshop location — Friday, September 11"
+      body: "Amherst Room, 10th floor, Campus Center."
+    - label: "Breakout session rooms"
+      body: "Rooms 804 and 803, Campus Center."
+    - label: "Meditation room"
+      body: "Room 803, Campus Center."
     - label: "Flight"
       body: >-
         If you are travelling by air, the closest airport is Bradley
