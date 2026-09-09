@@ -107,6 +107,12 @@ permalink: /symposium/
         <header>
           <span>{{ day.label }}</span>
           <h3>{{ day.theme }}</h3>
+          {% if day.location %}
+          <p class="symposium-agenda-location">
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            {{ day.location }}
+          </p>
+          {% endif %}
         </header>
         <ol>
           {% for item in day.items %}
@@ -119,6 +125,7 @@ permalink: /symposium/
               {% if item.speaker %}<small class="symposium-session-meta"><b>Speaker:</b> {{ item.speaker }}</small>{% endif %}
               {% if item.panelists %}<small class="symposium-session-meta"><b>Panelists:</b> {{ item.panelists | join: ", " }}</small>{% endif %}
               {% if item.moderator %}<small class="symposium-session-meta"><b>Moderator:</b> {{ item.moderator }}</small>{% endif %}
+              {% if item.location %}<small class="symposium-session-location"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{ item.location }}</small>{% endif %}
             </div>
           </li>
           {% endfor %}

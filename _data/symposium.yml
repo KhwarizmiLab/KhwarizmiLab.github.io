@@ -80,6 +80,7 @@ agenda:
   days:
     - label: "Day 1"
       theme: "Thursday, September 10"
+      location: "Hadley Room, 10th floor, Campus Center"
       items:
         - time: "8:00 a.m."
           title: "Check-in and Breakfast"
@@ -125,6 +126,7 @@ agenda:
           moderator: "Kaushik P. Seshadreesan"
         - time: "2:30 p.m."
           title: "Breakout Session"
+          location: "Rooms 804 and 803, Campus Center"
         - time: "3:30 p.m."
           title: "Coffee Break"
         - time: "3:45 p.m."
@@ -135,6 +137,7 @@ agenda:
           title: "Dinner"
     - label: "Day 2"
       theme: "Friday, September 11"
+      location: "Amherst Room, 10th floor, Campus Center"
       items:
         - time: "8:00 a.m."
           title: "Check-in and Breakfast"

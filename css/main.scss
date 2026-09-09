@@ -540,6 +540,22 @@ blockquote {
 	margin: 5px 0 0;
 }
 
+.symposium-agenda-location {
+	align-items: center;
+	color: rgba(255, 255, 255, 0.82);
+	display: flex;
+	font-size: 13px;
+	gap: 7px;
+	line-height: 1.4;
+	margin: 9px 0 0;
+}
+
+.symposium-agenda-location .glyphicon {
+	font-size: 12px;
+	letter-spacing: 0;
+	top: 0;
+}
+
 .symposium-agenda-day ol {
 	list-style: none;
 	margin: 0;
@@ -596,6 +612,18 @@ blockquote {
 
 .symposium-session-meta + .symposium-session-meta {
 	margin-top: 2px;
+}
+
+.symposium-agenda-day .symposium-session-location {
+	align-items: center;
+	color: var(--symposium-blue);
+	display: flex;
+	gap: 6px;
+	margin-top: 7px;
+}
+
+.symposium-session-location .glyphicon {
+	flex: 0 0 auto;
 }
 
 .symposium-session-meta b {
