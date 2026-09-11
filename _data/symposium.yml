@@ -175,7 +175,7 @@ agenda:
           title: "Dinner"
     - label: "Day 2"
       theme: "Friday, September 11"
-      location: "11th Floor, Marriott Room"
+      location: "11th Floor, Marriott Center"
       items:
         - time: "8:00 a.m."
           title: "Check-in and Breakfast"
@@ -231,7 +231,7 @@ logistics:
     - label: "Workshop location — Thursday, September 10"
       body: "Hadley Room, 10th floor, Campus Center."
     - label: "Workshop location — Friday, September 11"
-      body: "11th Floor, Marriott Room."
+      body: "11th Floor, Marriott Center."
     - label: "Breakout session rooms"
       body: "Hadley Room (10th floor), Room 804, and Room 803 at the Campus Center."
     - label: "Meditation room"
