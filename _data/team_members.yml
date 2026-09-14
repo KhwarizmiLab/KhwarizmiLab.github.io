@@ -70,3 +70,14 @@
   number_rec: 2
   interest1: LLM for Edge
   interest2: Quantum Sensing
+
+- name: Muhammad Ayaan Qasmi
+  photo: ayaan.jpeg
+  info: PhD Student
+  email: mqasmi_AT_umass.edu
+  number_educ: 1
+  education1: BE Software Engineering, <a href="http://nust.edu.pk/" target="_blank">National University of Sciences and Technology, Pakistan</a>. 2026
+  number_rec: 3
+  interest1: Networked Systems
+  interest2: Machine Learning
+  interest3: System Security
