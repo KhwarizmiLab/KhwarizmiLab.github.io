@@ -11,21 +11,22 @@ permalink: /nesqom-2026/
 
 <main class="nesqom-page col-sm-12">
   <header class="nesqom-hero">
-    <p class="nesqom-kicker">Khwarizmi Lab · Symposium recap</p>
-    <h1>NeSQom 2026</h1>
-    <p class="nesqom-subtitle">NSF Workshop on Quantum Communication and Networked Systems</p>
-    <p class="nesqom-intro">Researchers in classical networking, distributed systems, quantum networking, and quantum information science came together at UMass Amherst to explore the systems architecture of future quantum networks.</p>
-    <div class="nesqom-meta">
-      <span>{{ symposium.event.date }}</span>
-      <span>{{ symposium.event.location }}</span>
+    <div class="nesqom-hero-copy">
+      <p class="nesqom-kicker">Khwarizmi Lab · Symposium recap</p>
+      <h1>NeSQom 2026</h1>
+      <p class="nesqom-subtitle">NSF Workshop on Quantum Communication and Networked Systems</p>
+      <p class="nesqom-intro">Researchers in classical networking, distributed systems, quantum networking, and quantum information science came together at UMass Amherst to explore the systems architecture of future quantum networks.</p>
+      <div class="nesqom-meta">
+        <span>{{ symposium.event.date }}</span>
+        <span>{{ symposium.event.location }}</span>
+      </div>
+      <a class="nesqom-program-link" href="{{ '/symposium/' | relative_url }}">Explore the workshop program <span aria-hidden="true">→</span></a>
     </div>
-    <a class="nesqom-program-link" href="{{ '/symposium/' | relative_url }}">Explore the workshop program <span aria-hidden="true">→</span></a>
+    <figure class="nesqom-hero-photo">
+      <img src="{{ '/images/nesqom-2026/fav.jpg' | relative_url }}" alt="Two speakers stand beside the UMass Amherst podium at the NeSQom workshop." fetchpriority="high">
+      <figcaption>A moment from NeSQom 2026 at UMass Amherst</figcaption>
+    </figure>
   </header>
-
-  <figure class="nesqom-featured-photo">
-    <img src="{{ '/images/nesqom-2026/fav.jpg' | relative_url }}" alt="Two speakers stand beside the UMass Amherst podium at the NeSQom workshop." fetchpriority="high">
-    <figcaption>A moment from NeSQom 2026 at UMass Amherst</figcaption>
-  </figure>
 
   <section class="nesqom-section" aria-labelledby="nesqom-highlights-title">
     <div class="nesqom-section-heading">
@@ -35,19 +36,28 @@ permalink: /nesqom-2026/
     </div>
     <div class="nesqom-highlights">
       <article>
-        <span class="nesqom-highlight-number">01</span>
-        <h3>Research across the network stack</h3>
-        <p>Talks explored the quantum internet, optical networks, entanglement swapping, fidelity aware rate allocation, and communication across classical infrastructure.</p>
+        <img src="{{ '/images/nesqom-2026/IMG_0270.jpg' | relative_url }}" alt="Presenter discussing optical network digital twins with workshop attendees." loading="lazy">
+        <div class="nesqom-highlight-copy">
+          <span class="nesqom-highlight-number">01 · Research talks</span>
+          <h3>Research across the network stack</h3>
+          <p>Talks explored the quantum internet, optical networks, entanglement swapping, fidelity aware rate allocation, and communication across classical infrastructure.</p>
+        </div>
       </article>
       <article>
-        <span class="nesqom-highlight-number">02</span>
-        <h3>Perspectives from both communities</h3>
-        <p>Panels examined open problems in quantum networking and asked what emerging quantum networks can learn from classical networking.</p>
+        <img src="{{ '/images/nesqom-2026/IMG_0290.jpg' | relative_url }}" alt="Four speakers seated at the front of the room during a panel discussion." loading="lazy">
+        <div class="nesqom-highlight-copy">
+          <span class="nesqom-highlight-number">02 · Panels</span>
+          <h3>Perspectives from both communities</h3>
+          <p>Panels examined open problems in quantum networking and asked what emerging quantum networks can learn from classical networking.</p>
+        </div>
       </article>
       <article>
-        <span class="nesqom-highlight-number">03</span>
-        <h3>Shared questions for what comes next</h3>
-        <p>Breakout groups discussed robustness, routing and resource allocation, and services such as distributed quantum computing and sensing.</p>
+        <img src="{{ '/images/nesqom-2026/IMG_4079.jpg' | relative_url }}" alt="Attendees seated around tables during a breakout discussion." loading="lazy">
+        <div class="nesqom-highlight-copy">
+          <span class="nesqom-highlight-number">03 · Breakouts</span>
+          <h3>Shared questions for what comes next</h3>
+          <p>Breakout groups discussed robustness, routing and resource allocation, and services such as distributed quantum computing and sensing.</p>
+        </div>
       </article>
     </div>
   </section>
@@ -60,8 +70,8 @@ permalink: /nesqom-2026/
     {% if photos.size > 0 %}
     <div class="nesqom-gallery">
       {% for photo in photos %}
-      <figure>
-        <a href="{{ '/images/nesqom-2026/' | append: photo.image | relative_url }}" aria-label="View full-size photo: {{ photo.alt | escape }}">
+      <figure class="nesqom-gallery-item">
+        <a href="{{ '/images/nesqom-2026/' | append: photo.image | relative_url }}" data-nesqom-photo aria-label="View photo: {{ photo.alt | escape }}">
           <img src="{{ '/images/nesqom-2026/' | append: photo.image | relative_url }}" alt="{{ photo.alt | escape }}" loading="lazy">
         </a>
         {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
@@ -72,4 +82,19 @@ permalink: /nesqom-2026/
     <p class="nesqom-gallery-pending">Photos from the symposium are coming soon.</p>
     {% endif %}
   </section>
+
+  {% if photos.size > 0 %}
+  <dialog class="nesqom-lightbox" id="nesqom-lightbox" aria-label="NeSQom photo viewer">
+    <div class="nesqom-lightbox-inner">
+      <button class="nesqom-lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+      <button class="nesqom-lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <figure>
+        <img alt="">
+        <figcaption></figcaption>
+      </figure>
+      <button class="nesqom-lightbox-next" type="button" aria-label="Next photo">&#8250;</button>
+    </div>
+  </dialog>
+  <script src="{{ '/js/nesqom-gallery.js' | relative_url }}" defer></script>
+  {% endif %}
 </main>

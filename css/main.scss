@@ -32,12 +32,17 @@ figcaption {
 }
 
 .nesqom-hero {
-	background: linear-gradient(135deg, #102e4d 0%, #176b79 100%);
+	background: #102e4d;
 	border-radius: 14px;
 	color: #fff;
-	margin: 16px 0 24px;
-	padding: 64px 7%;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	margin: 16px 0 64px;
+	min-height: 520px;
+	overflow: hidden;
 }
+
+.nesqom-hero-copy { align-self: center; padding: 52px 8%; }
 
 .nesqom-kicker {
 	color: #16877b;
@@ -56,35 +61,62 @@ figcaption {
 .nesqom-program-link { background: #fff; border-radius: 5px; color: #123954; display: inline-block; font-weight: 700; padding: 10px 18px; }
 .nesqom-program-link:hover, .nesqom-program-link:focus { background: #def2eb; color: #123954; }
 
-.nesqom-featured-photo { margin: 0 0 56px; }
-.nesqom-featured-photo img { border-radius: 10px; display: block; height: auto; margin: 0; max-height: 560px; object-fit: cover; object-position: center 42%; width: 100%; }
-.nesqom-featured-photo figcaption { color: #557083; font-size: 14px; margin: 8px 0 0; text-align: left; }
+.nesqom-hero-photo { margin: 0; min-height: 100%; position: relative; }
+.nesqom-hero-photo img { border-radius: 0; height: 100%; inset: 0; margin: 0; object-fit: cover; object-position: center; position: absolute; width: 100%; }
+.nesqom-hero-photo figcaption { background: rgba(7, 25, 39, .72); bottom: 0; color: #fff; font-size: 13px; left: 0; margin: 0; padding: 8px 14px; position: absolute; right: 0; text-align: left; }
 
 .nesqom-section { margin-bottom: 62px; }
 .nesqom-section-heading { max-width: 760px; margin-bottom: 28px; }
 .nesqom-section-heading h2 { color: #122f53; font-size: 34px; margin: 6px 0 12px; }
 .nesqom-section-heading > p:last-child { color: #557083; }
 .nesqom-highlights { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.nesqom-highlights article { border: 1px solid #d8e5e8; border-top: 5px solid #16877b; border-radius: 7px; padding: 26px; }
+.nesqom-highlights article { border: 1px solid #d8e5e8; border-radius: 8px; overflow: hidden; }
+.nesqom-highlights article > img { aspect-ratio: 4 / 3; border-radius: 0; display: block; height: auto; margin: 0; object-fit: cover; width: 100%; }
+.nesqom-highlight-copy { padding: 22px 24px 26px; }
 .nesqom-highlight-number { color: #16877b; font-size: 14px; font-weight: 700; }
 .nesqom-highlights h3 { color: #122f53; font-size: 21px; line-height: 1.3; margin: 10px 0; }
 .nesqom-highlights p { color: #557083; margin: 0; }
-.nesqom-gallery { display: grid; gap: 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.nesqom-gallery figure { margin: 0; }
-.nesqom-gallery img { aspect-ratio: 4 / 3; border-radius: 7px; display: block; height: auto; margin: 0; object-fit: cover; width: 100%; }
-.nesqom-gallery figcaption { color: #557083; font-size: 14px; margin: 8px 0 0; text-align: left; }
+.nesqom-gallery { display: grid; gap: 22px; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.nesqom-gallery-item { grid-column: span 4; margin: 0; }
+.nesqom-gallery-item:nth-child(1), .nesqom-gallery-item:nth-child(7) { grid-column: span 7; }
+.nesqom-gallery-item:nth-child(2), .nesqom-gallery-item:nth-child(6) { grid-column: span 5; }
+.nesqom-gallery-item a { display: block; overflow: hidden; border-radius: 8px; }
+.nesqom-gallery-item img { aspect-ratio: 4 / 3; border-radius: 0; display: block; height: auto; margin: 0; object-fit: cover; transition: transform .25s ease; width: 100%; }
+.nesqom-gallery-item:nth-child(1) img, .nesqom-gallery-item:nth-child(7) img { aspect-ratio: 7 / 4; }
+.nesqom-gallery-item:nth-child(2) img, .nesqom-gallery-item:nth-child(6) img { aspect-ratio: 5 / 4; }
+.nesqom-gallery-item a:hover img, .nesqom-gallery-item a:focus img { transform: scale(1.04); }
+.nesqom-gallery-item figcaption { color: #557083; font-size: 14px; margin: 8px 0 0; text-align: left; }
 .nesqom-gallery-pending { background: #f3f8f8; border: 1px dashed #a8c9c9; border-radius: 7px; color: #557083; padding: 28px; }
+.nesqom-lightbox { background: #102e4d; border: 0; border-radius: 9px; color: #fff; max-height: 94vh; max-width: min(96vw, 1300px); padding: 18px; width: 96vw; }
+.nesqom-lightbox::backdrop { background: rgba(3, 15, 28, .88); }
+.nesqom-lightbox-inner { align-items: center; display: grid; gap: 12px; grid-template-columns: 40px minmax(0, 1fr) 40px; padding-top: 30px; }
+.nesqom-lightbox figure { margin: 0; min-width: 0; }
+.nesqom-lightbox img { border-radius: 5px; display: block; margin: 0 auto; max-height: calc(94vh - 120px); max-width: 100%; object-fit: contain; }
+.nesqom-lightbox figcaption { color: #e2f0f3; font-size: 14px; margin: 10px 0 0; text-align: center; }
+.nesqom-lightbox button { background: rgba(255, 255, 255, .14); border: 0; border-radius: 5px; color: #fff; cursor: pointer; font-size: 32px; line-height: 1; min-height: 40px; }
+.nesqom-lightbox button:hover, .nesqom-lightbox button:focus { background: rgba(255, 255, 255, .3); }
+.nesqom-lightbox-close { position: absolute; right: 18px; top: 12px; width: 40px; }
 .symposium-recap-link { margin: 12px 0 18px; text-align: right; }
 .symposium-recap-link a { color: #176b8f; font-weight: 700; }
 
 @media (max-width: $screen-sm-max) {
-	.nesqom-highlights, .nesqom-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.nesqom-hero { grid-template-columns: 1fr; }
+	.nesqom-hero-photo { min-height: 420px; }
+	.nesqom-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.nesqom-gallery-item, .nesqom-gallery-item:nth-child(n) { grid-column: span 6; }
+	.nesqom-gallery-item img, .nesqom-gallery-item:nth-child(n) img { aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: $screen-xs-max) {
-	.nesqom-hero { padding: 38px 25px; }
+	.nesqom-hero-copy { padding: 38px 25px; }
+	.nesqom-hero-photo { min-height: 280px; }
 	.nesqom-subtitle { font-size: 20px; }
-	.nesqom-highlights, .nesqom-gallery { grid-template-columns: 1fr; }
+	.nesqom-highlights { grid-template-columns: 1fr; }
+	.nesqom-gallery-item, .nesqom-gallery-item:nth-child(n) { grid-column: span 12; }
+	.nesqom-lightbox { padding: 10px; }
+	.nesqom-lightbox-inner { gap: 4px; grid-template-columns: 32px minmax(0, 1fr) 32px; }
+	.nesqom-lightbox button { font-size: 26px; min-height: 32px; }
+	.nesqom-lightbox-close { right: 10px; top: 8px; width: 32px; }
 	.nesqom-section-heading h2 { font-size: 29px; }
 }
 
