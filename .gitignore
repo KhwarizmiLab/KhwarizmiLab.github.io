@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 
 Gemfile.lock
+images/nesqom-2026/*.HEIC
+images/nesqom-2026/.DS_Store

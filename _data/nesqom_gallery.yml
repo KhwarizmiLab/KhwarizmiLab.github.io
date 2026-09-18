@@ -1,6 +1,21 @@
-# Add event photos here after placing files in images/nesqom-2026/.
-# Example:
-# - image: opening-remarks.jpg
-#   alt: A speaker addressing attendees during the opening remarks.
-#   caption: Opening remarks
-[]
+- image: IMG_0270.jpg
+  alt: A presenter discusses optical network digital twins with workshop attendees.
+  caption: Research presentation
+- image: IMG_0290.jpg
+  alt: Four speakers sit at the front of the room during a panel discussion.
+  caption: Panel discussion
+- image: IMG_0292.jpg
+  alt: A presenter speaks beside a projected slide about internet delay history.
+  caption: Technical talk
+- image: IMG_4079.jpg
+  alt: Attendees sit around tables during a breakout discussion.
+  caption: Breakout discussion
+- image: IMG_4081.jpg
+  alt: A speaker addresses attendees gathered around tables.
+  caption: Workshop discussion
+- image: IMG_4093.jpg
+  alt: A presenter speaks at the UMass Amherst podium with a slide projected behind them.
+  caption: Research presentation
+- image: IMG_4104.jpg
+  alt: Panelists sit at the front of the workshop room beneath a projected slide.
+  caption: Perspectives from the panel
