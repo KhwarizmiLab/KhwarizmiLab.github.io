@@ -7,62 +7,40 @@ sitemap: true
 permalink: /research/
 ---
 
-# Research
+<div class="research-page">
+  <header class="research-intro">
+    <h1>Research</h1>
+    <p>Inspired by the work of <a href="https://en.wikipedia.org/wiki/Al-Khwarizmi" target="_blank" rel="noopener noreferrer">Al-Khwarizmi <i class="fa fa-external-link" aria-hidden="true"></i></a>, the Khwarizmi Lab at UMass Amherst studies problems at the intersection of systems and algorithms. We develop secure and effective solutions for financial technology, quantum networks, and critical infrastructure, including mobile networks and industrial control systems.</p>
+    <p>Our research examines how networked systems behave in practice, where their security assumptions fall short, and how system design and verification can make them more reliable.</p>
+  </header>
 
-Inspiring from the work of <a href="https://en.wikipedia.org/wiki/Al-Khwarizmi" target="_blank">Al-Khwarizmi <i class="fa fa-external-link"></i></a>, the Khwarizmi lab at UMass Amherst is dedicated to undertake fundamental research topics that solve the challenging problems lying at the intersection of systems and algorithms. In particular, we develop secure and effective solutions in FinTech, Quantum Networks, and Critical Infrastructures -- such as 5G Mobile Networks, and Industrial Control Systems.
+  <section class="research-areas" aria-labelledby="research-areas-title">
+    <h2 id="research-areas-title">Research areas</h2>
 
-Our work brings innovation in building secure and reliable networked systems. Our research identifies fundamental open questions and explores them from various angles. It contributes to better understanding of the state-of-the-art network systems by challenging their operational efficacy, and identifying unexplored aspects at their heterogeneity. It provides simple and innovative solutions from system designs to their operations through verification.
+    <article class="research-topic" id="system-security">
+      <img src="{{ '/images/respic/security.jpg' | relative_url }}" alt="Fingerprint and digital security interface" loading="lazy">
+      <div>
+        <h3>System Security Policies</h3>
+        <p>We study authentication, authorization, and access control in large-scale digital systems, including banking and payments. By analyzing security policies and their implementation, we identify vulnerabilities and develop remedies that help protect users and business assets.</p>
+      </div>
+    </article>
 
-Here are some themes and domains that we currently work on:
+    <article class="research-topic" id="quantum-security">
+      <img class="research-topic-image-contain" src="{{ '/images/respic/quantum-computing.png' | relative_url }}" alt="Illustration of a quantum computing system" loading="lazy">
+      <div>
+        <h3>Quantum Security</h3>
+        <p>We investigate the practical security of quantum communication, including quantum key distribution and related protocols. Our work examines how these systems behave under adversarial conditions and seeks efficient, end-to-end protections for real-world use.</p>
+      </div>
+    </article>
 
-**System Security Policies:**
-Studying security policies of large-scale systems is crucial for identifying vulnerabilities and mitigating risks like data breaches and unauthorized access.
-![]({{ site.url }}{{ site.baseurl }}/images/respic/security.jpg){: style="width: 250px; float: left; margin: 5px 15px 0px 0px;"}
-A systematic analysis of security policies not only enhances the resilience of systems but also ensures compliance with regulations and industry-recommended practices.
-Our research endeavors focus on conducting comprehensive security analyses of modern digital systems. We scrutinize the authentication, authorization, and access control mechanisms within systems involving millions of users —such as banking— to ensure the highest standard of protection for users and business assets. Our findings pave the way for the development of effective remedies, ensuring the integrity and trustworthiness of digital systems in various operational contexts.
+    <article class="research-topic" id="mobile-networks">
+      <img src="{{ '/images/respic/CELL_SITES.jpeg' | relative_url }}" alt="Cellular towers against a blue sky" loading="lazy">
+      <div>
+        <h3>Mobile Networked Systems</h3>
+        <p>Next-generation mobile networks must meet diverse requirements for throughput, latency, safety, and trust. We develop network protocols and systems for efficient, safe, and secure mobile communications.</p>
+      </div>
+    </article>
+  </section>
 
-**Quantum Security:**
-![]({{ site.url }}{{ site.baseurl }}/images/respic/quantum-computing.png){: style="width: 250px; float: right; margin: 0px 10px"}
-In the rapidly evolving landscape of quantum computing, the field of quantum security emerges as a crucial component to safeguard users’ communication. Central to these security measures are quantum key distribution and post-cryptographic technologies. Researchers are actively crafting new protocols in these domains, poised for deployment in the near future. While numerous research works and commercial products leveraging these technologies exist, practical implementations still face challenges in fully harnessing the potential of quantum mechanics under adversarial scenarios. Our laboratory adopts a pragmatic approach, delving into the comprehensive understanding of secure quantum communication in diverse scenarios. Our focus is on the development of efficient and end-to-end secure solutions grounded in the principles of key security principles proven to be secure over decades of research works. Through these endeavors, we aim to contribute to the robustness of quantum security in real-world applications.
-
-
-**Mobile Networked Systems:** Next Generation (NG) Mobile Networks are designed to solve diverse application requirements (throughput, latency, safety, trust, and more) under one architecture. Our lab is mainly engaged in research and development of fundamental technologies behind NG mobile networks. Our aim is to enable novel network protocols for efficient, safe and secure mobile communications.
-
-![]({{ site.url }}{{ site.baseurl }}/images/respic/CELL_SITES.jpeg){: style="width: 70%; float: center; margin: 10px"}
-
-
-### ... and more.
-
-<!-- Our overarching goal is to explore and understand new quantum states of electronic matter on the atomic scale. To do so, we use and develop novel spectroscopic-imaging scanning tunneling microscopy (SI-STM) tools to visualize the relevant quantum mechanical degrees of freedom.
-
-Our goal is to build instruments and develop techniques that enable us to address the questions we find most interesting. This is possible thanks also to Milan's broad background with different research themes and technologies: he learned his trade in [Seamus Davis’ SI-STM lab](http://davisgroup.lassp.cornell.edu/) and with [Felix Baumberger](http://dpmc.unige.ch/gr_baumberger/index.html), and later moved as an [ETH fellow](http://www.ethfellows.ethz.ch/) to [Andreas Wallraff’s qudev lab](http://www.qudev.ethz.ch/) where he investigated coupled cavity arrays in circuit QED. We further have group members with different background and interests, working together on physics and instrumentation.
-
-
-**Scanning tunneling noise spectroscopy (STNS).** We have developed a novel cryogenic MHz amplifier that allows us to measure not only the average tunneling current, but also its fluctuation! This has many applications: one can detect the fluctuations of the electronic states, peculiar tunneling processes, and shot noise. We have used this instrument to discover charge trapping in the insulating layer of the cuprates, connected to the c-axis mystery, and to measure the doubling of the charge due to Andreev processes to the superfluid in a lead sample.
-
-
-**Mott physics and high-temperature superconductivity.** Questions of interest include: (i), How does the Mott state collapse upon doping and how is this related to the complex phase diagram of high-temperature superconductors? (ii), What is the strange metal phase seen in correlated electron systems? Is this an exotic long-range entangled state? What is the mechanism of dissipation in that state? (iii), Why is the transition temperature in high-temperature superconductors so high? We have worked on iridates, rhodates, and cuprates.
-
-**Nanofabricated "Smart Tips"**.
-![]({{ site.url }}{{ site.baseurl }}/images/respic/SmartTip.png){: style="width: 250px; float: left; margin: 0px  10px"}
-One of the  projects back from my job-proposal is to develop nanofabricated STM tips. The idea behind these “smart tips” is to use the technologies that were developed over decades in nanofabrication and make them available for scanning probe by using a nano-device instead of the traditional STM tungsten tip. One gains the flexibility of using different functionalities that are known from the fields of nanofabrication and mesoscopic physics. We are collaborating with the group Simon Groeblacher at TU Delft to realize this concept, benefitting from their unparalleled micro/nano fabrication know how.  A prototype of a smart tip is shown to the left. See publications in Microsyst Nanoeng, Nanotechnology, and PRB.
-
-**Josephson STM.** Josephson STM has the ability to gain insight into spatial variations of the order parameter, or superfluid density. We have managed to, for the first time, use JSTM with atomic resolution on a quantum material.
-We have used atomic-resolution Josephson scanning tunneling microscopy to reveal a strongly inhomogeneous superfluid in the iron-based superconductor FeTe0.55Se0.45. The results and their implications are published in Nature.
-
-We also detected and investigated a quite particular YSR state in the same material.
-
-**Ultra-stable SI-STM instrument.**  ![]({{ site.url }}{{ site.baseurl }}/images/respic/STMHead.png){: style="width: 250px; float: right; margin: 0px 10px"}
-For SI-STM, having the most stable STM head is key. We have used finite element simulations, good choices in material science, and craftsmanship to build the most stable STM head in the world, to our knowledge. See publication in RSI.
-
-
-**Strange Metals.** The strange metal phase might be the most mysterious phase of high-temperature superconductors. Here, the electrical resistivity grows linearly with temperature T in large areas of the phase diagram, with a mean free path that diminishes to a fraction of the interatomic distance. T-linear resistivity is often associated with quantum critical points and marginal-Fermi-liquid physics. In strange metals, the mystery seems to go even further: we deal with something that looks like a quantum critical phase over an extended range of the phase diagram instead of cumulating in a point. There exists no consistent theory for strange metals, leading to more adventurous new approaches including the holographic theories that use insights from gravity to explain strange metals (a recent textbook on this was written by our colleagues at Leiden University, Schalm and Zaanen).
-We are part of the 'Strange Metal consortium NL' that includes the groups of Hussey, Golden, van Heumen, Zaanen, Schalm, Stoof and Vandoren. 
-
-**Magnetic fluctuations and electron spin resonance.**
-![]({{ site.url }}{{ site.baseurl }}/images/respic/SpinFluc.png){: style="width: 70%; float: center; margin: 10px"}
-
-**Twisted bilayer graphene and other material with super-periodicities.**
-We have proposed that artificial super-periodicities can lead to improved superconductivity, both because of increased density of states and because of phase space arguments (see image from our SciPost publication below). Perhaps for different reasons, twisted bilayer graphene has been shown to superconduct! We are investigate this material with the groups of Efetov, Baumberger, and van der Molen.
-
-![]({{ site.url }}{{ site.baseurl }}/images/respic/SciPost.png){: style="width: 70%; float: center; margin: 0px"} -->
+  <p class="research-more">Explore the lab's work in our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
+</div>
