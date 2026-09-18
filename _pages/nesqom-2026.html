@@ -1,0 +1,70 @@
+---
+title: "NeSQom 2026"
+layout: default
+seo_description: "Highlights and photos from NeSQom 2026, the NSF Workshop on Quantum Communication and Networked Systems at UMass Amherst."
+sitemap: true
+permalink: /nesqom-2026/
+---
+
+{% assign symposium = site.data.symposium %}
+{% assign photos = site.data.nesqom_gallery %}
+
+<main class="nesqom-page col-sm-12">
+  <header class="nesqom-hero">
+    <p class="nesqom-kicker">Khwarizmi Lab · Symposium recap</p>
+    <h1>NeSQom 2026</h1>
+    <p class="nesqom-subtitle">NSF Workshop on Quantum Communication and Networked Systems</p>
+    <p class="nesqom-intro">Researchers in classical networking, distributed systems, quantum networking, and quantum information science came together at UMass Amherst to explore the systems architecture of future quantum networks.</p>
+    <div class="nesqom-meta">
+      <span>{{ symposium.event.date }}</span>
+      <span>{{ symposium.event.location }}</span>
+    </div>
+    <a class="nesqom-program-link" href="{{ '/symposium/' | relative_url }}">Explore the workshop program <span aria-hidden="true">→</span></a>
+  </header>
+
+  <section class="nesqom-section" aria-labelledby="nesqom-highlights-title">
+    <div class="nesqom-section-heading">
+      <p class="nesqom-kicker">From the program</p>
+      <h2 id="nesqom-highlights-title">Workshop highlights</h2>
+      <p>Across a day and a half, the program combined research talks, panels, and breakout discussions on the challenges of building quantum networks.</p>
+    </div>
+    <div class="nesqom-highlights">
+      <article>
+        <span class="nesqom-highlight-number">01</span>
+        <h3>Research across the network stack</h3>
+        <p>Talks explored the quantum internet, optical networks, entanglement swapping, fidelity aware rate allocation, and communication across classical infrastructure.</p>
+      </article>
+      <article>
+        <span class="nesqom-highlight-number">02</span>
+        <h3>Perspectives from both communities</h3>
+        <p>Panels examined open problems in quantum networking and asked what emerging quantum networks can learn from classical networking.</p>
+      </article>
+      <article>
+        <span class="nesqom-highlight-number">03</span>
+        <h3>Shared questions for what comes next</h3>
+        <p>Breakout groups discussed robustness, routing and resource allocation, and services such as distributed quantum computing and sensing.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="nesqom-section nesqom-gallery-section" aria-labelledby="nesqom-gallery-title">
+    <div class="nesqom-section-heading">
+      <p class="nesqom-kicker">Scenes from Amherst</p>
+      <h2 id="nesqom-gallery-title">Photo gallery</h2>
+    </div>
+    {% if photos.size > 0 %}
+    <div class="nesqom-gallery">
+      {% for photo in photos %}
+      <figure>
+        <a href="{{ '/images/nesqom-2026/' | append: photo.image | relative_url }}" aria-label="View full-size photo: {{ photo.alt | escape }}">
+          <img src="{{ '/images/nesqom-2026/' | append: photo.image | relative_url }}" alt="{{ photo.alt | escape }}" loading="lazy">
+        </a>
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="nesqom-gallery-pending">Photos from the symposium are coming soon.</p>
+    {% endif %}
+  </section>
+</main>
