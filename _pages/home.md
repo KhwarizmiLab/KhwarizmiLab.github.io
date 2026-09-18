@@ -50,10 +50,12 @@ We are a dynamic research group at the <a href="http://www.umass.edu" target="_b
 </div>
 
 
-Inspired by the pioneering work of Al-Khwarizmi, whose groundbreaking contributions laid the foundation for modern computing, including Algebra, the Khwarizmi Lab at UMass Amherst is dedicated to advancing fundamental research that addresses the complex challenges at the intersection of systems and algorithms. Our goal is to drive innovation across a range of critical fields, focusing on the development of secure, efficient, and scalable solutions. In particular, we focus on creating secure and effective solutions in FinTech, Quantum Networks, and Critical Infrastructures, such as 5G mobile networks and industrial control systems (see [Research](research)).
+Inspired by the pioneering work of Al-Khwarizmi, whose groundbreaking contributions laid the foundation for modern computing, including Algebra, the Khwarizmi Lab at UMass Amherst is dedicated to advancing fundamental research that addresses the complex challenges at the intersection of systems and algorithms.
+
+Our goal is to drive innovation across a range of critical fields, focusing on the development of secure, efficient, and scalable solutions. In particular, we focus on creating secure and effective solutions in FinTech, Quantum Networks, and Critical Infrastructures, such as 5G mobile networks and industrial control systems (see [Research](research)).
 
 
-**We are  looking for passionate Master's and Bachelor's students at UMass to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/vacancies) **!**
+**We are looking for passionate Master's and Bachelor's students at UMass to join the team!** [(more info)]({{ site.url }}{{ site.baseurl }}/vacancies)
 
 {% include featured_media.html %}
 

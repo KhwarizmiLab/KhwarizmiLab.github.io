@@ -3,9 +3,12 @@
 <h3>Latest News</h3>
 
 {% for article in site.data.news limit:5 %}
-<p><i><b>{{ article.date }}</b></i><br>{{ article.headline | markdownify}}</p>
+<article class="news-item">
+  <p class="news-date"><i><b>{{ article.date }}</b></i></p>
+  <div class="news-headline">{{ article.headline | markdownify }}</div>
+</article>
 {% endfor %}
 
-<h4><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">... see all News</a></h4>
+<h4 class="news-more"><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">... see all News</a></h4>
 
 </div>
