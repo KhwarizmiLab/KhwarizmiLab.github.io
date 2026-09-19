@@ -111,6 +111,71 @@ body {
   box-shadow: var(--focus-ring);
 }
 
+.lab-site-header {
+  background: #881c1c;
+  color: #fff;
+}
+
+.lab-site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.65rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+.lab-site-brand,
+.lab-site-nav a,
+.lab-site-brand:visited,
+.lab-site-nav a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.lab-site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.lab-site-brand img {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.lab-site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.9rem;
+}
+
+.lab-site-nav a {
+  padding: 0.25rem 0;
+  white-space: nowrap;
+}
+
+.lab-site-brand:hover,
+.lab-site-nav a:hover,
+.lab-site-brand:focus-visible,
+.lab-site-nav a:focus-visible,
+.lab-site-nav a[aria-current="page"] {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.lab-site-header a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 a {
   color: var(--link);
   text-decoration: underline;
