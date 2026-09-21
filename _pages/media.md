@@ -11,6 +11,8 @@ permalink: /media.html
 
 ## Digital Payments Security
 ### Zombie Credit Cards
+- <a href="https://www.wmar2news.com/matterformallory/researchers-find-some-expired-credit-cards-can-be-brought-back-to-life" title="Researchers find some expired credit cards can be brought back to life" target='_blank'>WMAR-2 News — Researchers find some expired credit cards can be brought back to life</a>
+- <a href="https://www.firstalert4.com/2026/08/31/researchers-say-zombie-card-attack-can-enable-transactions-some-expired-credit-cards/" title="Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards" target='_blank'>First Alert 4 — Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards</a>
 - <a href="https://www.thecooldown.com/green-tech/massachusetts-researchers-revive-expired-visa-cards/" title="Massachusetts researchers revive 'dead' Visa credit cards for contactless payments" target='_blank'>The Cool Down — Massachusetts researchers revive 'dead' Visa credit cards for contactless payments</a>
 - <a href="https://www.cardrates.com/news/security-flaw-can-bring-expired-visa-credit-cards-back-to-life/" title="Security Flaw Can Bring Expired Visa Credit Cards Back to Life" target='_blank'>CardRates — Security Flaw Can Bring Expired Visa Credit Cards Back to Life</a>
 - <a href="https://www.latribune.fr/article/tech/informatique/50102393136479/zombie-card-une-carte-bancaire-expiree-peut-encore-etre-utilisee-pour-payer" title="Zombie Card : une carte bancaire expirée peut encore être utilisée pour payer" target='_blank'>La Tribune — Zombie Card : une carte bancaire expirée peut encore être utilisée pour payer</a>
