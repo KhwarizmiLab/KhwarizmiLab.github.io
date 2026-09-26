@@ -11,6 +11,7 @@ permalink: /media.html
 
 ## Digital Payments Security
 ### Zombie Credit Cards
+- <a href="https://money.usnews.com/credit-cards/articles/zombie-credit-cards-how-your-expired-card-can-come-back-to-life" title="Zombie Credit Cards: How Your Expired Card Can Come Back to Life" target='_blank'>U.S. News &amp; World Report — Zombie Credit Cards: How Your Expired Card Can Come Back to Life</a>
 - <a href="https://www.wmar2news.com/matterformallory/researchers-find-some-expired-credit-cards-can-be-brought-back-to-life" title="Researchers find some expired credit cards can be brought back to life" target='_blank'>WMAR-2 News — Researchers find some expired credit cards can be brought back to life</a>
 - <a href="https://www.firstalert4.com/2026/08/31/researchers-say-zombie-card-attack-can-enable-transactions-some-expired-credit-cards/" title="Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards" target='_blank'>First Alert 4 — Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards</a>
 - <a href="https://www.thecooldown.com/green-tech/massachusetts-researchers-revive-expired-visa-cards/" title="Massachusetts researchers revive 'dead' Visa credit cards for contactless payments" target='_blank'>The Cool Down — Massachusetts researchers revive 'dead' Visa credit cards for contactless payments</a>
