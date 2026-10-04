@@ -193,7 +193,7 @@
   link:
     url: https://arxiv.org/pdf/2012.07994.pdf
     display: arXiv:2012.07994
-  highlight: 1
+  highlight: 0
 
 - title: "{FERRET}: Fall-back to {LTE} Microservices for Low Latency Data Access"
   year: 2020
