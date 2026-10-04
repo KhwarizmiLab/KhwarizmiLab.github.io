@@ -14,45 +14,25 @@ permalink: /publications/
 
 **At the end of this page, you can find the [full list of publications and patents](#full-list-of-publications).**
 
-{% assign number_printed = 0 %}
-{% for publi in site.data.publist %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if publi.highlight == 1 %}
-
-{% if even_odd == 0 %}
-<div class="row">
-{% endif %}
-
-<div class="col-sm-6 clearfix">
- <div class="well">
-  <pubtit>{{ publi.title }}
-  {% if publi.link.pdf %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]{% endif %}
-  {% if publi.link.slides %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]{% endif %}
-  {% if publi.award %}<br><span class="text-success"><strong>{{ publi.award }}</strong></span>{% endif %}
-  </pubtit>
-  {% if publi.image %}<img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="50%" style="float: left" />{% endif %}
-  <p>{{ publi.description }}</p>
-  <p><em>{{ publi.authors }}</em></p>
-  <p><strong><a href="{{ publi.link.url }}" target="_blank">{{ publi.link.display }}</a></strong></p>
-  <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
-  <p> {{ publi.news2 }}</p>
- </div>
-</div>
-
-{% assign number_printed = number_printed | plus: 1 %}
-
-{% if even_odd == 1 %}
-</div>
-{% endif %}
-
+{% assign highlighted_publications = site.data.publist | where: "highlight", 1 %}
+<div class="publication-columns">
+{% for column in (0..1) %}
+<div class="publication-column">
+{% for publi in highlighted_publications %}
+{% assign item_column = forloop.index0 | modulo: 2 %}
+{% if item_column == column %}
+{% include publication_highlight.html publi=publi %}
 {% endif %}
 {% endfor %}
-
-{% assign even_odd = number_printed | modulo: 2 %}
-{% if even_odd == 1 %}
 </div>
-{% endif %}
+{% endfor %}
+</div>
+
+<div class="publication-list-mobile">
+{% for publi in highlighted_publications %}
+{% include publication_highlight.html publi=publi %}
+{% endfor %}
+</div>
 
 <p> &nbsp; </p>
 

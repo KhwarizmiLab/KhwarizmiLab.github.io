@@ -475,30 +475,39 @@ firstp {
   height: 240px;
   object-fit: cover;
 }
-#picid .gallery-columns {
+#picid .gallery-columns,
+#gridid .publication-columns {
 	display: flex;
 	gap: 32px;
 }
-#picid .gallery-column {
+#picid .gallery-column,
+#gridid .publication-column {
 	flex: 1 1 0;
 	min-width: 0;
 }
 #picid .gallery-item p {
 	margin-top: 0;
 }
-#picid .gallery-list-mobile {
+#gridid .publication-item {
+	display: flow-root;
+}
+#picid .gallery-list-mobile,
+#gridid .publication-list-mobile {
 	display: none;
 }
 @media (max-width: $screen-sm-max) {
-	#picid .gallery-columns {
+	#picid .gallery-columns,
+	#gridid .publication-columns {
 		gap: 24px;
 	}
 }
 @media (max-width: $screen-xs-max) {
-	#picid .gallery-columns {
+	#picid .gallery-columns,
+	#gridid .publication-columns {
 		display: none;
 	}
-	#picid .gallery-list-mobile {
+	#picid .gallery-list-mobile,
+	#gridid .publication-list-mobile {
 		display: block;
 	}
 }

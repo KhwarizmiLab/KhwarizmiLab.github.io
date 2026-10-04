@@ -1,0 +1,13 @@
+<div class="well publication-item">
+  <pubtit>{{ include.publi.title }}
+  {% if include.publi.link.pdf %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ include.publi.link.pdf }}" target="_blank">PDF</a>]{% endif %}
+  {% if include.publi.link.slides %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ include.publi.link.slides }}" target="_blank">Slides</a>]{% endif %}
+  {% if include.publi.award %}<br><span class="text-success"><strong>{{ include.publi.award }}</strong></span>{% endif %}
+  </pubtit>
+  {% if include.publi.image %}<img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ include.publi.image }}" class="img-responsive" width="50%" style="float: left" />{% endif %}
+  <p>{{ include.publi.description }}</p>
+  <p><em>{{ include.publi.authors }}</em></p>
+  <p><strong><a href="{{ include.publi.link.url }}" target="_blank">{{ include.publi.link.display }}</a></strong></p>
+  <p class="text-danger"><strong> {{ include.publi.news1 }}</strong></p>
+  <p> {{ include.publi.news2 }}</p>
+</div>
