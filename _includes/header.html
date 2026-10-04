@@ -14,11 +14,25 @@
 	<div class="collapse navbar-collapse" id="navbar-collapse-1">
 	  <ul class="nav navbar-nav navbar-right">
 		<li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
+		<li class="dropdown navbar-section">
+		  <a href="{{ site.url }}{{ site.baseurl }}/research">Research</a>
+		  <button type="button" class="dropdown-toggle navbar-section-toggle" data-toggle="dropdown" aria-expanded="false" aria-controls="research-menu" aria-label="Open Research submenu">
+			<span class="caret" aria-hidden="true"></span>
+		  </button>
+		  <ul class="dropdown-menu" id="research-menu">
+			<li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
+		  </ul>
+		</li>
+		<li class="dropdown navbar-section">
+		  <a href="{{ site.url }}{{ site.baseurl }}/team">Team</a>
+		  <button type="button" class="dropdown-toggle navbar-section-toggle" data-toggle="dropdown" aria-expanded="false" aria-controls="team-menu" aria-label="Open Team submenu">
+			<span class="caret" aria-hidden="true"></span>
+		  </button>
+		  <ul class="dropdown-menu" id="team-menu">
+			<li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a></li>
+		  </ul>
+		</li>
 		<li><a href="{{ site.url }}{{ site.baseurl }}/media.html">Media & Press</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Gallery</a></li>
 		<li><a href="{{ site.url }}{{ site.baseurl }}/ece371/">ECE 371</a></li>
 		<li><a href="{{ '/nesqom-2026/' | relative_url }}">NeSQom 2026 <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
 		<li><a href="{{ site.url }}{{ site.baseurl }}/emvexpiredcards">Expired Card Attack <i class="fa fa-external-link"></i></a></li>

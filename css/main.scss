@@ -148,6 +148,34 @@ firstp {
   max-width: 1500px;
 }
 
+.navbar-nav > .navbar-section {
+  display: grid;
+  grid-template-columns: auto 44px;
+}
+
+.navbar-default .navbar-section-toggle {
+  background: transparent;
+  border: 0;
+  border-left: 1px solid rgba($navbar-default-link-color, .4);
+  color: $navbar-default-link-color;
+  cursor: pointer;
+  font: inherit;
+  min-height: 44px;
+  padding: 10px;
+
+  &:hover,
+  &:focus,
+  &[aria-expanded="true"] {
+    background: rgba($navbar-default-link-hover-color, .12);
+    color: $navbar-default-link-hover-color;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $navbar-default-link-hover-color;
+    outline-offset: -4px;
+  }
+}
+
 @media (min-width: 768px) {
   .navbar-default .navbar-collapse.collapse {
     white-space: nowrap;
@@ -176,18 +204,41 @@ firstp {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1379px) {
+@media (max-width: 1379px) {
   .navbar .navbar-header {
+    display: flex;
+    align-items: center;
     float: none;
+  }
+
+  .navbar .navbar-brand {
+    float: none;
+    flex: 0 0 auto;
+    margin-left: 0;
+  }
+
+  .navbar .navbar-brand + .navbar-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: clamp(14px, 2.5vw, #{$font-size-large});
+    padding-left: 0;
+    padding-right: 8px;
+    white-space: nowrap;
   }
 
   .navbar .navbar-toggle {
     display: block;
+    flex: 0 0 auto;
+    order: 1;
+    margin-left: 0;
   }
 
   .navbar .navbar-collapse {
     border-top: 1px solid rgba(255, 255, 255, .2);
-    max-height: calc(100vh - 50px);
+    padding-left: $navbar-padding-horizontal;
+    padding-right: $navbar-padding-horizontal;
+    max-height: calc(100vh - #{$navbar-height} - 1px);
+    max-height: calc(100dvh - #{$navbar-height} - 1px);
   }
 
   .navbar .navbar-collapse.collapse {
@@ -213,6 +264,17 @@ firstp {
 
   .navbar .navbar-nav > li > a {
     padding: 10px 15px;
+  }
+
+  .navbar-nav > .navbar-section {
+    grid-template-columns: 1fr 44px;
+  }
+
+  .navbar-nav > .navbar-section > .dropdown-menu {
+    grid-column: 1 / -1;
+    position: static;
+    float: none;
+    margin: 0;
   }
 }
 
@@ -294,7 +356,20 @@ firstp {
 }
 
 .research-more {
-	margin-top: 8px;
+	background: $gray-lighter;
+	border-left: 4px solid $navbar-default-bg;
+	border-radius: $border-radius-base;
+	color: $headings-color;
+	font-size: $font-size-large;
+	font-weight: 600;
+	line-height: 1.5;
+	margin-top: 24px;
+	padding: 20px 24px;
+
+	a {
+		font-weight: 700;
+		text-decoration: underline;
+	}
 }
 
 @media (max-width: $screen-xs-max) {
