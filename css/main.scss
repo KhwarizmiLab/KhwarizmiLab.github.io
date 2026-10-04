@@ -150,29 +150,80 @@ firstp {
 
 .navbar-nav > .navbar-section {
   display: grid;
-  grid-template-columns: auto 44px;
+  grid-template-columns: auto 32px;
 }
 
 .navbar-default .navbar-section-toggle {
+  align-self: center;
   background: transparent;
   border: 0;
-  border-left: 1px solid rgba($navbar-default-link-color, .4);
+  border-radius: $border-radius-base;
   color: $navbar-default-link-color;
   cursor: pointer;
   font: inherit;
-  min-height: 44px;
-  padding: 10px;
+  height: 44px;
+  padding: 0;
 
   &:hover,
   &:focus,
   &[aria-expanded="true"] {
-    background: rgba($navbar-default-link-hover-color, .12);
     color: $navbar-default-link-hover-color;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
   }
 
   &:focus-visible {
     outline: 2px solid $navbar-default-link-hover-color;
     outline-offset: -4px;
+  }
+
+  .caret {
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    height: 7px;
+    width: 7px;
+    margin-left: 0;
+    margin-top: -4px;
+    transform: rotate(45deg);
+  }
+
+  &[aria-expanded="true"] .caret {
+    margin-top: 2px;
+    transform: rotate(225deg);
+  }
+}
+
+.navbar-default .navbar-nav > .navbar-section {
+  &.open > a {
+    text-decoration: underline;
+    text-underline-offset: .3em;
+  }
+
+  > .dropdown-menu {
+    left: 0;
+    right: auto;
+    min-width: 210px;
+    padding: 6px;
+    border: 1px solid $dropdown-border;
+    border-radius: 0 0 $border-radius-large $border-radius-large;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+  }
+
+  > .dropdown-menu > li > a {
+    color: $headings-color;
+    font-size: $font-size-large;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 10px 16px;
+    border-radius: $border-radius-base;
+
+    &:hover,
+    &:focus {
+      background: $gray-lighter;
+      color: $navbar-default-bg;
+    }
   }
 }
 
@@ -189,6 +240,10 @@ firstp {
 }
 
 @media (min-width: 1380px) {
+  .navbar-default .navbar-nav > .navbar-section > a {
+    padding-right: 0;
+  }
+
   .navbar .container-fluid {
     display: flex;
     align-items: center;
@@ -270,11 +325,28 @@ firstp {
     grid-template-columns: 1fr 44px;
   }
 
-  .navbar-nav > .navbar-section > .dropdown-menu {
+  .navbar-default .navbar-nav > .navbar-section > .dropdown-menu {
     grid-column: 1 / -1;
     position: static;
     float: none;
     margin: 0;
+    min-width: 0;
+    padding: 4px 0 8px;
+    background: rgba(0, 0, 0, .12);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .navbar-default .navbar-nav > .navbar-section > .dropdown-menu > li > a {
+    color: $navbar-default-link-hover-color;
+    padding: 10px 28px;
+
+    &:hover,
+    &:focus {
+      background: rgba($navbar-default-link-hover-color, .12);
+      color: $navbar-default-link-hover-color;
+    }
   }
 }
 
