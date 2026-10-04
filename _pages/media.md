@@ -11,6 +11,8 @@ permalink: /media.html
 
 ## Digital Payments Security
 ### Zombie Credit Cards
+- <a href="https://www.racunalniske-novice.com/en/how-can-expired-contactless-cards-become-a-means-of-payment-again/" title="How can expired contactless cards become a means of payment again?" target='_blank'>Računalniške novice — How can expired contactless cards become a means of payment again?</a>
+- <a href="https://www.digitaltoday.co.kr/en/view/109016/expired-credit-cards-can-still-pay-zombie-card-flaw-found" title="Expired credit cards can still be used for contactless payments, 'zombie card' flaw found" target='_blank'>Digital Today — Expired credit cards can still be used for contactless payments, 'zombie card' flaw found</a>
 - <a href="https://money.usnews.com/credit-cards/articles/zombie-credit-cards-how-your-expired-card-can-come-back-to-life" title="Zombie Credit Cards: How Your Expired Card Can Come Back to Life" target='_blank'>U.S. News &amp; World Report — Zombie Credit Cards: How Your Expired Card Can Come Back to Life</a>
 - <a href="https://www.wmar2news.com/matterformallory/researchers-find-some-expired-credit-cards-can-be-brought-back-to-life" title="Researchers find some expired credit cards can be brought back to life" target='_blank'>WMAR-2 News — Researchers find some expired credit cards can be brought back to life</a>
 - <a href="https://www.firstalert4.com/2026/08/31/researchers-say-zombie-card-attack-can-enable-transactions-some-expired-credit-cards/" title="Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards" target='_blank'>First Alert 4 — Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards</a>
