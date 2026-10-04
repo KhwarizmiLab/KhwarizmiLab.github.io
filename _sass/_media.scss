@@ -1,0 +1,18 @@
+.media-coverage {
+  li {
+    margin-bottom: 0.75em;
+    overflow-wrap: anywhere;
+  }
+
+  .media-publisher {
+    color: $headings-color;
+    font-size: 1.125em;
+    font-weight: 700;
+  }
+
+  .media-article-title {
+    color: $link-color;
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
