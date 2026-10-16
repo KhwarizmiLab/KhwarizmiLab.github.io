@@ -131,9 +131,11 @@ See team in action: [Lab Pictures]({{ site.url }}{{ site.baseurl }}/pictures)!
 
 <div class="col-sm-4 clearfix">
 <h4>Bachelor's Students</h4>
+<ul>
 {% for member in site.data.bsc %}
-{{ member.name }}
+<li>{% if member.link %}<a href="{{ member.link }}" target="_blank">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</li>
 {% endfor %}
+</ul>
 </div>
 
 </div>
