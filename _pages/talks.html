@@ -9,7 +9,7 @@ permalink: /talks/
 
 <div class="research-page talks-page">
   <header class="research-intro">
-    <h1>Talks &amp; Demos</h1>
+    <h1>Talks, Demos &amp; Interviews</h1>
     <p>Conference talks, research demonstrations, and media interviews from the Khwarizmi Lab. Videos are linked from the corresponding entries in our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
   </header>
 
@@ -65,16 +65,22 @@ permalink: /talks/
       {% endif %}
       <article class="research-topic talks-item">
         {% if interview.video %}
-          {% assign interview_video_id = interview.video | split: "v=" | last | split: "&" | first %}
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item"
-                    title="Interview: {{ interview.title | escape }}"
-                    src="https://www.youtube.com/embed/{{ interview_video_id }}"
-                    frameborder="0"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
+            {% if interview.video contains "youtube.com" or interview.video contains "youtu.be" %}
+              {% assign interview_video_id = interview.video | split: "v=" | last | split: "&" | first %}
+              <iframe class="embed-responsive-item"
+                      title="Interview: {{ interview.title | escape }}"
+                      src="https://www.youtube.com/embed/{{ interview_video_id }}"
+                      frameborder="0"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            {% else %}
+              <video class="embed-responsive-item" controls preload="none" title="Interview: {{ interview.title | escape }}">
+                <source src="{{ interview.video }}" type="video/mp4">
+              </video>
+            {% endif %}
           </div>
         {% else %}
           <div class="well">
@@ -84,14 +90,16 @@ permalink: /talks/
           </div>
         {% endif %}
         <div>
-          <span class="label talks-label talks-label-talk">Interviews</span>
+          <span class="label label-success talks-label">Interviews</span>
           <h3>{{ interview.title }}</h3>
           <p class="talks-venue">{{ interview.publisher }}</p>
           <p>{{ interview.description }}</p>
           <p class="talks-links">
             {% if interview.video %}
               <a href="{{ interview.video }}" target="_blank" rel="noopener noreferrer">Watch interview <i class="fa fa-external-link" aria-hidden="true"></i></a>
-            {% else %}
+            {% endif %}
+            {% if interview.url %}
+              {% if interview.video %}<span aria-hidden="true">&middot;</span> {% endif %}
               <a href="{{ interview.url }}" target="_blank" rel="noopener noreferrer">Read interview <i class="fa fa-external-link" aria-hidden="true"></i></a>
             {% endif %}
             {% if publi.link.url %}<span aria-hidden="true">&middot;</span> <a href="{{ publi.link.url }}" target="_blank" rel="noopener noreferrer">Related paper</a>{% endif %}

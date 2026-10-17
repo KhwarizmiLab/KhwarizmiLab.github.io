@@ -17,6 +17,7 @@
     - title: "Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards"
       publisher: First Alert 4
       url: https://www.firstalert4.com/2026/08/31/researchers-say-zombie-card-attack-can-enable-transactions-some-expired-credit-cards/
+      video: https://d1l66zlxaqpl1u.cloudfront.net/wp-gray/20260831/6a95fc0226dfec20d4e9083f/file_1920x1080-5400-v4/file_1280x720-2000-v3_1.mp4
       description: "First Alert 4 covers the Zombie Card attack and its implications for expired contactless cards."
     - title: "Researchers find some expired credit cards can be brought ‘back to life’"
       publisher: WMAR-2 News
@@ -100,9 +101,10 @@
   image: payment_arch.png
   description: "This paper investigates the security of digital wallet transactions, highlighting vulnerabilities in authentication, authorization, and access control. It exposes weaknesses in decentralized authority delegation, allowing attackers to add stolen bank cards, bypass payment authorization, and violate access control policies. The findings underscore the severity of these vulnerabilities, prompting proposed remedies to enhance security measures in digital wallet systems."
   interviews:
-    - title: "Digital security expert gives advice on using digital wallets"
+    - title: "Digital security expert shares advice on keeping your personal information safe when using digital wallets"
       publisher: NBC / NECN
       url: https://spectrumnewsnecn.com/necn/central-western-ma/news/2024/12/02/digital-security-expert-gives-advice-on-using-digital-wallets
+      video: "https://media.raven.news/NYS/2024/12/NYS_5PM_Pr_02220458/NYS_5PM Professor on Digital Security VOSOT_1222024_155157352_video.mp4"
       description: "A NECN interview with digital security expert Raja Hasnain Anwar about using digital wallets safely."
   authors: "<b>Raja Hasnain Anwar</b>, Syed Rafiul Hussain, and <b>Muhammad Taqi Raza</b>"
   link:
