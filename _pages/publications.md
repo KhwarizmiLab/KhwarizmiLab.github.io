@@ -43,14 +43,13 @@ permalink: /publications/
 
 {% for publi in site.data.publist %}
 
-  <b>{{ publi.year }}:</b> {{ publi.title }}
-  <!-- Check if file links exist -->
-  {% if publi.link.pdf %}<b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]</b>{% endif %}
-  {% if publi.link.slides %}<b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]</b>{% endif %}
-  {% if publi.link.talk %}<b>[<a href="{{ publi.link.talk }}" target="_blank" rel="noopener noreferrer">Talk</a>]</b>{% endif %}
-  {% if publi.link.demo %}<b>[<a href="{{ publi.link.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>]</b>{% endif %}
-  {% if publi.award %}<span class="text-success">{{ publi.award }}</span>{% endif %}
+<p class="publication-entry"><b>{{ publi.year }}:</b> {{ publi.title }}
+{% if publi.link.pdf %} <span class="text-nowrap"><b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]</b></span>{% endif %}
+{% if publi.link.slides %} <span class="text-nowrap"><b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]</b></span>{% endif %}
+{% if publi.link.talk %} <span class="text-nowrap"><b>[<a href="{{ publi.link.talk }}" target="_blank" rel="noopener noreferrer">Talk</a>]</b></span>{% endif %}
+{% if publi.link.demo %} <span class="text-nowrap"><b>[<a href="{{ publi.link.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>]</b></span>{% endif %}
+{% if publi.award %} <span class="text-success">{{ publi.award }}</span>{% endif %}</p>
 
-  <em>{{ publi.authors }} </em><br /><a href="{{ publi.link.url }}">{{ publi.link.display }}</a>
+<p><em>{{ publi.authors }} </em><br /><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></p>
 
 {% endfor %}
