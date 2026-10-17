@@ -13,6 +13,15 @@
   image: setup.png
   description: "Most people assume an expired card is useless, but our research shows that in some contactless Visa payment setups an expired card can still be accepted when the expiry date shown to the terminal is altered. We tested this with real cards, terminals, merchants, and five major US banks, and found that the issue is a gap in how the payment system enforces card expiration rather than a broken cryptographic scheme."
   video_description: "A live demonstration of the Zombie Card attack: an expired Visa card completes a $100 contactless transaction at a real point-of-sale terminal."
+  interviews:
+    - title: "Researchers say 'Zombie Card' attack can enable transactions on some expired credit cards"
+      publisher: First Alert 4
+      url: https://www.firstalert4.com/2026/08/31/researchers-say-zombie-card-attack-can-enable-transactions-some-expired-credit-cards/
+      description: "First Alert 4 covers the Zombie Card attack and its implications for expired contactless cards."
+    - title: "Researchers find some expired credit cards can be brought ‘back to life’"
+      publisher: WMAR-2 News
+      video: https://www.youtube.com/watch?v=_4NNzpDIZMQ
+      description: "A WMAR-2 News segment on the Zombie Card attack and the risks posed by some expired contactless cards."
   authors: "<b>Raja Hasnain Anwar</b>, <b>Gerard DeCunha</b>, and <b>Muhammad Taqi Raza</b>"
   link:
     pdf: usenixsecurity26-anwar.pdf
@@ -90,6 +99,11 @@
   year: 2024
   image: payment_arch.png
   description: "This paper investigates the security of digital wallet transactions, highlighting vulnerabilities in authentication, authorization, and access control. It exposes weaknesses in decentralized authority delegation, allowing attackers to add stolen bank cards, bypass payment authorization, and violate access control policies. The findings underscore the severity of these vulnerabilities, prompting proposed remedies to enhance security measures in digital wallet systems."
+  interviews:
+    - title: "Digital security expert gives advice on using digital wallets"
+      publisher: NBC / NECN
+      url: https://spectrumnewsnecn.com/necn/central-western-ma/news/2024/12/02/digital-security-expert-gives-advice-on-using-digital-wallets
+      description: "A NECN interview with digital security expert Raja Hasnain Anwar about using digital wallets safely."
   authors: "<b>Raja Hasnain Anwar</b>, Syed Rafiul Hussain, and <b>Muhammad Taqi Raza</b>"
   link:
     url: https://www.usenix.org/conference/usenixsecurity24/presentation/anwar

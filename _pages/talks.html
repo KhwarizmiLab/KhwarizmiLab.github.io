@@ -1,8 +1,8 @@
 ---
-title: "Khwarizmi Lab - Talks & Demos"
+title: "Khwarizmi Lab - Talks, Demos & Interviews"
 layout: textlay
-excerpt: "Khwarizmi Lab -- Talks & Demos"
-seo_description: "Watch talks and research demonstrations from the Khwarizmi Lab at UMass Amherst on payment security and digital wallet security."
+excerpt: "Khwarizmi Lab -- Talks, Demos & Interviews"
+seo_description: "Watch talks and research demonstrations, and read media interviews featuring Khwarizmi Lab research on payment and digital wallet security."
 sitemap: true
 permalink: /talks/
 ---
@@ -10,7 +10,7 @@ permalink: /talks/
 <div class="research-page talks-page">
   <header class="research-intro">
     <h1>Talks &amp; Demos</h1>
-    <p>Conference talks and research demonstrations from the Khwarizmi Lab. Each video is linked from the corresponding entry in our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
+    <p>Conference talks, research demonstrations, and media interviews from the Khwarizmi Lab. Videos are linked from the corresponding entries in our <a href="{{ '/publications/' | relative_url }}">publications</a>.</p>
   </header>
 
   {% assign video_kinds = "demo,talk" | split: "," %}
@@ -56,6 +56,48 @@ permalink: /talks/
           </div>
         </article>
       {% endif %}
+    {% endfor %}
+    {% for interview in publi.interviews %}
+      {% assign publi_year = publi.year | append: "" %}
+      {% if publi_year != current_year %}
+        <h2 class="talks-year">{{ publi.year }}</h2>
+        {% assign current_year = publi_year %}
+      {% endif %}
+      <article class="research-topic talks-item">
+        {% if interview.video %}
+          {% assign interview_video_id = interview.video | split: "v=" | last | split: "&" | first %}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+                    title="Interview: {{ interview.title | escape }}"
+                    src="https://www.youtube.com/embed/{{ interview_video_id }}"
+                    frameborder="0"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+          </div>
+        {% else %}
+          <div class="well">
+            <p><strong>{{ interview.publisher }}</strong></p>
+            <p><a href="{{ interview.url }}" target="_blank" rel="noopener noreferrer">{{ interview.title }}</a></p>
+            <p><a class="btn btn-default" href="{{ interview.url }}" target="_blank" rel="noopener noreferrer">Read interview <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          </div>
+        {% endif %}
+        <div>
+          <span class="label talks-label talks-label-talk">Interviews</span>
+          <h3>{{ interview.title }}</h3>
+          <p class="talks-venue">{{ interview.publisher }}</p>
+          <p>{{ interview.description }}</p>
+          <p class="talks-links">
+            {% if interview.video %}
+              <a href="{{ interview.video }}" target="_blank" rel="noopener noreferrer">Watch interview <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            {% else %}
+              <a href="{{ interview.url }}" target="_blank" rel="noopener noreferrer">Read interview <i class="fa fa-external-link" aria-hidden="true"></i></a>
+            {% endif %}
+            {% if publi.link.url %}<span aria-hidden="true">&middot;</span> <a href="{{ publi.link.url }}" target="_blank" rel="noopener noreferrer">Related paper</a>{% endif %}
+          </p>
+        </div>
+      </article>
     {% endfor %}
   {% endfor %}
 </div>
