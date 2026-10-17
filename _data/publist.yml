@@ -12,9 +12,12 @@
   year: 2026
   image: setup.png
   description: "Most people assume an expired card is useless, but our research shows that in some contactless Visa payment setups an expired card can still be accepted when the expiry date shown to the terminal is altered. We tested this with real cards, terminals, merchants, and five major US banks, and found that the issue is a gap in how the payment system enforces card expiration rather than a broken cryptographic scheme."
+  video_description: "A live demonstration of the Zombie Card attack: an expired Visa card completes a $100 contactless transaction at a real point-of-sale terminal."
   authors: "<b>Raja Hasnain Anwar</b>, <b>Gerard DeCunha</b>, and <b>Muhammad Taqi Raza</b>"
   link:
     pdf: usenixsecurity26-anwar.pdf
+    demo: https://www.youtube.com/watch?v=4lSSENmAXsg
+    project: /emvexpiredcards/
     url: https://www.usenix.org/conference/usenixsecurity26/presentation/anwar
     display: USENIX Security
   highlight: 1
@@ -93,7 +96,18 @@
     display: USENIX Security Symposium
     pdf: usenixsecurity24-anwar.pdf
     slides: Anwar-digital-wallet-payment.pdf
+    talk: https://www.youtube.com/watch?v=wZ8b6121l6w
   highlight: 1
+
+- title: "Human-in-the-Loop for Secure Digital Wallets Transactions"
+  year: 2024
+  description: "Digital wallet transactions often rely on wallet-level identities instead of verifying the actual cardholder. This talk examines how that trust model enables stolen-card enrollment and authorization bypasses, and proposes user-centered verification such as push-based multi-factor authentication and periodic re-authentication."
+  authors: "<b>Raja Hasnain Anwar</b>"
+  link:
+    url: https://www.usenix.org/conference/soups2024/presentation/anwar
+    display: Symposium on Usable Privacy and Security (SOUPS)
+    talk: https://www.youtube.com/watch?v=28c3HCaQpzA
+  highlight: 0
 
 - title: "Characterizing Encrypted Application Traffic through Cellular Radio Interface Protocol"
   year: 2024
