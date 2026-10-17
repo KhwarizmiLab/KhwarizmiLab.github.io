@@ -1,7 +1,11 @@
 <div class="well publication-item">
+  {% assign slides_url = include.publi.link.slides %}
+  {% unless slides_url contains "://" %}
+    {% assign slides_url = slides_url | prepend: "/docs/" | prepend: site.baseurl | prepend: site.url %}
+  {% endunless %}
   <pubtit>{{ include.publi.title }}
   {% if include.publi.link.pdf %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ include.publi.link.pdf }}" target="_blank">PDF</a>]{% endif %}
-  {% if include.publi.link.slides %}[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ include.publi.link.slides }}" target="_blank">Slides</a>]{% endif %}
+  {% if include.publi.link.slides %}[<a href="{{ slides_url }}" target="_blank" rel="noopener noreferrer">Slides</a>]{% endif %}
   {% if include.publi.link.talk %}[<a href="{{ include.publi.link.talk }}" target="_blank" rel="noopener noreferrer">Talk</a>]{% endif %}
   {% if include.publi.link.demo %}[<a href="{{ include.publi.link.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>]{% endif %}
   {% if include.publi.award %}<br><span class="text-success"><strong>{{ include.publi.award }}</strong></span>{% endif %}

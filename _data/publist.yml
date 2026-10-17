@@ -39,6 +39,7 @@
   link:
     url: https://arxiv.org/abs/2608.07626
     display: 2026 IEEE International Conference on Quantum Computing and Engineering (QCE)
+    slides: https://alihamzamalik.me/ieee-qweek-presentation-setup/
   highlight: 0
 
 - title: "ORACLE: Reconciling Next-G Cellular Core Operations for Correctness"

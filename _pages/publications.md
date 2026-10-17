@@ -43,9 +43,13 @@ permalink: /publications/
 
 {% for publi in site.data.publist %}
 
+{% assign slides_url = publi.link.slides %}
+{% unless slides_url contains "://" %}
+  {% assign slides_url = slides_url | prepend: "/docs/" | prepend: site.baseurl | prepend: site.url %}
+{% endunless %}
 <p class="publication-entry"><b>{{ publi.year }}:</b> {{ publi.title }}
 {% if publi.link.pdf %} <span class="text-nowrap"><b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.pdf }}" target="_blank">PDF</a>]</b></span>{% endif %}
-{% if publi.link.slides %} <span class="text-nowrap"><b>[<a href="{{ site.url }}{{ site.baseurl }}/docs/{{ publi.link.slides }}" target="_blank">Slides</a>]</b></span>{% endif %}
+{% if publi.link.slides %} <span class="text-nowrap"><b>[<a href="{{ slides_url }}" target="_blank" rel="noopener noreferrer">Slides</a>]</b></span>{% endif %}
 {% if publi.link.talk %} <span class="text-nowrap"><b>[<a href="{{ publi.link.talk }}" target="_blank" rel="noopener noreferrer">Talk</a>]</b></span>{% endif %}
 {% if publi.link.demo %} <span class="text-nowrap"><b>[<a href="{{ publi.link.demo }}" target="_blank" rel="noopener noreferrer">Demo</a>]</b></span>{% endif %}
 {% if publi.award %} <span class="text-success">{{ publi.award }}</span>{% endif %}</p>
