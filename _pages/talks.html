@@ -77,7 +77,7 @@ permalink: /talks/
                       referrerpolicy="strict-origin-when-cross-origin"
                       allowfullscreen></iframe>
             {% else %}
-              <video class="embed-responsive-item" controls preload="none" title="Interview: {{ interview.title | escape }}">
+              <video class="embed-responsive-item" controls preload="none" poster="{{ interview.thumbnail }}" title="Interview: {{ interview.title | escape }}">
                 <source src="{{ interview.video }}" type="video/mp4">
               </video>
             {% endif %}
