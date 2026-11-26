@@ -5,22 +5,27 @@
   }
 
   .media-list li {
-    display: flex;
-    gap: 1em;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 1em;
     margin-bottom: 1.25em;
     overflow-wrap: anywhere;
   }
 
   .media-logo {
-    flex: 0 0 64px;
+    position: relative;
 
     img {
+      position: absolute;
+      top: 50%;
       display: block;
       width: 100%;
-      height: 40px;
+      height: auto;
+      max-height: 100%;
       margin: 0;
       border-radius: 0;
       object-fit: contain;
+      transform: translateY(-50%);
     }
   }
 
@@ -45,13 +50,15 @@
   }
 
   .media-date {
+    grid-column: 1 / -1;
+    margin: 0 0 0.25em;
     color: #666;
     font-size: 0.875em;
   }
 
   @media (max-width: 575px) {
-    .media-logo {
-      flex-basis: 48px;
+    .media-list li {
+      grid-template-columns: 48px minmax(0, 1fr);
     }
   }
 }
