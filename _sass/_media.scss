@@ -1,7 +1,35 @@
 .media-coverage {
-  li {
-    margin-bottom: 0.75em;
+  .media-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .media-list li {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1.25em;
     overflow-wrap: anywhere;
+  }
+
+  .media-logo {
+    flex: 0 0 64px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 40px;
+      margin: 0;
+      border-radius: 0;
+      object-fit: contain;
+    }
+  }
+
+  .media-entry {
+    min-width: 0;
+
+    p {
+      margin: 0;
+    }
   }
 
   .media-publisher {
@@ -14,5 +42,16 @@
     color: $link-color;
     font-size: 1em;
     font-weight: 400;
+  }
+
+  .media-date {
+    color: #666;
+    font-size: 0.875em;
+  }
+
+  @media (max-width: 575px) {
+    .media-logo {
+      flex-basis: 48px;
+    }
   }
 }

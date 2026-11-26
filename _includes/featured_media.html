@@ -2,7 +2,9 @@
 <h2 id="featured-media-heading">Research Featured In</h2>
 <div class="featured-media-grid">
 {% for item in site.data.featured_media %}
-<a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: item.logo | relative_url }}" alt="{{ item.publisher }} logo"></a>
+{% assign logo = site.data.media_logos[item.publisher] %}
+<a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: logo | relative_url }}" alt="{{ item.publisher | escape }} logo"></a>
 {% endfor %}
 </div>
+<p class="featured-media-more"><a href="{{ '/media.html' | relative_url }}">View all news &amp; media &rarr;</a></p>
 </div>

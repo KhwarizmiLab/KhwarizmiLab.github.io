@@ -656,6 +656,12 @@ blockquote {
 	margin: 32px 0;
 }
 
+.featured-media-more {
+	margin: 20px 0 0;
+	text-align: center;
+	font-weight: 700;
+}
+
 .featured-media-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

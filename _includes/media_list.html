@@ -1,0 +1,24 @@
+{% assign entries = site.data.media_coverage | where: "section", include.section %}
+<ul class="media-list">
+  {% for item in entries %}
+    {% assign logo = site.data.media_logos[item.publisher] %}
+    <li>
+      <div class="media-logo">
+        {% if logo %}
+          <img src="{{ '/images/media-logos/' | append: logo | relative_url }}" alt="" width="64" height="40" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="media-entry">
+        <p class="media-publisher">{{ item.publisher | escape }}</p>
+        {% if item.title and item.link %}
+          <p class="media-article-title"><a href="{{ item.link | escape }}" target="_blank" rel="noopener noreferrer">{{ item.title | escape }}</a></p>
+        {% elsif item.link %}
+          <p class="media-article-title"><a href="{{ item.link | escape }}" target="_blank" rel="noopener noreferrer">View search results</a></p>
+        {% endif %}
+        {% if item.date %}
+          <p class="media-date"><time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%B %d, %Y" }}</time></p>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
