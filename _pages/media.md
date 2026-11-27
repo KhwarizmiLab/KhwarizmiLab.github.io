@@ -10,16 +10,24 @@ permalink: /media.html
 
 # Media and Press Coverage
 
-## Digital Payments Security
-
-### ACH Bank Payments
+<details class="media-section" name="media-coverage">
+<summary><h2 id="ach-bank-payments">ACH Bank Payments</h2></summary>
 {% include media_list.html section="ACH Bank Payments" %}
+</details>
 
-### Zombie Credit Cards
+<details class="media-section" name="media-coverage">
+<summary><h2 id="zombie-credit-cards">Zombie Credit Cards</h2></summary>
 {% include media_list.html section="Zombie Credit Cards" %}
+</details>
 
-### Digital Wallets
+<details class="media-section" name="media-coverage">
+<summary><h2 id="digital-wallets">Digital Wallets</h2></summary>
 {% include media_list.html section="Digital Wallets" %}
+</details>
 
-## Quantum Computing
+<details class="media-section" name="media-coverage">
+<summary><h2 id="quantum-computing">Quantum Computing</h2></summary>
 {% include media_list.html section="Quantum Computing" %}
+</details>
+
+<script src="{{ '/js/media-accordion.js' | relative_url }}" defer></script>

@@ -1,7 +1,46 @@
 .media-coverage {
+  .media-section {
+    background: mix($navbar-default-bg, $body-bg, 5%);
+    border: 1px solid mix($navbar-default-bg, $body-bg, 22%);
+    border-radius: $border-radius-base;
+    margin: 0 0 1em;
+  }
+
+  .media-section summary {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0.8em 1em;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      color: $navbar-default-bg;
+      content: "+";
+      font-size: 1.6em;
+      line-height: 1;
+      margin-left: 1em;
+    }
+
+    h2 {
+      color: $navbar-default-bg;
+      font-size: 1.4em;
+      margin: 0;
+    }
+  }
+
+  .media-section[open] summary::after {
+    content: "\2212";
+  }
+
   .media-list {
     list-style: none;
-    padding-left: 0;
+    margin: 0;
+    padding: 0 1em 0.25em;
   }
 
   .media-list li {
