@@ -10,7 +10,7 @@ permalink: /media.html
 
 # Media and Press Coverage
 
-{% include featured_media.html hide_more=true %}
+{% include featured_media.html hide_more=true scale_logos=true %}
 
 <details class="media-section" name="media-coverage">
 <summary><h2 id="ach-bank-payments">ACH Bank Payments</h2></summary>
@@ -33,3 +33,4 @@ permalink: /media.html
 </details>
 
 <script src="{{ '/js/media-accordion.js' | relative_url }}" defer></script>
+<script src="{{ '/js/featured-media-wall.js' | relative_url }}" defer></script>

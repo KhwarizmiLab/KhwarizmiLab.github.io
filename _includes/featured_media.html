@@ -3,7 +3,7 @@
 <div class="featured-media-grid">
 {% for item in site.data.featured_media %}
 {% assign logo = site.data.media_logos[item.publisher] %}
-<a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: logo | relative_url }}" alt="{{ item.publisher | escape }} logo"></a>
+<a class="featured-media-logo"{% if include.scale_logos %} data-logo-scale="{{ item.logo_scale | default: 1 | escape }}"{% endif %} href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: logo | relative_url }}" alt="{{ item.publisher | escape }} logo"></a>
 {% endfor %}
 </div>
 {% unless include.hide_more %}
