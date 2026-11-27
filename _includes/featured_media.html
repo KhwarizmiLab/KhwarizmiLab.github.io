@@ -6,5 +6,7 @@
 <a class="featured-media-logo" href="{{ item.link }}" target="_blank" rel="noopener noreferrer"><img src="{{ '/images/media-logos/' | append: logo | relative_url }}" alt="{{ item.publisher | escape }} logo"></a>
 {% endfor %}
 </div>
+{% unless include.hide_more %}
 <p class="featured-media-more"><a href="{{ '/media.html' | relative_url }}">View all news &amp; media &rarr;</a></p>
+{% endunless %}
 </div>

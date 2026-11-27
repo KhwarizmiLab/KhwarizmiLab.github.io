@@ -10,6 +10,8 @@ permalink: /media.html
 
 # Media and Press Coverage
 
+{% include featured_media.html hide_more=true %}
+
 <details class="media-section" name="media-coverage">
 <summary><h2 id="ach-bank-payments">ACH Bank Payments</h2></summary>
 {% include media_list.html section="ACH Bank Payments" %}
